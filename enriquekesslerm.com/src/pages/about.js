@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'theme-ui'
+import { Container, Text } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 
 export default function AboutPage() {
@@ -7,7 +7,8 @@ export default function AboutPage() {
     <Layout>
       <Container variant='content'>
         <main sx={{ flex: 1, pb: 4, mx: 'auto'}}>
-          <h1>About page</h1>
+          <h1 sx={{ pb: 4 }}>About me</h1>
+          <Text>Hey, I'm Enrique Kessler Martínez</Text>
         </main>
       </Container>
     </Layout>
