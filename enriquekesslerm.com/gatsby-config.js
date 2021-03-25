@@ -13,14 +13,16 @@ module.exports = {
     ]
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-theme-blorg`,
       options: {
         // contentPath: 'content',
         // filter: () => true,
-        // pagination: 5,
+        pagination: 5,
         columns: 1,
-        // indexPath: '/blog',
+        // indexPath: '/',
         // imageMaxWidth: 1380,
         // categoryIndexPath: category => `/${category}`,
         // tagIndexPath: tag => `/:${tag}:`,
