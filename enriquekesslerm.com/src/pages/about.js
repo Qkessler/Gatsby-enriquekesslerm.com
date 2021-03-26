@@ -9,7 +9,7 @@ export default function AboutPage() {
     <Layout>
       <Container variant='content'>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
-          // TODO: Will have to change the Enrique part to gradient.
+          TODO: Will have to change the Enrique part to gradient.
           <Heading as='h1' sx={{ pb: 4 }}>Hey, It's Enrique</Heading>
           <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.</Text>
           <StaticImage src="../images/fotoCV.png"

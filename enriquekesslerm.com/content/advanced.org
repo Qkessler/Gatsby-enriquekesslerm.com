@@ -2,7 +2,7 @@
 #+ORGA_PUBLISH_KEYWORD: PUBLISHED
 #+TODO: DRAFT | PUBLISHED
 
-* PUBLISHED Customize the Theme :tutorial:
+* PUBLISHED Customize the Theme                                    :tutorial:
 CLOSED: [2020-11-10 Tue 15:45]
 :PROPERTIES:
 :SUMMARY:  How to change the colors and stuff.
@@ -10,7 +10,7 @@ CLOSED: [2020-11-10 Tue 15:45]
 
 Color theme is powered by [[https://theme-ui.com][theme-ui]], the same way [[https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-blog][the official markdown based blog theme]] is. There are 2 ways to customize the theme.
 
-** DRAFT Use a Different [[https://theme-ui.com/packages/presets][Preset]]
+** Use a Different [[https://theme-ui.com/packages/presets][Preset]]
 The default preset is [[https://github.com/orgapp/orgajs/tree/master/packages/orga-theme-ui-preset][orga-theme-ui-preset]]. To use a different one, simply install the package.
 #+BEGIN_SRC sh
 npm install @theme-ui/preset-dark
@@ -93,7 +93,7 @@ In the about example, you created your own =Layout= component, but you kept the 
 
 If you find yourself tweaking these components more than you would like to, or you have a problem with the design of the overall layout, or maybe the design philosophy is not matching what's in your mind, it's time for you to [[Create Your Website from Scratch][create your website from scratch]].
 
-* PUBLISHED Create Your Website from Scratch :tutorial:
+* PUBLISHED Create Your Website from Scratch                       :tutorial:
 CLOSED: [2020-11-10 Tue 14:59]
 :PROPERTIES:
 :SUMMARY:  Laverage gatsby-theme-orga to create your perfect website from scratch.

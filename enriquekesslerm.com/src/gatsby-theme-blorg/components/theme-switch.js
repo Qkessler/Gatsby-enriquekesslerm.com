@@ -11,14 +11,14 @@ export default () => {
     <IconButton onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>
       { colorMode === 'default' ?
         <IconContext.Provider value={{
-          size: '1.2em', color: 'white', style: { verticalAlign: 'middle' }
+          size: '1.1em', color: 'white', style: { verticalAlign: 'middle' }
         }}>
-          <LightIcon />
+          <DarkIcon />
         </IconContext.Provider>
         : <IconContext.Provider value={{
-          size: '1em', color: 'white', style: { verticalAlign: 'middle' }
+          size: '1.2em', color: 'white', style: { verticalAlign: 'middle' }
         }}>
-        <DarkIcon />
+        <LightIcon />
       </IconContext.Provider>}
     </IconButton>
   )
