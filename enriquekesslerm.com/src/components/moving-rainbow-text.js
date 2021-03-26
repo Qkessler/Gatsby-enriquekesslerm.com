@@ -32,6 +32,8 @@ const MagicRainbowText = ({
             var(${colorKeys[0]})
           )
         `,
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
       }}
     >
       {children}
