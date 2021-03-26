@@ -14,8 +14,10 @@ export default function AboutPage() {
     <Layout>
       <Container variant='content'>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
-          TODO: Will have to change the Enrique part to gradient.
-          <Heading as='h1' sx={{ pb: 4 }}>Hey, It's Enrique</Heading>
+          <Heading as='h1' sx={{ pb: 4, display: 'flex'}}>
+            <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>
+            <MagicRainbowText>Enrique</MagicRainbowText>
+          </Heading>
           <Text>{aboutMeText}</Text>
           <StaticImage src="../images/fotoCV.png"
             alt="Enrique Kessler Martínez"
@@ -27,7 +29,6 @@ export default function AboutPage() {
             <Heading as='h2'>Projects</Heading>
             <ProjectShow name='testing' description='This is the first project' />
           </Box>
-          <MagicRainbowText>This is a test</MagicRainbowText>
         </main>
       </Container>
     </Layout>
