@@ -16,7 +16,7 @@ export default function AboutPage() {
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
           <Heading as='h1' sx={{ pb: 4, display: 'flex'}}>
             <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>
-            <MagicRainbowText>Enrique</MagicRainbowText>
+            <MagicRainbowText intervalDelay={800}>Enrique</MagicRainbowText>
           </Heading>
           <Text>{aboutMeText}</Text>
           <StaticImage src="../images/fotoCV.png"
