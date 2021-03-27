@@ -5,21 +5,25 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import ProjectShow from '../components/project-show'
 import MagicRainbowText from '../components/moving-rainbow-text'
-
+import CloudQuestionsLogo from '../../assets/images/cq-logo.svg'
 
 const aboutMeText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.'
+
+const projectLogoStyle = {
+  background: 'white',
+}
 
 export default function AboutPage() {
   return (
     <Layout>
       <Container variant='content'>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
-          <Heading as='h1' sx={{ pb: 4, display: 'flex'}}>
+          <Heading as='h1' sx={{ pb: 4, display: 'flex' }}>
             <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>
             <MagicRainbowText intervalDelay={800}>Enrique</MagicRainbowText>
           </Heading>
           <Text>{aboutMeText}</Text>
-          <StaticImage src="../images/fotoCV.png"
+          <StaticImage src="../../assets/images/fotoCV.png"
             alt="Enrique Kessler Martínez"
             placeholder="blurred"
             layout="constrained"
@@ -27,7 +31,9 @@ export default function AboutPage() {
           />
           <Box as='div'>
             <Heading as='h2'>Projects</Heading>
-            <ProjectShow name='testing' description='This is the first project' />
+            <ProjectShow name='testing' description='This is the first project'>
+              <CloudQuestionsLogo className={projectLogoStyle}/>
+            </ProjectShow>
           </Box>
         </main>
       </Container>
