@@ -7,6 +7,7 @@
   "dependencies": {
     "gatsby": "^2.27.2",
     "gatsby-plugin-image": "^1.1.2",
+    "gatsby-plugin-optimize-svgs": "^1.0.5",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.14.3",
     "gatsby-theme-blorg": "^2.3.13",

@@ -5,7 +5,6 @@ import { MdWbSunny as LightIcon, } from 'react-icons/md'
 import { IconContext } from 'react-icons'
 
 export default () => {
-
   const [ colorMode, setColorMode ] = useColorMode()
   return (
     <IconButton onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>

@@ -2,7 +2,7 @@
 #+ORGA_PUBLISH_KEYWORD: PUBLISHED
 #+TODO: DRAFT | PUBLISHED
 
-* PUBLISHED Customize the Theme                                    :tutorial:
+* PUBLISHED Customize the Theme
 CLOSED: [2020-11-10 Tue 15:45]
 :PROPERTIES:
 :SUMMARY:  How to change the colors and stuff.
