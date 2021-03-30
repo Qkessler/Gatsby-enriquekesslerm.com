@@ -36,7 +36,7 @@ export default function AboutPage() {
           />
           <Box as='div'>
             <Heading as='h2'>Projects</Heading>
-            <Link as={GatsbyLink} to='/projects/cloud-questions' sx={{ variant: 'project' }}>
+            <Link as={GatsbyLink} to='/projects/cloud-questions' variant='project'>
               <ProjectShow name='CloudQuestions web' description='Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'>
                 <Box as='div' mr={4} ml={1}>
                   <CloudQuestionsLogo width={50} css={whiteColor} />
