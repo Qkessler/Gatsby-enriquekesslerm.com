@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 // import React from 'react'
-import { Container, Text, Heading, Box, Link, jsx } from 'theme-ui'
+import { Container, Text, Heading, Box, jsx, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FaMusic } from 'react-icons/fa'
@@ -36,7 +36,7 @@ export default function AboutPage() {
           />
           <Box as='div'>
             <Heading as='h2'>Projects</Heading>
-            <Link as={GatsbyLink} to='/projects/cloud-questions' variant='project'>
+            <Link to='/projects/cloud-questions' variant='project'>
               <ProjectShow name='CloudQuestions web' description='Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'>
                 <Box as='div' mr={4} ml={1}>
                   <CloudQuestionsLogo width={50} css={whiteColor} />

@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-optimize-svgs',
+    `gatsby-plugin-optimize-svgs`,
     {
       resolve: `gatsby-theme-blorg`,
       options: {
