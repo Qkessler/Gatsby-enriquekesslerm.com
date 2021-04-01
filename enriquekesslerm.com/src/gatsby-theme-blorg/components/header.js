@@ -13,7 +13,7 @@ export default ({ title }) => {
       alignItems: 'center',
       justifyContent: 'space-between',
     }}>
-      <Box bg='gray' p={1} h={10} w={10} sx={{ borderRadius: 6}}>
+      <Box bg='muted' p={1} h={10} w={10} sx={{ borderRadius: 6, }}>
         <ThemeSwitch />
       </Box>
       <Box sx={{ display: 'flex', placeItems: 'center'}}>
