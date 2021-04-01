@@ -5,9 +5,10 @@ import { Container, Text, Heading, Box, jsx, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FaMusic } from 'react-icons/fa'
-import { Link as GatsbyLink } from 'gatsby'
+// import { Link as GatsbyLink } from 'gatsby'
 
 import ProjectShow from '../components/project-show'
+import Timeline from '../components/timeline'
 import MagicRainbowText from '../components/moving-rainbow-text'
 import CloudQuestionsLogo from '../../assets/images/cq-logo.svg'
 
@@ -21,6 +22,24 @@ const whiteFill = {
 const cqWebDescription = 'Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'
 
 const appMusicDescription = 'Maven Desktop App created with functionality that allows for xml importing, and implemented with patterns from the GoF Design Patterns book.'
+
+const timelineElements = [
+  {
+    'title': 'testing1',
+    'info': 'this is the info for 1',
+    'time': '17/03',
+  },
+  {
+    'title': 'testing2',
+    'info': 'this is the info for 2',
+    'time': '17/03',
+  },
+  {
+    'title': 'testing3',
+    'info': 'this is the info for 3',
+    'time': '17/03',
+  },
+]
 
 export default function AboutPage() {
   return (
@@ -53,7 +72,7 @@ export default function AboutPage() {
           </Box>
           <Box as='div'>
             <Heading as='h2'>Timeline</Heading>
-            
+            <Timeline elements={timelineElements}/>
           </Box>
         </main>
       </Container>
