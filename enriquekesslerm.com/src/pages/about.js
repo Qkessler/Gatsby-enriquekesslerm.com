@@ -18,6 +18,10 @@ const whiteFill = {
   fill: 'grey',
 }
 
+const cqWebDescription = 'Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'
+
+const appMusicDescription = 'Maven Desktop App created with functionality that allows for xml importing, and implemented with patterns from the GoF Design Patterns book.'
+
 export default function AboutPage() {
   return (
     <Layout>
@@ -36,12 +40,12 @@ export default function AboutPage() {
           />
           <Box as='div'>
             <Heading as='h2'>Projects</Heading>
-              <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description='Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'>
+            <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description={cqWebDescription}>
                 <Box as='div' mr={4} ml={1}>
                   <CloudQuestionsLogo width={50} css={whiteFill} />
                  </Box>
               </ProjectShow>
-            <ProjectShow to='/projects/app-music' name='AppMusic' description='Maven Desktop App created with functionality that allows for xml importing, and implemented with patterns from the GoF Design Patterns book.'>
+            <ProjectShow to='/projects/app-music' name='AppMusic' description={appMusicDescription}>
               <Box as='div' mr={4} ml={1}>
                 <FaMusic size={40} color='grey'/>
               </Box>
