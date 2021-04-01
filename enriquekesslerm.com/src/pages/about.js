@@ -14,7 +14,7 @@ import CloudQuestionsLogo from '../../assets/images/cq-logo.svg'
 const aboutMeText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.'
 
 
-const whiteColor = {
+const whiteFill = {
   fill: 'grey',
 }
 
@@ -36,14 +36,12 @@ export default function AboutPage() {
           />
           <Box as='div'>
             <Heading as='h2'>Projects</Heading>
-            <Link as={GatsbyLink} to='/projects/cloud-questions' variant='project'>
-              <ProjectShow name='CloudQuestions web' description='Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'>
+              <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description='Django Web-App for studying which creates an easier customer experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.'>
                 <Box as='div' mr={4} ml={1}>
-                  <CloudQuestionsLogo width={50} css={whiteColor} />
-                </Box>
+                  <CloudQuestionsLogo width={50} css={whiteFill} />
+                 </Box>
               </ProjectShow>
-            </Link>
-            <ProjectShow name='AppMusic' description='Maven Desktop App created with functionality that allows for xml importing, and implemented with patterns from the GoF Design Patterns book.'>
+            <ProjectShow to='/projects/app-music' name='AppMusic' description='Maven Desktop App created with functionality that allows for xml importing, and implemented with patterns from the GoF Design Patterns book.'>
               <Box as='div' mr={4} ml={1}>
                 <FaMusic size={40} color='grey'/>
               </Box>
