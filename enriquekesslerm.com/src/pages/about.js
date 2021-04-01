@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 // import React from 'react'
-import { Container, Text, Heading, Box, jsx, Link } from 'theme-ui'
+import { Container, Text, Heading, Box, jsx } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FaMusic } from 'react-icons/fa'
@@ -25,19 +25,18 @@ const appMusicDescription = 'Maven Desktop App created with functionality that a
 
 const timelineElements = [
   {
-    'title': 'testing1',
-    'info': 'this is the info for 1',
-    'time': '17/03',
+    'year': 2021,
+    'events': [
+      { 'info': 'this is the info for the 2021 event' },
+      { 'info': 'this is the second event for 2021' },
+    ],
   },
   {
-    'title': 'testing2',
-    'info': 'this is the info for 2',
-    'time': '17/03',
-  },
-  {
-    'title': 'testing3',
-    'info': 'this is the info for 3',
-    'time': '17/03',
+    'year': 2020,
+    'events': [
+      { 'info': 'this is the info for the 2020 event' },
+      { 'info': 'this is the second event for 2020' },
+    ],
   },
 ]
 
@@ -57,22 +56,22 @@ export default function AboutPage() {
             layout="constrained"
             width={200}
           />
-          <Box as='div'>
-            <Heading as='h2'>Projects</Heading>
+          <Box as='div' py={4}>
+            <Heading as='h2' pb={2}>Projects</Heading>
             <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description={cqWebDescription}>
-                <Box as='div' mr={4} ml={1}>
-                  <CloudQuestionsLogo width={50} css={whiteFill} />
-                 </Box>
-              </ProjectShow>
+              <Box as='div' mr={4} ml={1}>
+                <CloudQuestionsLogo width={50} css={whiteFill} />
+              </Box>
+            </ProjectShow>
             <ProjectShow to='/projects/app-music' name='AppMusic' description={appMusicDescription}>
               <Box as='div' mr={4} ml={1}>
-                <FaMusic size={40} color='grey'/>
+                <FaMusic size={40} color='grey' />
               </Box>
             </ProjectShow>
           </Box>
           <Box as='div'>
             <Heading as='h2'>Timeline</Heading>
-            <Timeline elements={timelineElements}/>
+            <Timeline elements={timelineElements} />
           </Box>
         </main>
       </Container>
