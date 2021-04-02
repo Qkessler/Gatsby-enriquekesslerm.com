@@ -21,7 +21,7 @@ module.exports = {
       options: {
         // contentPath: 'content',
         // filter: () => true,
-        pagination: 5,
+        // pagination: 5,
         columns: 1,
         // indexPath: '/',
         // imageMaxWidth: 1380,

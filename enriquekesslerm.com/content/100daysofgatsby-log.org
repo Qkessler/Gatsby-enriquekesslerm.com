@@ -151,3 +151,113 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    webinar, and added a note on the notes that I had been taking on the
    webinar: [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/enrique-kesslerm-web/performance_webinar_notes.org][performance webinar notes.]]
 
+* Day 17: 2021/03/24
+   I moved the enriquekesslerm.com repo from the 100DaysOfGatsby to its own repo,
+   with the intention of using the repository to create my future web page, which
+   will contain information about me and some of my writing, getting excited! :smile:
+
+   I had a ton of problems with the moving process, it seems that I need to adapt
+   to having starter pages using a lower version of dependencies with:
+
+   #+begin_src bash	
+    npm install --force-dependencies
+   #+end_src
+   
+   After successfully moving the project, before running out of time, I started dabbling
+   into the creation of my =/about= page. I need to create a content plan before jumping
+   to code.
+* Day 18: 2021/03/25
+   I continued working on the /about page. In order to follow good about page design
+   guidelines, I created the [[file:20210325120813-about_pages.org::+title: About pages][about pages note]]. I started dabbling on the use of
+   Images in gatsby, which is a spiky topic. Gatsby knows that most of the performance
+   issues in modern web apps come from images, and has created a image plugin to
+   take care of that, really cool.
+
+   I created a project-show component in order to showcase some of the projects on
+   the about page, half acting as a cv.
+* Day 19: 2021/03/26
+   As I keep on moving with the /about page, I decided on the initial design that I
+   linked on previous days. You can find it [[file:about-page-poc.jpg][here.]] I started working on the gradient
+   part of the text. Sparked by the initial idea, I found two interesting links:
+
+   - https://www.joshwcomeau.com/react/rainbow-button/: rainbow gradient
+     transition inspiration, the idea drawing on react hooks and css variables
+     is great. I adapted his work to act as a moving background for my text.
+   - https://github.com/system-ui/theme-ui/discussions/1011: some information
+     about how to style theme-ui components using css tags.
+
+   With working information, I adapted Josh's work to get a working animated
+   gradient text component, which I used to style my name on the /about page.
+
+   #+CAPTION: Moving gradient name!
+   #+NAME:   gradient-name
+   [[./gradient-name.gif]]
+* Day 20: 2021/03/27
+   Already on the 20th day! I'm loving the journey and it feels like I'm getting
+   more comfortable working with npm, typeScript and Gatsby overall. The project
+   tree no longer feels scary.
+
+   I continued working on the /about page, starting to create the components
+   filling some of the sections. I did some more work on the project-show component,
+   but I ran into some problems trying to use the theme-ui main color theme for
+   "styling" the svg. Some of the links that I found useful:
+
+   - [[https://stackoverflow.com/questions/61158924/import-svg-as-a-component-in-gatsby/61161331][Stack overflow answer]].
+   - [[https://www.gatsbyjs.com/plugins/gatsby-plugin-react-svg/#gatsby-plugin-react-svg-npm-version][gatsby-plugin-react-svg documentation]].
+* Day 21: 2021/03/28
+   I continued with the structure of the /about page, with problems. I find that some
+   of the posts that are supposed to be format friendly are faulty, I might need to
+   restart the project again.
+
+   Some of the problems seem to be coming from the fact that most of the dependencies are
+   legacy-deps, which are not secured. I continued with the inclusions of some of the
+   projects that I have been working on and tried the optimization of svgs, without success.
+
+   Styling seems hard with the theme-ui configuration, without having our own. I need to
+   figure out a way to extend the orga-theme-ui-preset with my styles, or use a min.css file.
+* Day 22: 2021/03/30
+   Today I kept working trying to understand the theming that is done with
+   the default =orga-theme-ui-preset=. I can't seem to understand the shadowing
+   of the theme. From the base *Theme-ui* documentation I see that the following
+   example should work:
+   #+begin_src javascript
+        import orga from 'orga-theme-ui-preset/lib/index'
+
+
+        export default {
+          ...orga,
+          links: {
+            project: {
+              color: 'text',
+              textDecoration: 'none',
+              transition: '0.3s',
+              '&:hover': {
+                color: 'secondary',
+              }
+            }
+          }
+     }
+   #+end_src
+
+   This code under =gatsby-plugin-theme-ui/index.js= should provide the 'project' variant
+   for Links, but the styling doesn't seem to be applied. Need to do some more digging.
+   Today was fun.
+* Day 23: 2021/03/31
+   I continued trying to tweak the custom =theme= in the starter, but
+   I still don't seem to understand the way the creator intended for us to tweak
+   his own theme.
+
+   I have tried the definition of variants for some of the components that I wan't
+   to create, without success. I have also tried to extend his theme by using the
+   ...orga in the index file, no luck. I reached to @xiaoxinghu to clear up the fog
+   a bit.
+* Day 24: 2021/04/01
+   I'm ready to give up, it feels like there is no progress... APRIL FOOLS!
+   
+   I have finally got a hang of how theme-ui styles its components. Even though
+   I couldn't use variants as I would have liked, I was able to create components
+   and style them individually, accessing the theme properties with the =sx= prop.
+
+   That said, I finished the projects section in the /about page. I also started
+   working on the timeline component for the /about page and finally got a working
+   style. I love the initial look, I need to fill in the info soon.
