@@ -8,7 +8,7 @@ const NavLink = ({ path, text }) => {
   return (
     <Link as={GatsbyLink} to={path}>
       <Box as='div' sx={{ color: 'text', fontSize: 18 }}>
-        <Text sx={{ p: 10 }}>{text}</Text>
+        <Text sx={{ p: 12 }}>{text}</Text>
       </Box>
     </Link>)
 }
@@ -23,10 +23,11 @@ export default () => {
       alignItems: 'center',
       justifyContent: 'space-between',
     }}>
-      <Box bg='muted' p={1} h={10} w={10} sx={{ borderRadius: 6, }}>
+      <Box bg='muted' p={1} h={10} w={10} sx={{ borderRadius: 6 }}>
         <ThemeSwitch />
       </Box>
-      <Box as='div' sx={{ display: 'flex', placeItems: 'center' }}>
+      <Box as='div' sx={{ display: 'flex',
+                          placeItems: 'center' }}>
         <NavLink path='/blog' text='Blog'/>
         <NavLink path='/projects' text='Projects'/>
         <NavLink path='/about' text='About'/>

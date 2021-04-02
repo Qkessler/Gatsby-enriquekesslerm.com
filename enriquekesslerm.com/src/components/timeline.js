@@ -1,6 +1,5 @@
 /** @jsx jsx */
 
-// import React from 'react'
 import * as styles from './timeline.module.css'
 import { Box, Text, jsx, Heading } from 'theme-ui'
 
