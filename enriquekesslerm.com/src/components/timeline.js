@@ -13,7 +13,7 @@ const Timeline = ({ elements }) => {
           <ul className={styles.sessions}>
             {yearEvents.events.map((event) => {
               return (
-                <li key="{event}" className={styles.timelineElem}>
+                <li key={event} className={styles.timelineElem}>
                   <span></span>
                   <Text className={styles.info} sx={{ color: 'text' }}>{event.info}</Text>
                 </li>

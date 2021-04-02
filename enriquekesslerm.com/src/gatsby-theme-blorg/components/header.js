@@ -1,9 +1,19 @@
 /** @jsx jsx */
-import { Link } from 'gatsby'
-import { jsx, Text, Box } from 'theme-ui'
+
+import { Link as GatsbyLink } from 'gatsby'
+import { jsx, Text, Box, Link } from 'theme-ui'
 import ThemeSwitch from './theme-switch'
 
-export default ({ title }) => {
+const NavLink = ({ path, text }) => {
+  return (
+    <Link as={GatsbyLink} to={path}>
+      <Box as='div' sx={{ color: 'text', fontSize: 18 }}>
+        <Text sx={{ p: 10 }}>{text}</Text>
+      </Box>
+    </Link>)
+}
+
+export default () => {
   return (
     <header sx={{
       '@media print': { display: 'none' },
@@ -16,27 +26,11 @@ export default ({ title }) => {
       <Box bg='muted' p={1} h={10} w={10} sx={{ borderRadius: 6, }}>
         <ThemeSwitch />
       </Box>
-      <Box sx={{ display: 'flex', placeItems: 'center'}}>
-        <Link to='/blog'>
-      <Text sx={{
-            p: 3,
-          }}>Blog</Text>
-        </Link>
-        <Link to='/projects'>
-          <Text sx={{
-            p: 3,
-          }}>Projects</Text>
-        </Link>
-        <Link to='/about'>
-          <Text sx={{
-            p: 3,
-          }}>About</Text>
-        </Link>
-        <Link to='/'>
-          <Text sx={{
-            p: 3,
-          }}>Home</Text>
-        </Link>
+      <Box as='div' sx={{ display: 'flex', placeItems: 'center' }}>
+        <NavLink path='/blog' text='Blog'/>
+        <NavLink path='/projects' text='Projects'/>
+        <NavLink path='/about' text='About'/>
+        <NavLink path='/' text='Home'/>
       </Box>
     </header>
   )

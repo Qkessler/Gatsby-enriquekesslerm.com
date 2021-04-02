@@ -10,7 +10,7 @@ export default () => {
     <IconButton onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>
       { colorMode === 'default' ?
         <IconContext.Provider value={{
-          size: '1.1em', color: 'white', style: { verticalAlign: 'middle' }
+          size: '1.1em', color: 'grey', style: { verticalAlign: 'middle' }
         }}>
           <DarkIcon />
         </IconContext.Provider>
