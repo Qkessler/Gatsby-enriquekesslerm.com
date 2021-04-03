@@ -1,11 +1,9 @@
 /** @jsx jsx */
 
-// import React from 'react'
 import { Container, Text, Heading, Box, jsx } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FaMusic } from 'react-icons/fa'
-// import { Link as GatsbyLink } from 'gatsby'
 
 import ProjectShow from '../components/project-show'
 import Timeline from '../components/timeline'
@@ -49,13 +47,15 @@ export default function AboutPage() {
             <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>
             <MagicRainbowText intervalDelay={800}>Enrique</MagicRainbowText>
           </Heading>
-          <Text>{aboutMeText}</Text>
-          <StaticImage src="../../assets/images/fotoCV.png"
-            alt="Enrique Kessler Martínez"
-            placeholder="blurred"
-            layout="constrained"
-            width={200}
-          />
+          <Box sx={{ display: 'flex' }}>
+            <Text pr={4} sx={{width: '75%'}}>{aboutMeText}</Text>
+            <StaticImage src="../../assets/images/fotoCV.png"
+              alt="Enrique Kessler Martínez"
+              placeholder="blurred"
+              layout="constrained"
+              width={200}
+            />
+          </Box>
           <Box as='div' py={4}>
             <Heading as='h2' pb={2}>Projects</Heading>
             <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description={cqWebDescription}>
