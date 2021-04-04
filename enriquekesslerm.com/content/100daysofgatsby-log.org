@@ -1,4 +1,4 @@
-#+TITLE: 100DaysOfGatsby
+#+TITLE: 100 Days Of Gatsby
 #+DATE: <2021-03-24 Wen>
 #+SUMMARY: Starting the journey! This is the post where I keep all my progress on the 100DaysOfGatsby challenge.
 
