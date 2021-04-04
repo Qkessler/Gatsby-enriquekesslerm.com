@@ -1,3 +1,5 @@
+import {markers} from './travel-markers'
+
 export const constants = {
   aboutMeText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.',
   
@@ -21,19 +23,6 @@ export const constants = {
     },
   ],
   
-  markers: [
-    {
-      position: [36.9185374212387, -3.477133978308259],
-      text: 'Lanjarón - Aug 2020',
-    },
-    {
-      position: [43.907335141376386, 3.27719088064041],
-      text: 'Occitanie - Aug 2020',
-    },
-    {
-      position: [37.98826349118192, 23.721413237793367],
-      text: 'Greece - Aug 2019',
-    },
-  ]
+  markers: [...markers],
 }
 
