@@ -8,6 +8,7 @@ import { FaMusic } from 'react-icons/fa'
 import ProjectShow from '../components/project-show'
 import Timeline from '../components/timeline'
 import MagicRainbowText from '../components/moving-rainbow-text'
+import TravelMap from '../components/travel-map'
 import CloudQuestionsLogo from '../../assets/images/cq-logo.svg'
 import { constants } from '../constants/constants'
 
@@ -49,6 +50,10 @@ export default function AboutPage() {
           <Box as='div'>
             <Heading as='h2'>Timeline</Heading>
             <Timeline elements={constants.timelineElements} />
+          </Box>
+          <Box as='div'>
+            <Heading as='h2' py={4}>Travel map</Heading>
+            <TravelMap center={[37.607152579659946, -0.9878845758906367]} zoom={2} markers={constants.markers}/>
           </Box>
         </main>
       </Container>
