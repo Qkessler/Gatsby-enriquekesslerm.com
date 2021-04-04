@@ -9,7 +9,7 @@ import ProjectShow from '../components/project-show'
 import Timeline from '../components/timeline'
 import MagicRainbowText from '../components/moving-rainbow-text'
 import TravelMap from '../components/travel-map'
-import CloudQuestionsLogo from '../../assets/images/cq-logo.svg'
+import CloudQuestionsLogo from '../../assets/svg/cq-logo.svg'
 import { constants } from '../constants/constants'
 
 const whiteFill = {

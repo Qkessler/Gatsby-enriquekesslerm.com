@@ -1,18 +1,5 @@
 import React, { Component } from 'react'
-import { FaMapMarkerAlt } from 'react-icons/fa'
-import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-
-const markerIcon = new L.icon({
-  iconUrl: FaMapMarkerAlt,
-  iconSize: [64, 64],
-  iconAnchor: [32, 64],
-  popupAnchor: null,
-  shadowUrl: null,
-  shadowSize: null,
-  shadowAnchor: null
-}
-)
 
 export default class TravelMap extends Component {
   render() {
@@ -28,7 +15,8 @@ export default class TravelMap extends Component {
             <Marker position={m.position}>
               <Popup>{m.text}</Popup>
             </Marker>
-          ))}
+          )
+          )}
         </MapContainer>
       )
     }

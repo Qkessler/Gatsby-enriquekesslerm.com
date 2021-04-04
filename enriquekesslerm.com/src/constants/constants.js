@@ -23,16 +23,16 @@ export const constants = {
   
   markers: [
     {
-      position: [37.609048, -0.989805],
-      text: 'testing1',
+      position: [36.9185374212387, -3.477133978308259],
+      text: 'Lanjarón - Aug 2020',
     },
     {
-      position: [37.608674, -0.988936],
-      text: 'testing2',
+      position: [43.907335141376386, 3.27719088064041],
+      text: 'Occitanie - Aug 2020',
     },
     {
-      position: [37.61051831674965, -0.9832926341329478],
-      text: 'testing3',
+      position: [37.98826349118192, 23.721413237793367],
+      text: 'Greece - Aug 2019',
     },
   ]
 }
