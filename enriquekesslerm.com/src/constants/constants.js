@@ -10,7 +10,7 @@ export const constants = {
     {
       'year': 2021,
       'events': [
-        { 'info': '' },
+        { 'info': '😄 I got hired as an SDE Intern @ Amazon!' },
       ],
     },
     {

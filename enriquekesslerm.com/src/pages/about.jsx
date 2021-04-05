@@ -1,9 +1,10 @@
 /** @jsx jsx */
 
-import { Container, Text, Heading, Box, jsx } from 'theme-ui'
+import { Container, Text, Heading, Box, jsx, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FaMusic } from 'react-icons/fa'
+import { Link as GatsbyLink } from 'gatsby'
 
 import ProjectShow from '../components/project-show'
 import Timeline from '../components/timeline'
@@ -46,6 +47,9 @@ export default function AboutPage() {
                 <FaMusic size={40} color='grey' />
               </Box>
             </ProjectShow>
+            <Text>You can find the rest of the projects 
+              <Link as={GatsbyLink} to='/projects' sx={{ paddingLeft: 1}}>here.</Link>
+            </Text>
           </Box>
           <Box as='div'>
             <Heading as='h2'>Timeline</Heading>

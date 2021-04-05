@@ -35,19 +35,22 @@ const projects = [
       <Box as='div' sx={{ width: '100%', maxWidth: 60 }}>
         <CloudQuestionsLogo width='100%' css={greyFill} />
       </Box>
-    </ProjectShow>),
+    </ProjectShow>
+  ),
   (
     <ProjectShow to='/projects/app-music' name='AppMusic' description={constants.appMusicDescription}>
       <Box as='div' sx={{ width: '100%', maxWidth: 50, marginX: 1 }}>
         <FaMusic size='100%' color='#cbcdd1' />
       </Box>
-    </ProjectShow>),
+    </ProjectShow>
+  ),
   (
     <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description={constants.cqWebDescription}>
       <Box as='div' sx={{ width: '100%', maxWidth: 60 }}>
         <CloudQuestionsLogo width='100%' css={greyFill} />
       </Box>
-    </ProjectShow>),
+    </ProjectShow>
+  ),
 ]
 
 
