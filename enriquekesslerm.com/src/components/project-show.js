@@ -1,9 +1,9 @@
 /** @jsx jsx */
-// import React from 'react'
+
 import { Box, Heading, Text, jsx, Link } from 'theme-ui'
 import { Link as GatsbyLink } from 'gatsby'
 
-const PostShow = ({ name, description, children, to }) => {
+const ProjectShow = ({ name, description, children, to}) => {
   return (
     <div>
       <Link as={GatsbyLink} to={to}>
@@ -20,4 +20,4 @@ const PostShow = ({ name, description, children, to }) => {
   )
 }
 
-export default PostShow;
+export default ProjectShow;
