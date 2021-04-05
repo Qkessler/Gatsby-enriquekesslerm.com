@@ -31,7 +31,7 @@ export default function AboutPage() {
           </Box>
           <Box as='div' py={4}>
             <Heading as='h2' pb={2}>Latest Projects</Heading>
-            <Projects number={2}/>
+            <Projects number={3}/>
             <Text>You can find the rest of the projects 
               <Link as={GatsbyLink} to='/projects' sx={{ paddingLeft: 1}}>here.</Link>
             </Text>
