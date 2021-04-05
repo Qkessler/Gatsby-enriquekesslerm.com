@@ -3,19 +3,13 @@
 import { Container, Text, Heading, Box, jsx, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
-import { FaMusic } from 'react-icons/fa'
 import { Link as GatsbyLink } from 'gatsby'
 
-import ProjectShow from '../components/project-show'
+import Projects from '../components/projects'
 import Timeline from '../components/timeline'
 import MagicRainbowText from '../components/moving-rainbow-text'
 import TravelMap from '../components/travel-map'
-import CloudQuestionsLogo from '../../assets/svg/cq-logo.svg'
 import { constants } from '../constants/constants'
-
-const whiteFill = {
-  fill: 'grey',
-}
 
 export default function AboutPage() {
   return (
@@ -36,17 +30,8 @@ export default function AboutPage() {
             />
           </Box>
           <Box as='div' py={4}>
-            <Heading as='h2' pb={2}>Projects</Heading>
-            <ProjectShow to='/projects/cloud-questions' name='CloudQuestions web' description={constants.cqWebDescription}>
-              <Box as='div' mr={4} ml={1}>
-                <CloudQuestionsLogo width={50} css={whiteFill} />
-              </Box>
-            </ProjectShow>
-            <ProjectShow to='/projects/app-music' name='AppMusic' description={constants.appMusicDescription}>
-              <Box as='div' mr={4} ml={1}>
-                <FaMusic size={40} color='grey' />
-              </Box>
-            </ProjectShow>
+            <Heading as='h2' pb={2}>Latest Projects</Heading>
+            <Projects number={2}/>
             <Text>You can find the rest of the projects 
               <Link as={GatsbyLink} to='/projects' sx={{ paddingLeft: 1}}>here.</Link>
             </Text>
