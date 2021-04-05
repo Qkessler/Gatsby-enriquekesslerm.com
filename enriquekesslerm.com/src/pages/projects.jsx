@@ -31,7 +31,7 @@ const projects = [
     </ProjectShow>
   ),
   (
-    <ProjectShow to='/projects/cloud-questions' name='CloudQuestions App' description={constants.cqAppDescription}>
+    <ProjectShow to='/projects/cq-app' name='CloudQuestions App' description={constants.cqAppDescription}>
       <Box as='div' sx={{ width: '100%', maxWidth: 60 }}>
         <CloudQuestionsLogo width='100%' css={greyFill} />
       </Box>
@@ -53,7 +53,6 @@ const projects = [
 
 
 export default function ProjectsPage() {
-  
   return (
     <Layout>
       <Container variant='content'>
