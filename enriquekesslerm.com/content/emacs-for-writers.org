@@ -1,0 +1,74 @@
+#+TITLE: Writing in Emacs
+#+DATE: <2021-04-06 Tue>
+#+CATEGORY: emacs
+#+SUMMARY: Emacs, as the amazing-operating-system-disguised-as-an-editor that it is, it holds several modes that are interesting for writing from blog posts, articles, and everything that comes to mind.
+#+IMAGE: ./images/andrew-neel-cckf4TsHAuw-unsplash.jpg
+
+Emacs, as the amazing-operating-system-disguised-as-an-editor that it is, it
+holds several modes that are interesting for writing from blog posts,
+articles, and everything that comes to mind.
+
+Even though I'm a strong advocate for org-mode, there are other modes that
+need to complement org-mode in order to reach the point that any writer might
+be comfortable with when working with past editors —namely Word, LibreOffice
+and more.
+
+Starting with the king, [[https://orgmode.org/manual/Languages.html][org-mode]] is an all-time favorite package by most Emacs
+users, as it provides the entire productivity ecosystem that most people need
+in their daily lives: from to do lists, agenda, calendar, exporting and more,
+all while using a Markdown brother writing style. It is also highly
+configurable, allowing for other packages to add to its already extensive
+functionality. I wouldn't recommend starting with other authoring modes inside
+Emacs, like [[https://www.gnu.org/software/emacs-muse/][Muse]] or [[https://www.emacswiki.org/emacs/MarkdownMode][even Markdown]]. Org-mode is already part of Emacs.
+
+When writing, specially when writing some document that might have some
+complex structure, it is always good that you can outline your document with
+org-mode. Using collapsible headers —in org-mode, we use asterisks to define
+the level we are on. There is a good guide on structural writing with org-mode
+by Tony Ballantyne [[https://tonyballantyne.com/EmacsWritingTips.html][here]].
+
+Some of the other features that I need when writing my notes —I use [[file:20210124110000-how_to_take_smart_notes_with_org_mode.org][org-roam]]
+to be able to get the bidirectional-links goodies— or blog posts are
+spelling, logic and style checking.
+
+For spelling, I use =Flyspell=, configured to be a minor-mode staying in the
+background. It waits for me to press the "correct word at point" keybinding
+(that I have assigned to =C-M-i=) and checks the entire buffer for spelling
+errors and corrects the last one. You can also cycle through the possible
+corrections with the same keybinding again. As I write in both English and
+Spanish, use a custom function to switch the dictionary =Flyspell= is using:
+
+#+begin_src lisp
+  (defun fd-switch-dictionary()
+    (interactive)
+    (let* ((dic ispell-current-dictionary)
+           (change (if (string= dic "english") "spanish" "english")))
+      (ispell-change-dictionary change)
+      (message "Dictionary switched from %s to %s" dic change)
+      ))
+  (defun flyspell-buffer-after-pdict-save (&rest _)
+    (flyspell-buffer))
+
+  (advice-add 'ispell-pdict-save :after #'flyspell-buffer-after-pdict-save)
+#+end_src
+
+Lastly, for logic and style checking, I recently started dabbling with =proselint=,
+which is a Python3 package that provides linting for prose text. I connect it
+to my Emacs modes using =Flycheck=. I followed [[https://unconj.ca/blog/linting-prose-in-emacs.html][this blog post]] for the configuration.
+
+#+begin_src lisp
+  (use-package flycheck
+    :ensure t
+    :config (
+             (flycheck-define-checker proselint
+               "A linter for prose."
+               :command ("proselint" source-inplace)
+               :error-patterns
+               ((warning line-start (file-name) ":" line ":" column ": "
+                         (id (one-or-more (not (any " "))))
+                         (message) line-end))
+               :modes (text-mode markdown-mode gfm-mode))
+
+             (add-to-list 'flycheck-checkers 'proselint)
+             ))
+#+end_src
