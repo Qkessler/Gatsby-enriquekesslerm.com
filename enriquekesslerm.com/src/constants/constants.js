@@ -1,9 +1,9 @@
 import { markers } from './travel-markers'
 
 export const constants = {
-  aboutMeText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
-    'Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu.' +
-    'Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci.' +
+  aboutMeText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+    'Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. ' +
+    'Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. ' +
     'Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit ' +
     'vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.',
   cqWebDescription: 'Django Web-App for studying which creates an easier customer ' +
@@ -37,5 +37,10 @@ export const constants = {
     'vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis. ',
   linkedinLink: 'https://www.linkedin.com/in/enrique-kessler-martinez/',
   githubLink: 'https://github.com/Qkessler',
+  blogText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+    'Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. ' +
+    'Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. ' +
+    'Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit ' +
+    'vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.',
 }
 

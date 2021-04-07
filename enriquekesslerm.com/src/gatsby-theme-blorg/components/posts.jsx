@@ -2,12 +2,13 @@
 
 import { Link } from 'gatsby'
 import _ from 'lodash/fp'
-import { Box, Flex, Heading, jsx, Text } from 'theme-ui'
-// import { useSiteMetadata } from 'gatsby-theme-blorg/src/hooks'
+import { Box, Flex, Heading, jsx, Text, Container } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import PostList from 'gatsby-theme-blorg/src/components/post-list'
 import SEO from "gatsby-theme-blorg/src/components/seo"
 import Tags from 'gatsby-theme-blorg/src/components/tags'
+
+import { constants } from '../../constants/constants'
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -25,12 +26,12 @@ export const Post = ({ id, date, title, category, tags, excerpt, slug }) => {
     }}>
       <Link href={`${slug}`}>
         <Box py={2}>
-          <Text variant='caption' color='gray'>{ date }</Text>
-          <Heading as='h1' color='primary'>{ title }</Heading>
-          <Text color='text'>{ excerpt }</Text>
+          <Text variant='caption' color='gray'>{date}</Text>
+          <Heading as='h1' color='primary'>{title}</Heading>
+          <Text color='text'>{excerpt}</Text>
         </Box>
       </Link>
-      <Tags tags={tags}/>
+      <Tags tags={tags} />
     </Flex>
   )
 }
@@ -38,7 +39,7 @@ export const Post = ({ id, date, title, category, tags, excerpt, slug }) => {
 const PaginationLink = ({ url, children }) => {
   if (!url) return <div></div>
   return (
-    <Link to={url}>{ children }</Link>
+    <Link to={url}>{children}</Link>
   )
 }
 
@@ -52,24 +53,31 @@ export default ({ data, location, pageContext }) => {
   )(posts)
 
   const { next, prev, columns } = pageContext
-  
+
   // As I use /blog as Index path for the posts, I need to use the header
   // category if the category is not 'blog'.
-  const isNotBlog = category !== `blog`
+  const isBlog = category === `blog`
 
   return (
     <Layout>
       <SEO title='Blog' keywords={keywords} />
       <main sx={{ flex: 1 }}>
-        { category && category.length > 0 && isNaN(category) &&
-          isNotBlog && (
+        {isBlog && (
+          <Container pb={4} variant='content'>
+            <Heading as='h1'>Blog</Heading>
+            <Text pt={4} pb={2}>{constants.blogText}</Text>
+          </Container>
+        )}
+        {category && category.length > 0 && isNaN(category) &&
+          !isBlog && (
             <Heading as='h1' sx={{
               pt: 4, pb: 4,
-              textTransform: 'uppercase',
+              textTransform: 'capitalize',
               textAlign: 'center',
-              letterSpacing: '0.1em' }}>{ category }</Heading>
+              letterSpacing: '0.1em'
+            }}>{category}</Heading>
           )}
-        <PostList posts={posts} columns={columns}/>
+        <PostList posts={posts} columns={columns} />
       </main>
       <Flex sx={{ justifyContent: 'space-between', width: '100%' }}>
         <PaginationLink url={prev}>
