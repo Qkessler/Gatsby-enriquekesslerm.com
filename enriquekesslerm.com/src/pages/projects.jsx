@@ -2,6 +2,7 @@
 
 import { Container, Heading, jsx, Text, Box, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
+import SEO from 'gatsby-theme-blorg/src/components/seo'
 import { GrLinkedin } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
 import { Link as GatsbyLink } from 'gatsby'
@@ -24,6 +25,7 @@ export default function ProjectsPage() {
   return (
     <Layout>
       <Container variant='content'>
+        <SEO title='Projects'></SEO>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
           <Heading as='h1'>Projects</Heading>
           <Text pt={4} pb={2}>{constants.projectsText}</Text>

@@ -2,6 +2,7 @@
 
 import { Container, Text, Heading, Box, jsx, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
+import SEO from 'gatsby-theme-blorg/src/components/seo'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link as GatsbyLink } from 'gatsby'
 
@@ -15,6 +16,7 @@ export default function AboutPage() {
   return (
     <Layout>
       <Container variant='content'>
+        <SEO title='About'/>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
           <Heading as='h1' sx={{ pb: 4, display: 'flex' }}>
             <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>

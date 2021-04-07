@@ -59,7 +59,7 @@ export default ({ data, location, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title='Home' keywords={keywords} />
+      <SEO title='Blog' keywords={keywords} />
       <main sx={{ flex: 1 }}>
         { category && category.length > 0 && isNaN(category) &&
           isNotBlog && (
