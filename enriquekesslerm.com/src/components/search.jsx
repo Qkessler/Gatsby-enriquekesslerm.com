@@ -16,6 +16,7 @@ export default class Search extends Component {
       query: ``,
       results: [],
       columns: 1,
+      allPosts: props.allPosts,
     }
   }
 
@@ -30,6 +31,7 @@ export default class Search extends Component {
           WebkitBoxShadow: '0 1px 8px 1px rgba(0,0,0,0.4)',
           boxShadow: '0 1px 8px 1px rgba(0,0,0,0.4)',
           width: '100%',
+               marginBottom: 4,
           borderRadius: 12,
         }}>
           <Input placeholder='Search articles' defaultValue={this.state.query}
@@ -42,6 +44,7 @@ export default class Search extends Component {
             <GoSearch />
           </IconContext.Provider>
         </Box>
+        {!this.state.results.length && <PostList posts={this.state.allPosts} columns={this.state.columns} />}
         {this.state.results && <PostList posts={this.state.results} columns={this.state.columns} />}
       </Container>
     )

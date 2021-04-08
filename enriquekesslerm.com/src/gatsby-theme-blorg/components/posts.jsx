@@ -45,7 +45,7 @@ const PaginationLink = ({ url, children }) => {
 }
 
 
-const BoxSearch = ({columns}) => (
+const SearchBox = ({columns, allPosts, ...rest}) => (
   <StaticQuery
     query={graphql`
       query SearchIndexQuery {
@@ -55,9 +55,9 @@ const BoxSearch = ({columns}) => (
       }
     `}
     render={data => (
-      <Box>
-        <Search searchIndex={data.siteSearchIndex.index} columns={columns}/>
-      </Box>
+      <Container {...rest} variant='content'>
+        <Search searchIndex={data.siteSearchIndex.index} columns={columns} allPosts={allPosts}/>
+      </Container>
     )}
   />
 )
@@ -84,9 +84,9 @@ export default ({ data, location, pageContext }) => {
       <SEO title='Blog' keywords={keywords} />
       <main sx={{ flex: 1 }}>
         {isBlog && (
-          <Container pb={4} variant='content'>
+          <Container pb={2} variant='content'>
             <Heading as='h1'>Blog</Heading>
-            <Text pt={4} pb={2}>{constants.blogText}</Text>
+            <Text pt={4}>{constants.blogText}</Text>
           </Container>
         )}
         {category && category.length > 0 && isNaN(category) &&
@@ -98,8 +98,9 @@ export default ({ data, location, pageContext }) => {
               letterSpacing: '0.1em'
             }}>{category}</Heading>
           )}
-        <BoxSearch columns={columns}/>
-        {showAll && <PostList posts={posts} columns={columns} />}
+        <SearchBox pb={4} pt={3} columns={columns} allPosts={posts}/>
+        { // showAll && <PostList posts={posts} columns={columns} />
+        }
       </main>
       <Flex sx={{ justifyContent: 'space-between', width: '100%' }}>
         <PaginationLink url={prev}>
