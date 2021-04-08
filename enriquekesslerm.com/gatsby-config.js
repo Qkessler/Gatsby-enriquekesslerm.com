@@ -1,7 +1,7 @@
 module.exports = {
   // pathPrefix: `/gatsby-starter-blorg`,
   siteMetadata: {
-    siteURL: 'https://enriquekesslerm.com',
+    siteUrl: 'https://enriquekesslerm.com',
     title: `Enrique Kessler Martínez`,
     description: `Enrique Kessler Martínez's personal web and blog.`,
     author: 'Enrique Kessler Martínez',

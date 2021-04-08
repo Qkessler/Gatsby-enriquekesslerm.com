@@ -5,7 +5,6 @@ import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from 'gatsby-theme-blorg/src/components/seo'
 import { GrLinkedin } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
-import { Link as GatsbyLink } from 'gatsby'
 
 import Projects from '../components/projects'
 import { constants } from '../constants/constants'
@@ -13,11 +12,11 @@ import { constants } from '../constants/constants'
 const SocialItem = ({ text, to, children }) => (
   <Box pb={2} sx={{ display: 'flex' }}>
     {children}
-    <Link as={GatsbyLink} to={to}>
+    <a href={to}>
       <Box as='div' sx={{ color: 'text', fontWeight: '600' }}>
         <Text pl={2}>{text}</Text>
       </Box>
-    </Link>
+    </a>
   </Box>
 )
 

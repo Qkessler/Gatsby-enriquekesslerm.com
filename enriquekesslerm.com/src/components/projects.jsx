@@ -44,7 +44,10 @@ const Projects = ({ number }) => {
   const sliceNumber = number ? number : projects.length
   return (
     <Box as='div'>
-    { projects.slice(0, sliceNumber).map((p) => (p)) }
+      <ul>
+        { projects.slice(0, sliceNumber).map((p, index) =>
+        <li key={index}>{p}</li>) }
+      </ul>
     </Box>
   )
 }
