@@ -59,7 +59,7 @@ module.exports = {
             date: node => {
               const date = node.date
               const moment = require('moment')
-              return moment(date).format(`MMMM DD, YYYY`)
+              return moment(date).add(-1, 'd').format(`MMMM DD, YYYY`)
             },
             category: node => node.category,
           },
