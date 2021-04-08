@@ -6,13 +6,14 @@ import { Box, Flex, Heading, jsx, Text, Container } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from "gatsby-theme-blorg/src/components/seo"
 import Tags from 'gatsby-theme-blorg/src/components/tags'
+import PostList from 'gatsby-theme-blorg/src/components/post-list'
 
 import { constants } from '../../constants/constants'
 import Search from '../../components/search'
 
 const rootPath = `${__PATH_PREFIX__}/`
 
-export const Post = ({ id, date, title, category, tags, excerpt, slug }) => {
+export const Post = ({ id, date, title, tags, excerpt, slug }) => {
   return (
     <Flex key={`p-${id}`} sx={{
       bg: 'surface',
@@ -96,9 +97,8 @@ export default ({ data, location, pageContext }) => {
               letterSpacing: '0.1em'
             }}>{category}</Heading>
           )}
-        <SearchBox pb={4} pt={3} columns={columns} allPosts={posts}/>
-        { // showAll && <PostList posts={posts} columns={columns} />
-        }
+        {isBlog && <SearchBox pb={4} pt={3} columns={columns} allPosts={posts}/>}
+        { !isBlog && <PostList posts={posts} columns={columns} /> }
       </main>
       <Flex sx={{ justifyContent: 'space-between', width: '100%' }}>
         <PaginationLink url={prev}>

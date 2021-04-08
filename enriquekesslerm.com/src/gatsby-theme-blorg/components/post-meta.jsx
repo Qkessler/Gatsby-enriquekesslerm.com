@@ -21,9 +21,13 @@ const PostDate = ({ post }) => (
     <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
       <Info>{{
         info:
-        <Link as={GatsbyLink} to='/'>
-            <Text>Enrique Kessler Martínez</Text>
-          </Link>,
+        <Box sx={{ display: 'flex'}}>
+          <Text pr={1}>By</Text>
+            <Link as={GatsbyLink} to='/'>
+              <Text>Enrique Kessler Martínez</Text>
+            </Link>
+          <Text pl={2}>|</Text>
+          </Box>,
       }}
       </Info>
       <Info>{{
