@@ -4,7 +4,6 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import _ from 'lodash/fp'
 import { Box, Flex, Heading, jsx, Text, Container } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
-import PostList from 'gatsby-theme-blorg/src/components/post-list'
 import SEO from "gatsby-theme-blorg/src/components/seo"
 import Tags from 'gatsby-theme-blorg/src/components/tags'
 
@@ -77,7 +76,6 @@ export default ({ data, location, pageContext }) => {
   // As I use /blog as Index path for the posts, I need to use the header
   // category if the category is not 'blog'.
   const isBlog = category === `blog`
-  const showAll = true;
 
   return (
     <Layout>

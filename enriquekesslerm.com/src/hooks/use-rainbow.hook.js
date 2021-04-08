@@ -44,7 +44,7 @@ const useRainbow = ({ intervalDelay = 2000 }) => {
     if (!isEnabled) {
       return;
     }
-
+    /* eslint-disable */
     range(0, WINDOW_SIZE).map(index => {
       const name = getColorPropName(uniqueId, index);
       const initialValue = rainbowColors[index];
@@ -57,6 +57,7 @@ const useRainbow = ({ intervalDelay = 2000 }) => {
       });
     });
   }, [WINDOW_SIZE, isEnabled]);
+  /* eslint-enable */
 
   const intervalCount = useIncrementingNumber(intervalDelay);
 
