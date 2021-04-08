@@ -56,7 +56,11 @@ module.exports = {
             tags: node => node.tags,
             excerpt: node => node.summary,
             slug: node => node.slug,
-            // date: node => node.date,
+            date: node => {
+              const date = node.date
+              const moment = require('moment')
+              return moment(date).local().format(`LL`)
+            },
             category: node => node.category,
           },
         },
