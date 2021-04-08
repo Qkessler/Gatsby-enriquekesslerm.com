@@ -1,5 +1,5 @@
 #+TITLE: Writing in Emacs
-#+DATE: <2021-04-06 Tue>
+#+DATE: <2021-04-07 Tue>
 #+CATEGORY: emacs
 #+SUMMARY: Emacs, as the amazing-operating-system-disguised-as-an-editor that it is, it holds several modes that are interesting for writing from blog posts, articles, and everything that comes to mind.
 #+IMAGE: ./images/andrew-neel-cckf4TsHAuw-unsplash.jpg
