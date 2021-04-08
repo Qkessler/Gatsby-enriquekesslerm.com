@@ -10,10 +10,9 @@ const Timeline = ({ elements }) => {
         <Box as='div'>
           <Heading as='h4'>{yearEvents.year}</Heading>
           <ul className={styles.sessions}>
-            {yearEvents.events.map((event) => {
+            {yearEvents.events.map((event, index) => {
               return (
-                <li key={event} className={styles.timelineElem}>
-                  <span></span>
+                <li key={index} className={styles.timelineElem}>
                   <Text className={styles.info} sx={{ color: 'text' }}>{event.info}</Text>
                 </li>
               )

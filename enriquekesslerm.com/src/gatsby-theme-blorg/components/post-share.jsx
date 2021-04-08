@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { Button, Heading, jsx } from 'theme-ui'
+import { IconButton, Text, jsx } from 'theme-ui'
 import { useSiteMetadata } from 'gatsby-theme-blorg/src/hooks'
+// import {} from 'react-icons/'
 
 const objectToGetParams = object => {
   return '?' + Object.keys(object)
@@ -20,19 +21,18 @@ const TweetThisButton = ({ post: { title, slug } }) => {
 
   return (
     <a href={link}>
-      <Button sx={{
-        width: '100%',
+      <IconButton sx={{
         px: 2,
       }}>
-        <Heading as='h3'>Tweet this.</Heading>
-      </Button>
+        
+      </IconButton>
     </a>
   )
 }
 
 const ShareWithFacebook = ({ post: { title, slug, excerpt } }) => {
   const { siteUrl } = useSiteMetadata();
-  const facebookLink = `https://www.facebook.com/sharer/sharer.php?` +
+  const facebookLink = `https://www.facebook.com/sharer/sharer.php` +
     objectToGetParams({
       u: `${siteUrl}${slug}`,
       title: title,
@@ -42,9 +42,36 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt } }) => {
   return (<div></div>)
 }
 
+const ShareWithLinkedIn = ({ post: { title, slug } }) => {
+  const { author, siteUrl } = useSiteMetadata();
+  const linkedInLink = `https://www.linkedin.com/shareArticle` +
+    objectToGetParams({
+      mini: 'true',
+      source: author,
+      url: `${siteUrl}${slug}`,
+      title: title,
+    })
+  console.log(linkedInLink)
+  return (<div></div>)
+}
+
+const ShareByMail = ({ post: { title, slug, excerpt } }) => {
+  const { author, siteUrl } = useSiteMetadata();
+  const mailToLink = `mailto:` +
+    objectToGetParams({
+      subject: `From ${siteUrl}${slug}: ${title}`,
+      body: `Here is a post from ${author}'s blog that might interest you:\n\n` +
+        `${title}. ${excerpt}\n${slug}`,
+    })
+  console.log(mailToLink)
+  return (<div></div>)
+}
+
 export default ({ post }) => (
   <div>
     <TweetThisButton post={post} />
     <ShareWithFacebook post={post} />
+    <ShareWithLinkedIn post={post} />
+    <ShareByMail post={post} /> 
   </div>
 )

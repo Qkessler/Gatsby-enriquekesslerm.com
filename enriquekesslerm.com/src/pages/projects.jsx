@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Container, Heading, jsx, Text, Box, Link } from 'theme-ui'
+import { Container, Heading, jsx, Text, Box } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from 'gatsby-theme-blorg/src/components/seo'
 import { GrLinkedin } from 'react-icons/gr'
