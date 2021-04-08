@@ -44,7 +44,7 @@ export default class Search extends Component {
             <GoSearch />
           </IconContext.Provider>
         </Box>
-        {!this.state.results.length && <PostList posts={this.state.allPosts} columns={this.state.columns} />}
+        {!this.state.query.length && <PostList posts={this.state.allPosts} columns={this.state.columns} />}
         {this.state.results && <PostList posts={this.state.results} columns={this.state.columns} />}
       </Container>
     )
