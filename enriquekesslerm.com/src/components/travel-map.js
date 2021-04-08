@@ -11,8 +11,8 @@ export default class TravelMap extends Component {
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
             attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" />
-          {markers !== null && markers.map((m) => (
-            <Marker position={m.position}>
+          {markers !== null && markers.map((m, index) => (
+            <Marker key={index} position={m.position}>
               <Popup>{m.text}</Popup>
             </Marker>
           )
