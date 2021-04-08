@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import _ from 'lodash/fp'
 import { Box, Flex, Heading, jsx, Text, Container } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
@@ -9,6 +9,7 @@ import SEO from "gatsby-theme-blorg/src/components/seo"
 import Tags from 'gatsby-theme-blorg/src/components/tags'
 
 import { constants } from '../../constants/constants'
+import Search from '../../components/search'
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -43,6 +44,25 @@ const PaginationLink = ({ url, children }) => {
   )
 }
 
+
+const BoxSearch = ({columns}) => (
+  <StaticQuery
+    query={graphql`
+      query SearchIndexQuery {
+        siteSearchIndex {
+          index
+        }
+      }
+    `}
+    render={data => (
+      <Box>
+        <Search searchIndex={data.siteSearchIndex.index} columns={columns}/>
+      </Box>
+    )}
+  />
+)
+
+
 export default ({ data, location, pageContext }) => {
   const posts = data.allOrgPost.nodes
   const category = location.pathname.replace(new RegExp(`^${rootPath}`), '')
@@ -57,6 +77,7 @@ export default ({ data, location, pageContext }) => {
   // As I use /blog as Index path for the posts, I need to use the header
   // category if the category is not 'blog'.
   const isBlog = category === `blog`
+  const showAll = true;
 
   return (
     <Layout>
@@ -77,7 +98,8 @@ export default ({ data, location, pageContext }) => {
               letterSpacing: '0.1em'
             }}>{category}</Heading>
           )}
-        <PostList posts={posts} columns={columns} />
+        <BoxSearch columns={columns}/>
+        {showAll && <PostList posts={posts} columns={columns} />}
       </main>
       <Flex sx={{ justifyContent: 'space-between', width: '100%' }}>
         <PaginationLink url={prev}>

@@ -45,5 +45,22 @@ module.exports = {
         linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
       }
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [`title`, `tags`, `category`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          OrgPost: {
+            title: node => node.title,
+            tags: node => node.tags,
+            excerpt: node => node.summary,
+            slug: node => node.slug,
+            // date: node => node.date,
+            category: node => node.category,
+          },
+        },
+      },
+    },
   ],
 }

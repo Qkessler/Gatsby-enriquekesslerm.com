@@ -5,6 +5,8 @@
   "version": "1.0.0",
   "author": "Xiaoxing Hu <xiaoxing@huxx.org>",
   "dependencies": {
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^3.0.2",
+    "elasticlunr": "^0.9.5",
     "gatsby": "^2.27.2",
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-optimize-svgs": "^1.0.5",
