@@ -1,7 +1,11 @@
 /** @jsx jsx */
-import { IconButton, Text, jsx } from 'theme-ui'
+import { IconButton, Flex, jsx } from 'theme-ui'
 import { useSiteMetadata } from 'gatsby-theme-blorg/src/hooks'
-// import {} from 'react-icons/'
+import { IconContext } from 'react-icons'
+import { FaFacebook } from 'react-icons/fa'
+import { SiTwitter } from 'react-icons/si'
+import { GrLinkedin } from 'react-icons/gr'
+import { FiMail } from 'react-icons/fi'
 
 const objectToGetParams = object => {
   return '?' + Object.keys(object)
@@ -9,6 +13,16 @@ const objectToGetParams = object => {
     .map(key => `${key}=${encodeURIComponent(object[key])}`)
     .join('&')
 }
+
+const SocialButton = ({ link, children }) => (
+  <a href={link}>
+    <IconButton sx={{
+      px: 2,
+    }}>
+      {children}
+    </IconButton>
+  </a>
+)
 
 const TweetThisButton = ({ post: { title, slug } }) => {
   const { siteUrl, twitter } = useSiteMetadata()
@@ -20,13 +34,9 @@ const TweetThisButton = ({ post: { title, slug } }) => {
   })
 
   return (
-    <a href={link}>
-      <IconButton sx={{
-        px: 2,
-      }}>
-        
-      </IconButton>
-    </a>
+    <SocialButton link={link}>
+      <SiTwitter />
+    </SocialButton>
   )
 }
 
@@ -38,8 +48,11 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt } }) => {
       title: title,
       quote: excerpt,
     })
-  console.log(facebookLink)
-  return (<div></div>)
+  return (
+    <SocialButton link={facebookLink}>
+      <FaFacebook />
+    </SocialButton>
+  )
 }
 
 const ShareWithLinkedIn = ({ post: { title, slug } }) => {
@@ -51,8 +64,10 @@ const ShareWithLinkedIn = ({ post: { title, slug } }) => {
       url: `${siteUrl}${slug}`,
       title: title,
     })
-  console.log(linkedInLink)
-  return (<div></div>)
+  return (
+    <SocialButton link={linkedInLink}>
+      <GrLinkedin />
+    </SocialButton>)
 }
 
 const ShareByMail = ({ post: { title, slug, excerpt } }) => {
@@ -61,17 +76,22 @@ const ShareByMail = ({ post: { title, slug, excerpt } }) => {
     objectToGetParams({
       subject: `From ${siteUrl}${slug}: ${title}`,
       body: `Here is a post from ${author}'s blog that might interest you:\n\n` +
-        `${title}. ${excerpt}\n${slug}`,
+        `${title}. ${excerpt}\n${siteUrl}${slug}`,
     })
-  console.log(mailToLink)
-  return (<div></div>)
+  return (
+    <SocialButton link={mailToLink}>
+      <FiMail />
+    </SocialButton>)
 }
 
 export default ({ post }) => (
-  <div>
-    <TweetThisButton post={post} />
-    <ShareWithFacebook post={post} />
-    <ShareWithLinkedIn post={post} />
-    <ShareByMail post={post} /> 
-  </div>
+  <Flex sx={{ color: 'gray', alignItems: 'center', flexWrap: 'wrap', pt: 2 }}>
+    <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
+      <TweetThisButton post={post} />
+      <ShareWithFacebook post={post} />
+      <ShareWithLinkedIn post={post} />
+      <ShareByMail post={post} />
+    </IconContext.Provider>
+  </Flex>
+
 )
