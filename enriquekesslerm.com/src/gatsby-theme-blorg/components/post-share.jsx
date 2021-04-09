@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { IconButton, Flex, jsx } from 'theme-ui'
+import { IconButton, Box, Text, jsx } from 'theme-ui'
 import { useSiteMetadata } from 'gatsby-theme-blorg/src/hooks'
 import { IconContext } from 'react-icons'
 import { FaFacebook } from 'react-icons/fa'
@@ -17,14 +17,14 @@ const objectToGetParams = object => {
 const SocialButton = ({ link, children }) => (
   <a href={link}>
     <IconButton sx={{
-      px: 2,
+      px: 1, size: 30,
     }}>
       {children}
     </IconButton>
   </a>
 )
 
-const TweetThisButton = ({ post: { title, slug } }) => {
+const TweetThisButton = ({ post: { title, slug }, size }) => {
   const { siteUrl, twitter } = useSiteMetadata()
   if (!twitter || twitter.length === 0) return null
   const link = `https://twitter.com/intent/tweet` + objectToGetParams({
@@ -35,12 +35,12 @@ const TweetThisButton = ({ post: { title, slug } }) => {
 
   return (
     <SocialButton link={link}>
-      <SiTwitter />
+      <SiTwitter size={size} />
     </SocialButton>
   )
 }
 
-const ShareWithFacebook = ({ post: { title, slug, excerpt } }) => {
+const ShareWithFacebook = ({ post: { title, slug, excerpt }, size }) => {
   const { siteUrl } = useSiteMetadata();
   const facebookLink = `https://www.facebook.com/sharer/sharer.php` +
     objectToGetParams({
@@ -50,12 +50,12 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt } }) => {
     })
   return (
     <SocialButton link={facebookLink}>
-      <FaFacebook />
+      <FaFacebook size={size} />
     </SocialButton>
   )
 }
 
-const ShareWithLinkedIn = ({ post: { title, slug } }) => {
+const ShareWithLinkedIn = ({ post: { title, slug }, size }) => {
   const { author, siteUrl } = useSiteMetadata();
   const linkedInLink = `https://www.linkedin.com/shareArticle` +
     objectToGetParams({
@@ -66,11 +66,11 @@ const ShareWithLinkedIn = ({ post: { title, slug } }) => {
     })
   return (
     <SocialButton link={linkedInLink}>
-      <GrLinkedin />
+      <GrLinkedin size={size} />
     </SocialButton>)
 }
 
-const ShareByMail = ({ post: { title, slug, excerpt } }) => {
+const ShareByMail = ({ post: { title, slug, excerpt }, size }) => {
   const { author, siteUrl } = useSiteMetadata();
   const mailToLink = `mailto:` +
     objectToGetParams({
@@ -80,18 +80,37 @@ const ShareByMail = ({ post: { title, slug, excerpt } }) => {
     })
   return (
     <SocialButton link={mailToLink}>
-      <FiMail />
+      <FiMail size={size} />
     </SocialButton>)
 }
 
+const EditOnGithub = ({ post: { slug } }) => {
+  const { social } = useSiteMetadata();
+  const githubUser = social[2].url;
+  const edit = `${githubUser}/enriquekesslerm.com/edit/main/enriquekesslerm.com/content${slug}.org`
+  return (
+    <a href={edit}>
+      <Text sx={{ verticalAlign: 'middle' }}>Edit this page on Github</Text>
+    </a>)
+}
+
 export default ({ post }) => (
-  <Flex sx={{ color: 'gray', alignItems: 'center', flexWrap: 'wrap', pt: 2 }}>
-    <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
-      <TweetThisButton post={post} />
-      <ShareWithFacebook post={post} />
-      <ShareWithLinkedIn post={post} />
-      <ShareByMail post={post} />
-    </IconContext.Provider>
-  </Flex>
+  <Box sx={{
+    display: 'flex', color: 'gray', flexWrap: 'wrap', pt: 2
+  }}>
+    <Box as='div' sx={{ flexGrow: 1, flexBasis: 500 }}>
+      <Text sx={{ verticalAlign: 'middle' }}>Share with</Text>
+      <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
+        <TweetThisButton post={post} size={35} />
+        <ShareWithFacebook post={post} size={35} />
+        <ShareWithLinkedIn post={post} size={35} />
+        <ShareByMail post={post} size={35} />
+      </IconContext.Provider>
+    </Box>
+    <Box sx={{ flexGrow: 1, flexBasis: 150 }}>
+      <EditOnGithub post={post} />
+    </Box>
+
+  </Box>
 
 )

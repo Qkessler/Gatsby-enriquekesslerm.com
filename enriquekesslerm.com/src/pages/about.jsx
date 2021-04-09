@@ -16,7 +16,7 @@ export default function AboutPage() {
   return (
     <Layout>
       <Container variant='content'>
-        <SEO title='About'/>
+        <SEO title='About' />
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
           <Heading as='h1' sx={{ pb: 4, display: 'flex' }}>
             <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>
@@ -28,7 +28,7 @@ export default function AboutPage() {
               alt="Enrique Kessler Martínez"
               placeholder="blurred"
               layout="constrained"
-                         sx={{ flexGrow: 1, flexBasis: 0, minWidth: 200, maxWidth: 250, margin: 'auto' }}
+              sx={{ flexGrow: 1, flexBasis: 0, minWidth: 200, maxWidth: 250, margin: 'auto' }}
             />
           </Box>
           <Box as='div' py={4}>
