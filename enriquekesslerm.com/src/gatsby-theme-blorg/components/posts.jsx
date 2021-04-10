@@ -4,7 +4,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import _ from "lodash/fp"
 import { Box, Flex, Heading, jsx, Text, Container } from "theme-ui"
 import Layout from "gatsby-theme-blorg/src/components/layout"
-import Seo from "src/gatsby-theme-blorg/src/components/seo"
+import SEO from "gatsby-theme-blorg/src/components/seo"
 import Tags from "gatsby-theme-blorg/src/components/tags"
 import PostList from "gatsby-theme-blorg/src/components/post-list"
 
@@ -87,7 +87,7 @@ export default ({ data, location, pageContext }) => {
 
   return (
     <Layout>
-      <Seo title="Blog" keywords={keywords} />
+      <SEO title="Blog" keywords={keywords} />
       <main sx={{ flex: 1 }}>
         {isBlog && (
           <Container pb={2} variant="content">
