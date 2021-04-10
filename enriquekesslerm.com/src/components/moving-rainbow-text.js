@@ -1,18 +1,14 @@
-import React from 'react';
-import { Text } from 'theme-ui'
+import React from "react"
+import { Text } from "theme-ui"
 
-import useRainbow from '../hooks/use-rainbow.hook';
+import useRainbow from "../hooks/use-rainbow.hook"
 
-const MagicRainbowText = ({
-  children,
-  intervalDelay = 1300,
-  ...delegated
-}) => {
-  const transitionDelay = intervalDelay * 1.25;
+const MagicRainbowText = ({ children, intervalDelay = 1300, ...delegated }) => {
+  const transitionDelay = intervalDelay * 1.25
 
-  const colors = useRainbow({ intervalDelay });
+  const colors = useRainbow({ intervalDelay })
 
-  const colorKeys = Object.keys(colors);
+  const colorKeys = Object.keys(colors)
 
   return (
     <Text
@@ -32,13 +28,13 @@ const MagicRainbowText = ({
             var(${colorKeys[0]})
           )
         `,
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
       }}
     >
       {children}
     </Text>
-  );
-};
+  )
+}
 
-export default MagicRainbowText;
+export default MagicRainbowText

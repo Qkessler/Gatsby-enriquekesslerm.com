@@ -1,16 +1,17 @@
 module.exports = {
   // pathPrefix: `/gatsby-starter-blorg`,
   siteMetadata: {
-    siteUrl: 'https://enriquekesslerm.com',
+    siteUrl: "https://enriquekesslerm.com",
     title: `Enrique Kessler Martínez`,
     description: `Enrique Kessler Martínez's personal web and blog.`,
-    author: 'Enrique Kessler Martínez',
-    twitter: 'quique_kessler', // replace it, or set to 'false' to disable "Tweet this" button
-    social: [ // again, replace thse with your own value, or set to empty array to disable them
-      { name: 'twitter', url: 'https://twitter.com/quique_kessler' },
-      { name: 'website', url: 'https://enriquekesslerm.com' },
-      { name: 'github', url: 'https://github.com/Qkessler' },
-    ]
+    author: "Enrique Kessler Martínez",
+    twitter: "quique_kessler", // replace it, or set to 'false' to disable "Tweet this" button
+    social: [
+      // again, replace thse with your own value, or set to empty array to disable them
+      { name: "twitter", url: "https://twitter.com/quique_kessler" },
+      { name: "website", url: "https://enriquekesslerm.com" },
+      { name: "github", url: "https://github.com/Qkessler" },
+    ],
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -22,7 +23,7 @@ module.exports = {
         // filter: () => true,
         // pagination: 5,
         columns: 1,
-        indexPath: '/blog',
+        indexPath: "/blog",
         // imageMaxWidth: 1380,
         // categoryIndexPath: category => `/${category}`,
         // tagIndexPath: tag => `/:${tag}:`,
@@ -31,18 +32,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
+          include: /assets/, // See below to configure properly
+        },
+      },
     },
     {
-      resolve: 'gatsby-plugin-react-leaflet',
+      resolve: "gatsby-plugin-react-leaflet",
       options: {
-        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
-      }
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+      },
     },
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
@@ -51,16 +52,16 @@ module.exports = {
         // How to resolve each field`s value for a supported node type
         resolvers: {
           OrgPost: {
-            title: node => node.title,
-            tags: node => node.tags,
-            excerpt: node => node.summary,
-            slug: node => node.slug,
-            date: node => {
+            title: (node) => node.title,
+            tags: (node) => node.tags,
+            excerpt: (node) => node.summary,
+            slug: (node) => node.slug,
+            date: (node) => {
               const date = node.date
-              const moment = require('moment')
-              return moment(date).add(-1, 'd').format(`MMMM DD, YYYY`)
+              const moment = require("moment")
+              return moment(date).add(-1, "d").format(`MMMM DD, YYYY`)
             },
-            category: node => node.category,
+            category: (node) => node.category,
           },
         },
       },
