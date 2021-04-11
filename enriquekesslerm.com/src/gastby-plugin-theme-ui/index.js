@@ -5,6 +5,6 @@ export default {
   //   }
   // },
   colors: {
-    background: "tomato",
-  },
+    text: 'red'
+  }
 }

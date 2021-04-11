@@ -1,5 +1,6 @@
 #+TITLE: 100 Days Of Gatsby
 #+DATE: <2021-03-24 Wen>
+#+IMAGE: ./images/gatsby-blue-green.png
 #+SUMMARY: Starting the journey! This is the post where I keep all my progress on the 100DaysOfGatsby challenge.
 
 Considering previous experience learning Python following a similar strategy, I
