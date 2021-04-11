@@ -91,7 +91,7 @@ export default ({ data, location, pageContext }) => {
       <main sx={{ flex: 1 }}>
         {isBlog && (
           <Container pb={2} variant="content">
-            <Heading as="h1">Blog</Heading>
+            <Heading as="h1" pb={3}>Blog</Heading>
             <Text pt={4}>{constants.blogText}</Text>
           </Container>
         )}

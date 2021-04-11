@@ -26,7 +26,7 @@ export default function ProjectsPage() {
       <Container variant='content'>
         <SEO title='Projects'></SEO>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
-          <Heading as='h1'>Projects</Heading>
+          <Heading as='h1' pb={3}>Projects</Heading>
           <Text pt={4} pb={2}>{constants.projectsText}</Text>
           <ul>
             <li key='linkedin'>

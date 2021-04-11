@@ -6,6 +6,7 @@
   "author": "Xiaoxing Hu <xiaoxing@huxx.org>",
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^3.0.2",
+    "eslint-config-react-app": "^6.0.0",
     "gatsby": "^3.2.1",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-react-leaflet": "^3.0.0",
