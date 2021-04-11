@@ -3,7 +3,7 @@
 #+TODO: DRAFT | PUBLISHED
 #+TODO: TODO | DONE
 
-* PUBLISHED First Thing First :tutorial:
+* PUBLISHED First Thing First                                      :tutorial:
 CLOSED: [2020-11-10 Tue 16:00]
 :PROPERTIES:
 :SUMMARY: when you are reading this from =localhost=, you can skip this part now.
@@ -31,7 +31,7 @@ yarn run develop
 
 Now you have your site at http://localhost:8000.
 
-* PUBLISHED Config and Options :tutorial:
+* PUBLISHED Config and Options                                     :tutorial:
 CLOSED: [2020-11-10 Tue 15:55]
 :PROPERTIES:
 :SUMMARY:  Options for the plugin, explained
@@ -191,5 +191,5 @@ All other properties will be available for graphql queries.
 
 I try to stick as close to org-mode syntax as possible. So array is always string separated by spaces. You can customize these settings on a per file basis, just like in org-mode.
 
-** You are not suppose to see this section :noexport:
+** You are not suppose to see this section                         :noexport:
 This section is ignored when building the website.
