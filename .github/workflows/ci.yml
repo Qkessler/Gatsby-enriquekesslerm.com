@@ -23,6 +23,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@2.0.3
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
+        BASE_BRANCH: main
         BRANCH: gh-pages
         FOLDER: public
