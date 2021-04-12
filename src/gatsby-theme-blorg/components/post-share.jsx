@@ -119,8 +119,7 @@ export default ({ post }) => (
     }}
   >
     <Box as="div" sx={{ flexGrow: 1, flexBasis: 500 }}>
-      <Text sx={{ verticalAlign: "middle" }}>Share with</Text>
-      <IconContext.Provider value={{ style: { verticalAlign: "middle" } }}>
+      <IconContext.Provider value={{ style: { } }}>
         <TweetThisButton post={post} size={35} />
         <ShareWithFacebook post={post} size={35} />
         <ShareWithLinkedIn post={post} size={35} />
