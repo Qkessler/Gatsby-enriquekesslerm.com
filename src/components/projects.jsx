@@ -19,7 +19,7 @@ const projects = [
       {
         info: (
           <ProjectShow
-            to="/projects/enriquekesslerm"
+            to="/enriquekesslermcom"
             name="enriquekesslerm.com"
             description={constants.webDescription}
           />
