@@ -12,7 +12,7 @@ export const constants = {
     "experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.",
   cqAppDescription:
     "Following the initial success of the web, " +
-    "I partnered with another developer to create the app using Flutter!",
+    "I partnered with another developer to create the CloudQuestions app using Flutter!",
   webDescription:
     "In order to have a personal web to showcase myself and " +
     "showing my love for emacs, I built this blog using org-mode files and Gatsby!",

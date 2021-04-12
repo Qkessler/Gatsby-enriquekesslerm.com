@@ -40,7 +40,7 @@ export default function ProjectsPage() {
               </SocialItem>
             </li>
           </ul>
-          <Projects/>
+          <Projects timeline/>
         </main>
       </Container>
     </Layout>
