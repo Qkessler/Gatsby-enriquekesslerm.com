@@ -38,7 +38,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    simplicity and ease of mastering the concepts.
 
    I also added the location pages, but it doesn't really work because I still
-   don't understand how to pass the variables to the queries.
+   don't understand how to pafss the variables to the queries.
 
 * Day 5: 2021/03/11
    I though that it was a good idea to check the =filesystem-api= to make sure

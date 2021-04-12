@@ -1,0 +1,130 @@
+#+ORGA_PUBLISH_KEYWORD: PUBLISHED
+#+TODO: DRAFT | PUBLISHED
+
+* PUBLISHED enriquekesslerm.com                       :web:software:personal:
+:PROPERTIES:
+:DATE: <2021-04-12 lun>
+:CATEGORY: Projects
+:SUMMARY: Personal web used to showcase myself and collect my writings and ideas in one spot.
+:IMAGE: ./images/danielle-macinnes-IuLgi9PWETU-unsplash.jpg
+:END:
+
+The enriquekesslerm.com project started as a placeholder for learning Gatsby,
+entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built with Gatsby —easily
+industry-accepted the best framework for lightning fast websites—, the site has
+quickly become the place where I try to bring all of my ideas to be sure that I
+keep myself learning, while creating a personal space.
+
+** Why [[https://www.gatsbyjs.com/][Gatsby]]?
+   Gatsby is a React framework, so you will have to live with that it is built
+   in JavaScript. On the other side, Gatsby compensates by pre-fetching data and
+   caching all your website at build time. This means that the website will feel
+   as crisp as a mobile app while having all the advantages that the web still
+   offers, considering how young the mobile world is.
+
+   [[file:images/gatsby-index.png]]
+   
+   Gatsby provides extensive docs, and has a joyful community behind, trying to
+   make the web better one step at a time. Without reinventing the wheel, you
+   are able to access [[https://www.gatsbyjs.com/starters/][starters]], [[https://www.gatsbyjs.com/plugins][plugins]] and more.
+   
+   Considering the previous web-building experience that I had, drawing from
+   some of the [[https://www.djangoproject.com/][Django]] knowledge was plenty to build the website/blog that
+   I had been dreaming of. Using the =gatsby-config.js= file, you are able to
+   configure plugins and the siteMetadata, which is then queryable with Graphql.
+
+   #+begin_src javascript
+    graphql`
+      query SiteMetaData {
+        site {
+          siteMetadata {
+            title
+            author
+            siteUrl
+            description
+            twitter
+            social { name url }
+          }
+        }
+      }
+    `
+   #+end_src
+
+** Where is the content coming from?
+   Gatsby by default —i.e. using the default starter— provides several CMS that
+   you can connect to, namely Contentful, Ghost and more. I decided to go the
+   more “[[https://www.gnu.org/software/emacs/][emacsy]]” route, because
+
+   #+begin_quote
+   By experimenting with voluntary discomfort, we learn to appreciate far more of
+   our life, and can be content with a much simpler and more wholesome one.
+   #+end_quote
+   
+   Instead of going for Markdown files, being a hardcore Emacs user as I am, I
+   needed to find something to merge my love for Emacs and org-mode. The
+   solution rested in the [[https://www.huxiaoxing.com/building-a-website-with-org-mode-files][Xiaoxing's orgajs starter]], which uses the =orgajs=
+   package —also authored by him— parsing our org-mode files into beautiful and
+   configurable websites, What could be better?
+
+   Just to drive the point home, this is the magic of orgajs in play. The
+   following is the heading of this post.
+
+   #+begin_src 
+  ,* PUBLISHED enriquekesslerm.com                       :web:software:personal:
+:PROPERTIES:
+:DATE: <2021-04-12 lun>
+:CATEGORY: Projects
+:SUMMARY: Personal web used to showcase myself and collect my writings and ideas in one spot.
+:IMAGE: ./images/danielle-macinnes-IuLgi9PWETU-unsplash.jpg
+:END:
+
+The enriquekesslerm.com project started as a placeholder for learning Gatsby,
+entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built with Gatsby —easily
+industry-accepted the best framework for lightning fast websites—, the site has
+   #+end_src
+
+   [[file:images/mind-blown.gif]]
+
+** Structure
+   You can access the source code of this project —like any other of my
+   projects— at [[https://github.com/Qkessler]], feel free to commit any changes or
+   typos to help the cause.
+
+   [[/][enriquekesslerm.com]] follows the following structure
+
+   #+begin_src bash
+.
+├── assets
+│   ├── images
+│   └── svg
+├── content
+│   ├── 100daysofgatsby-log.org
+│   ├── advanced.org
+│   ├── emacs-for-writers.org
+│   ├── getting-started.org
+│   ├── images
+│   ├── projects.org
+│   └── standalong.org
+├── gatsby-config.js
+├── LICENSE
+├── package.json
+├── png2svg_black.sh
+├── README.md
+├── src
+│   ├── components
+│   ├── constants
+│   ├── gastby-plugin-theme-ui
+│   ├── gatsby-theme-blorg
+│   ├── hooks
+│   ├── pages
+│   └── utils
+└── yarn.lock
+   #+end_src
+
+   As I'm using the [[https://yarnpkg.com/][yarn]] package manager, the yarn.lock file keeps all the
+   versions of the packages that my page requires. Under the /content directory,
+   I store all the org-mode files that compose my posts. Under /src, there are
+   self developed components, but Gatsby's known concept as "Shadowing" is common.
+   I shadow some of the configuration files for the plugins gatsby-plugin-theme-ui
+   and gatsby-theme-blorg.
+   
