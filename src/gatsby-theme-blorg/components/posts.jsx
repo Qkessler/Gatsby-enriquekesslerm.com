@@ -83,7 +83,7 @@ export default ({ data, location, pageContext }) => {
 
   // As I use /blog as Index path for the posts, I need to use the header
   // category if the category is not 'blog'.
-  const isBlog = category === `blog`
+  const isBlog = category === `blog` || category === `blog/`
 
   return (
     <Layout>

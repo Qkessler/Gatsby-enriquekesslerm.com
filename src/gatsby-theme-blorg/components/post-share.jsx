@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { IconButton, Box, Text, jsx } from "theme-ui"
+import { IconButton, Box, Text, jsx, Link } from "theme-ui"
 import { useSiteMetadata } from "gatsby-theme-blorg/src/hooks"
 import { IconContext } from "react-icons"
 import { FaFacebook } from "react-icons/fa"
@@ -18,16 +18,20 @@ const objectToGetParams = (object) => {
 }
 
 const SocialButton = ({ link, children }) => (
-  <a href={link}>
-    <IconButton
-      sx={{
-        px: 1,
-        size: 30,
-      }}
-    >
-      {children}
-    </IconButton>
-  </a>
+  <Link href={link}>
+    <Box sx={{ color: '#c0cbcf' }}>
+
+      <IconButton
+        sx={{
+          px: 1,
+          size: 30,
+        }}
+      >
+        {children}
+      </IconButton>
+    </Box>
+  </Link>
+
 )
 
 const TweetThisButton = ({ post: { title, slug }, size }) => {
@@ -103,9 +107,11 @@ const EditOnGithub = ({ post: { slug } }) => {
   const githubUser = social[2].url
   const edit = `${githubUser}/enriquekesslerm.com/edit/main/enriquekesslerm.com/content${slug}.org`
   return (
-    <a href={edit}>
-      <Text sx={{ verticalAlign: "middle" }}>Edit this page on Github</Text>
-    </a>
+    <Link href={edit}>
+      <Box sx={{ color: '#c0cbcf'}}>
+        <Text sx={{ verticalAlign: "middle" }}>Edit this page on Github</Text>
+      </Box>
+    </Link>
   )
 }
 
@@ -113,13 +119,13 @@ export default ({ post }) => (
   <Box
     sx={{
       display: "flex",
-      color: "gray",
       flexWrap: "wrap",
       pt: 2,
     }}
   >
-    <Box as="div" sx={{ flexGrow: 1, flexBasis: 500 }}>
-      <IconContext.Provider value={{ style: { } }}>
+    <Box as="div" sx={{ display: 'flex', flexDirection: 'row', flexGrow: 1, flexBasis: 500 }}>
+      <Text pr={2}>Share with </Text>
+      <IconContext.Provider value={{ style: {} }}>
         <TweetThisButton post={post} size={35} />
         <ShareWithFacebook post={post} size={35} />
         <ShareWithLinkedIn post={post} size={35} />
