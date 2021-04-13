@@ -8,7 +8,6 @@ import { Link as GatsbyLink } from 'gatsby'
 
 import Projects from '../components/projects'
 import Timeline from '../components/timeline'
-import MagicRainbowText from '../components/moving-rainbow-text'
 import TravelMap from '../components/travel-map'
 import { constants } from '../constants/constants'
 
@@ -18,9 +17,7 @@ export default function AboutPage() {
       <Container variant='content'>
         <SEO title='About' />
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
-          <Heading as='h1' sx={{ pb: 4, display: 'flex' }}>
-            <Text sx={{ paddingRight: 2 }}>Hey, It's</Text>
-            <MagicRainbowText intervalDelay={800}>Enrique</MagicRainbowText>
+          <Heading as='h1' sx={{ pb: 4 }}> About me
           </Heading>
           <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
             <Text pb={4} pr={4} sx={{ flexGrow: 1, flexBasis: 500 }}>{constants.aboutMeText}</Text>
