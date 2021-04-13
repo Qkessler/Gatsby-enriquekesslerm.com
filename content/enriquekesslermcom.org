@@ -1,13 +1,9 @@
-#+ORGA_PUBLISH_KEYWORD: PUBLISHED
-#+TODO: DRAFT | PUBLISHED
-
-* PUBLISHED enriquekesslerm.com                       :web:software:personal:
-:PROPERTIES:
-:DATE: <2021-04-12 lun>
-:CATEGORY: Projects
-:SUMMARY: Personal web used to showcase myself and collect my writings and ideas in one spot.
-:IMAGE: ./images/danielle-macinnes-IuLgi9PWETU-unsplash.jpg
-:END:
+#+TITLE: enriquekesslerm.com
+#+DATE: <2021-04-12 lun>
+#+CATEGORY: Projects
+#+TAGS: web software personal
+#+SUMMARY: Personal web used to showcase myself and collect my writings and ideas in one spot.
+#+IMAGE: ./images/danielle-macinnes-IuLgi9PWETU-unsplash.jpg
 
 The enriquekesslerm.com project started as a placeholder for learning Gatsby,
 entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built with Gatsby —easily
@@ -127,4 +123,3 @@ industry-accepted the best framework for lightning fast websites—, the site ha
    self developed components, but Gatsby's known concept as "Shadowing" is common.
    I shadow some of the configuration files for the plugins gatsby-plugin-theme-ui
    and gatsby-theme-blorg.
-   
