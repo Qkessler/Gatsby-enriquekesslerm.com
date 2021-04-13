@@ -75,9 +75,8 @@ const projects = [
 
 function getAllProjects() {
   var allProjects = []
-  projects.forEach(yearProjects => {
-    allProjects.push(...yearProjects.events.map(e => e.info))
-  })
+  projects.forEach(yearProjects =>
+    allProjects.push(...yearProjects.events.map(e => e.info)))
   return allProjects
 }
 

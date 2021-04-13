@@ -47,4 +47,7 @@ export const constants = {
     "Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. " +
     "Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit " +
     "vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.",
+  indexText:
+    "Welcome! This web has been created to share some of my findings of the " +
+    "amazing world we live in and improve personally opening up myself to the world. Buckle up!",
 }
