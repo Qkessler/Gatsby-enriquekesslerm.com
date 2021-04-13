@@ -11,6 +11,8 @@ module.exports = {
       { name: "twitter", url: "https://twitter.com/quique_kessler" },
       { name: "website", url: "https://enriquekesslerm.com" },
       { name: "github", url: "https://github.com/Qkessler" },
+      { name: "linkedin", url: "https://www.linkedin.com/in/enrique-kessler-martinez" },
+      { name: "email", url: "mailto:enrique.kesslerm@gmail.com" }
     ],
   },
   plugins: [

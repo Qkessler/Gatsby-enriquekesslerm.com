@@ -7,6 +7,8 @@ import { SiTwitter } from "react-icons/si"
 import { GrLinkedin } from "react-icons/gr"
 import { FiMail } from "react-icons/fi"
 
+import { constants } from '../../constants/constants'
+
 const objectToGetParams = (object) => {
   return (
     "?" +
@@ -17,16 +19,10 @@ const objectToGetParams = (object) => {
   )
 }
 
-const SocialButton = ({ link, children }) => (
+export const SocialButton = ({ link, ariaLabel, children, sx }) => (
   <Link href={link}>
-    <Box sx={{ color: '#c0cbcf' }}>
-
-      <IconButton
-        sx={{
-          px: 1,
-          size: 30,
-        }}
-      >
+    <Box sx={{ color: `${constants.softGray}` }}>
+      <IconButton aria-label={ariaLabel} sx={sx}>
         {children}
       </IconButton>
     </Box>
@@ -46,7 +42,7 @@ const TweetThisButton = ({ post: { title, slug }, size }) => {
     })
 
   return (
-    <SocialButton link={link}>
+    <SocialButton link={link} ariaLabel='Twitter' sx={{ mx: 2, px: 1, size: 30 }}>
       <SiTwitter size={size} />
     </SocialButton>
   )
@@ -62,7 +58,7 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt }, size }) => {
       quote: excerpt,
     })
   return (
-    <SocialButton link={facebookLink}>
+    <SocialButton link={facebookLink} ariaLabel='Facebook' sx={{ mx: 2, px: 1, size: 30 }}>
       <FaFacebook size={size} />
     </SocialButton>
   )
@@ -79,7 +75,7 @@ const ShareWithLinkedIn = ({ post: { title, slug }, size }) => {
       title: title,
     })
   return (
-    <SocialButton link={linkedInLink}>
+    <SocialButton link={linkedInLink} ariaLabel='LinkedIn' sx={{ mx: 2, px: 1, size: 30 }}>
       <GrLinkedin size={size} />
     </SocialButton>
   )
@@ -96,7 +92,7 @@ const ShareByMail = ({ post: { title, slug, excerpt }, size }) => {
         `${title}. ${excerpt}\n${siteUrl}${slug}`,
     })
   return (
-    <SocialButton link={mailToLink}>
+    <SocialButton link={mailToLink} ariaLabel='Email' sx={{ mx: 2, px: 1, size: 30 }}> 
       <FiMail size={size} />
     </SocialButton>
   )
@@ -108,7 +104,7 @@ const EditOnGithub = ({ post: { slug } }) => {
   const edit = `${githubUser}/enriquekesslerm.com/edit/main/enriquekesslerm.com/content${slug}.org`
   return (
     <Link href={edit}>
-      <Box sx={{ color: '#c0cbcf'}}>
+      <Box sx={{ color: '#c0cbcf' }}>
         <Text sx={{ verticalAlign: "middle" }}>Edit this page on Github</Text>
       </Box>
     </Link>

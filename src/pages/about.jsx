@@ -28,13 +28,15 @@ export default function AboutPage() {
               sx={{ flexGrow: 1, flexBasis: 0, minWidth: 200, maxWidth: 250, margin: 'auto' }}
             />
           </Box>
-          <Box as='div' py={4}>
-            <Heading as='h2' pb={2}>Latest Projects</Heading>
-            <Projects number={3} />
-            <Text>You can find the rest of the projects
-              <Link as={GatsbyLink} to='/projects' sx={{ paddingLeft: 1 }}>here.</Link>
-            </Text>
-          </Box>
+          {
+            // <Box as='div' py={4}>
+            //  <Heading as='h2' pb={2}>Latest Projects</Heading>
+            //  <Projects number={3} />
+            //  <Text>You can find the rest of the projects
+            //    <Link as={GatsbyLink} to='/projects' sx={{ paddingLeft: 1 }}>here.</Link>
+            //  </Text>
+            // </Box>
+          }
           <Box as='div'>
             <Heading as='h2'>Timeline</Heading>
             <Timeline elements={constants.timelineElements} />
