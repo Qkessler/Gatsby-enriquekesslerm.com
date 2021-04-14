@@ -1,5 +1,5 @@
 module.exports = {
-  // pathPrefix: `/gatsby-starter-blorg`,
+  pathPrefix: `/enriquekesslerm.com`,
   siteMetadata: {
     siteUrl: "https://enriquekesslerm.com",
     title: `Enrique Kessler Martínez`,
