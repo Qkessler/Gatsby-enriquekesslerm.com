@@ -19,16 +19,18 @@ const objectToGetParams = (object) => {
   )
 }
 
-export const SocialButton = ({ link, ariaLabel, children, sx }) => (
-  <Link href={link}>
-    <Box sx={{ color: `${constants.softGray}` }}>
-      <IconButton aria-label={ariaLabel} sx={sx}>
-        {children}
-      </IconButton>
-    </Box>
-  </Link>
+export const SocialButton = ({ link, ariaLabel, mx, children }) => {
+  return (
+    <Link href={link}>
+      <Box mx={mx} sx={{ color: constants.iconGray }}>
+        <IconButton aria-label={ariaLabel} >
+          {children}
+        </IconButton>
+      </Box>
+    </Link>
 
-)
+  )
+}
 
 const TweetThisButton = ({ post: { title, slug }, size }) => {
   const { siteUrl, twitter } = useSiteMetadata()
@@ -92,7 +94,7 @@ const ShareByMail = ({ post: { title, slug, excerpt }, size }) => {
         `${title}. ${excerpt}\n${siteUrl}${slug}`,
     })
   return (
-    <SocialButton link={mailToLink} ariaLabel='Email' sx={{ mx: 2, px: 1, size: 30 }}> 
+    <SocialButton link={mailToLink} ariaLabel='Email' sx={{ mx: 2, px: 1, size: 30 }}>
       <FiMail size={size} />
     </SocialButton>
   )
@@ -104,7 +106,7 @@ const EditOnGithub = ({ post: { slug } }) => {
   const edit = `${githubUser}/enriquekesslerm.com/edit/main/enriquekesslerm.com/content${slug}.org`
   return (
     <Link href={edit}>
-      <Box sx={{ color: '#c0cbcf' }}>
+      <Box sx={{ color: constants.softGray }}>
         <Text sx={{ verticalAlign: "middle" }}>Edit this page on Github</Text>
       </Box>
     </Link>

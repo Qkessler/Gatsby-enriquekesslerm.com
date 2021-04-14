@@ -1,42 +1,41 @@
 /** @jsx jsx */
 
-import { Box, Container, Heading, Text, jsx, Link } from 'theme-ui'
+import { Box, Container, Heading, Text, jsx, Link, Grid } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from 'gatsby-theme-blorg/src/components/seo'
-import PostList from 'gatsby-theme-blorg/src/components/post-list'
 import { StaticQuery, graphql, Link as GatsbyLink } from 'gatsby'
 
 import MagicRainbowText from '../components/moving-rainbow-text'
 import { constants } from '../constants/constants'
 import Projects from '../components/projects'
+import PostReference from '../components/post-reference'
 
 const LatestPosts = () => (
   <StaticQuery
     query={graphql
       `
       query LatestPostsQuery {
-         allOrgPost(limit: 3, sort: {fields: date, order: DESC}) {
-            nodes {
-               id
-               date
-               title
-               tags
-               excerpt
-               slug
-           }
-        }
-     }
+    allOrgPost(limit: 3, sort: {fields: date, order: DESC}) {
+    nodes {
+      id
+      date(formatString: "MMMM DD, YYYY")
+      title
+      tags
+      excerpt
+      slug
+    }
+  }
+}
       `}
     render={data => {
       const posts = data.allOrgPost.nodes
-      posts.forEach(post => {
-        const date = post.date
-        const moment = require("moment")
-        post.date = moment(date).add(-1, "d").format(`MMMM DD, YYYY`)
-      })
       return (
         <Box as='div' mt={2} mb={3}>
-          <PostList posts={posts} />
+          <Grid columns={[1, 1]}>
+            {posts.map((post) => (
+              <PostReference key={post.slug} {...post} />
+            ))}
+          </Grid>
         </Box>
       )
     }}

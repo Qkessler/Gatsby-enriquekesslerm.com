@@ -18,17 +18,17 @@ const getUrl = (name) => {
 
 const SocialLinks = ({ ...props }) => {
   return (
-    <Box {...props} sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
-      <SocialButton link={getUrl('twitter')} ariaLabel='Twitter' sx={{ mx: 3, px: 1, size: 30 }}>
+    <Box {...props} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <SocialButton link={getUrl('twitter')} ariaLabel='Twitter' mx={3}>
         <SiTwitter size={35} />
       </SocialButton>
-      <SocialButton link={getUrl('github')} ariaLabel='Github' sx={{ mx: 3, px: 1, size: 30 }}>
+      <SocialButton link={getUrl('github')} ariaLabel='Github' mx={3}>
         <SiGithub size={35} />
       </SocialButton>
-      <SocialButton link={getUrl('linkedin')} ariaLabel='LinkedIn' sx={{ mx: 3, px: 1, size: 30 }}>
+      <SocialButton link={getUrl('linkedin')} ariaLabel='LinkedIn' mx={3}>
         <GrLinkedin size={35} />
       </SocialButton>
-      <SocialButton link={getUrl('email')} ariaLabel='Email' sx={{ mx: 3, px: 1, size: 30 }}>
+      <SocialButton link={getUrl('email')} ariaLabel='Email' mx={3}>
         <FiMail size={35} />
       </SocialButton>
     </Box>

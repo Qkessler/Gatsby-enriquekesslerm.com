@@ -2,6 +2,7 @@ import { markers } from "./travel-markers"
 
 export const constants = {
   softGray: '#777',
+  iconGray: '#c0cbcf',
   aboutMeText:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
     "Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. " +
