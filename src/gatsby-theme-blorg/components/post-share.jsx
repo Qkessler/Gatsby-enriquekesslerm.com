@@ -44,7 +44,7 @@ const TweetThisButton = ({ post: { title, slug }, size }) => {
     })
 
   return (
-    <SocialButton link={link} ariaLabel='Twitter' sx={{ mx: 2, px: 1, size: 30 }}>
+    <SocialButton link={link} ariaLabel='Twitter' mx={1}>
       <SiTwitter size={size} />
     </SocialButton>
   )
@@ -60,7 +60,7 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt }, size }) => {
       quote: excerpt,
     })
   return (
-    <SocialButton link={facebookLink} ariaLabel='Facebook' sx={{ mx: 2, px: 1, size: 30 }}>
+    <SocialButton link={facebookLink} ariaLabel='Facebook' mx={1}>
       <FaFacebook size={size} />
     </SocialButton>
   )
@@ -77,7 +77,7 @@ const ShareWithLinkedIn = ({ post: { title, slug }, size }) => {
       title: title,
     })
   return (
-    <SocialButton link={linkedInLink} ariaLabel='LinkedIn' sx={{ mx: 2, px: 1, size: 30 }}>
+    <SocialButton link={linkedInLink} ariaLabel='LinkedIn' mx={1}>
       <GrLinkedin size={size} />
     </SocialButton>
   )
@@ -94,7 +94,7 @@ const ShareByMail = ({ post: { title, slug, excerpt }, size }) => {
         `${title}. ${excerpt}\n${siteUrl}${slug}`,
     })
   return (
-    <SocialButton link={mailToLink} ariaLabel='Email' sx={{ mx: 2, px: 1, size: 30 }}>
+    <SocialButton link={mailToLink} ariaLabel='Email' mx={1}>
       <FiMail size={size} />
     </SocialButton>
   )
@@ -107,7 +107,7 @@ const EditOnGithub = ({ post: { slug } }) => {
   return (
     <Link href={edit}>
       <Box sx={{ color: constants.softGray }}>
-        <Text sx={{ verticalAlign: "middle" }}>Edit this page on Github</Text>
+        <Text>Edit this page on Github</Text>
       </Box>
     </Link>
   )
@@ -118,19 +118,25 @@ export default ({ post }) => (
     sx={{
       display: "flex",
       flexWrap: "wrap",
+      verticalAlign: 'center',
       pt: 2,
     }}
   >
-    <Box as="div" sx={{ display: 'flex', flexDirection: 'row', flexGrow: 1, flexBasis: 500 }}>
-      <Text pr={2}>Share with </Text>
-      <IconContext.Provider value={{ style: {} }}>
-        <TweetThisButton post={post} size={35} />
-        <ShareWithFacebook post={post} size={35} />
-        <ShareWithLinkedIn post={post} size={35} />
-        <ShareByMail post={post} size={35} />
-      </IconContext.Provider>
+    <Box as="div" sx={{
+      display: 'flex',
+      flexDirection: 'row',
+      flexGrow: 1,
+      flexBasis: 500,
+      verticalAlign: 'center',
+
+    }}>
+      <Text pr={2} pt={1}>Share with </Text>
+      <TweetThisButton post={post} size={35} />
+      <ShareWithFacebook post={post} size={35} />
+      <ShareWithLinkedIn post={post} size={35} />
+      <ShareByMail post={post} size={35} />
     </Box>
-    <Box sx={{ flexGrow: 1, flexBasis: 150 }}>
+    <Box sx={{ flexGrow: 1, flexBasis: 150, pt: 1 }}>
       <EditOnGithub post={post} />
     </Box>
   </Box>
