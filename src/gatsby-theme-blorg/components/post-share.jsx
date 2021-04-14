@@ -105,7 +105,7 @@ const EditOnGithub = ({ post: { slug } }) => {
   const githubUser = social[2].url
   const edit = `${githubUser}/enriquekesslerm.com/edit/main/enriquekesslerm.com/content${slug}.org`
   return (
-    <Link href={edit}>
+    <Link href={edit} >
       <Box sx={{ color: constants.softGray }}>
         <Text>Edit this page on Github</Text>
       </Box>
