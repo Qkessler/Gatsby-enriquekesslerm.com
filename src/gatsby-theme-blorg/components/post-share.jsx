@@ -103,7 +103,7 @@ const ShareByMail = ({ post: { title, slug, excerpt }, size }) => {
 const EditOnGithub = ({ post: { slug } }) => {
   const { social } = useSiteMetadata()
   const githubUser = social[2].url
-  const edit = `${githubUser}/enriquekesslerm.com/edit/main/enriquekesslerm.com/content${slug}.org`
+  const edit = `${githubUser}/enriquekesslerm.com/edit/main/content${slug}.org`
   return (
     <Link href={edit} >
       <Box sx={{ color: constants.softGray }}>
@@ -128,7 +128,6 @@ export default ({ post }) => (
       flexGrow: 1,
       flexBasis: 500,
       verticalAlign: 'center',
-
     }}>
       <Text pr={2} pt={1} color={constants.softGray}>Share with </Text>
       <TweetThisButton post={post} size={35} />
