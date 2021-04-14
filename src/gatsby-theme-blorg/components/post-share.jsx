@@ -130,7 +130,7 @@ export default ({ post }) => (
       verticalAlign: 'center',
 
     }}>
-      <Text pr={2} pt={1}>Share with </Text>
+      <Text pr={2} pt={1} color={constants.softGray}>Share with </Text>
       <TweetThisButton post={post} size={35} />
       <ShareWithFacebook post={post} size={35} />
       <ShareWithLinkedIn post={post} size={35} />

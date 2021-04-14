@@ -44,9 +44,9 @@ export default ({ data }) => {
         </main>
         <Box>
           <Flex sx={{ alignItems: 'center', verticalAlign: 'center', justifyContent: 'flex-end' }}>
-            <Link to={`/${post.category}`}>
+            <Link to={`/${post.category}`} sx={{ pr: 1 }}>
               <Text sx={{ p: 2, textAlign: 'right' }}>
-                Read more stories about "{post.category}"
+                {post.category}
               </Text>
             </Link>
             <TagsIcon sx={{ mr: 2 }} />
