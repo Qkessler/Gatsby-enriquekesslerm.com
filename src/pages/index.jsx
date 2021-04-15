@@ -53,12 +53,12 @@ export default function IndexPage() {
             <MagicRainbowText intervalDelay={800}>Enrique</MagicRainbowText>
           </Heading>
           <Text mb={5}>I am a Software Engineering student at
-            <Link href='http://www.um.es/' sx={{ paddingLeft: 1, paddingRight: 1 }}>
+            <Link href={constants.umuLink} sx={{ paddingLeft: 1, paddingRight: 1 }}>
               University of Murcia (UMU)
             </Link>
             and an
-            <Link href='https://github.com/Qkessler' sx={{ paddingLeft: 1, paddingRight: 1 }}>
-              OpenSource
+            <Link href={constants.githubLink} sx={{ paddingLeft: 1, paddingRight: 1 }}>
+              open-source
             </Link>
             lover. This web has been created to share some of my findings and
             opening myself up to the world.

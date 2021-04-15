@@ -22,7 +22,11 @@ const objectToGetParams = (object) => {
 export const SocialButton = ({ link, ariaLabel, mx, children }) => {
   return (
     <Link href={link}>
-      <Box mx={mx} sx={{ color: constants.iconGray }}>
+      <Box mx={mx} sx={{
+        color: constants.iconGray, transition: '0.3s', '&:hover': {
+          transform: 'scale(1.2)',
+        }
+      }}>
         <IconButton aria-label={ariaLabel} >
           {children}
         </IconButton>

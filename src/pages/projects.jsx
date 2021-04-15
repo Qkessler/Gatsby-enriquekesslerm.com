@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Container, Heading, jsx, Text, Box, Badge } from 'theme-ui'
+import { Container, Heading, jsx, Text, Box, Link } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from 'gatsby-theme-blorg/src/components/seo'
 import { GrLinkedin } from 'react-icons/gr'
@@ -8,7 +8,6 @@ import { FaGithub } from 'react-icons/fa'
 
 import Projects from '../components/projects'
 import { constants } from '../constants/constants'
-import { Tag } from '../components/project-show'
 
 const SocialItem = ({ text, to, children }) => (
   <Box pb={2} sx={{ display: 'flex' }}>
@@ -28,19 +27,17 @@ export default function ProjectsPage() {
         <SEO title='Projects'></SEO>
         <main sx={{ flex: 1, pb: 4, mx: 'auto' }}>
           <Heading as='h1' pb={3}>Projects</Heading>
-          <Text pt={4} pb={2}>{constants.projectsText}</Text>
-          <ul>
-            <li key='linkedin'>
-              <SocialItem text='/enrique-kessler-martinez' to={constants.linkedinLink}>
-                <GrLinkedin size={22} sx={{ color: 'text' }} />
-              </SocialItem>
-            </li>
-            <li key='github'>
-              <SocialItem text='/Qkessler' to={constants.githubLink}>
-                <FaGithub size={22} sx={{ color: 'text' }} />
-              </SocialItem>
-            </li>
-          </ul>
+          <Text>{constants.projectsText1}</Text>
+          <Link href={constants.githubLink}>
+            Github
+          </Link>
+          <Text> {constants.projectsText2}</Text>
+          <Box pt={2}>
+            <Text> {constants.projectsText3}</Text>
+            <Link href={constants.linkedinLink}>LinkedIn</Link>
+            <Text> and </Text>
+            <Link href={constants.twitterLink}>Twitter</Link>.
+          </Box>
           <Projects timeline />
         </main>
       </Container>

@@ -38,7 +38,7 @@ const SocialLinks = ({ ...props }) => {
 export default () => {
   const { author } = useSiteMetadata()
   return (
-    <footer sx={{
+    <footer id='footer' sx={{
       py: 5,
       textAlign: 'center',
       contentAlign: 'center',

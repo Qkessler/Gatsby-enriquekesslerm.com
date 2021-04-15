@@ -3,12 +3,18 @@ import { markers } from "./travel-markers"
 export const constants = {
   softGray: '#777',
   iconGray: '#c0cbcf',
-  aboutMeText:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-    "Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. " +
-    "Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. " +
-    "Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit " +
-    "vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.",
+  aboutMeText1:
+    'My full name is Enrique Kessler Martínez, nice to meet you! I am a ' +
+    'Software Engineering student at ',
+  aboutMeText2: 'I was born in Murcia, Spain and I have lived in the region ' +
+    'my entire life, benefiting from the amazing weather and the kind people. ' +
+    'I have been in nature a lot since my childhood, being part of a Scout ' +
+    'group and by going on hikes are runs anytime I have the chance.',
+  aboutMeText3: 'I love learning, both from books and the internet. I work on ',
+  aboutMeText4: 'to pick up new technologies and keep myself learning every day.',
+  aboutMeText5: 'On this website, I will publish most of my findings of the amazing ' +
+    'world that we live in in the form of book reviews, notes and articles. ' +
+    'I believe the openness will help me improve personally and professionally. Buckle up!',
   cqWebDescription:
     "Django Web-App for studying which creates an easier customer " +
     "experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.",
@@ -17,7 +23,7 @@ export const constants = {
     "I partnered with another developer to create the CloudQuestions app using Flutter!",
   webDescription:
     "In order to have a personal web to showcase myself and " +
-    "showing my love for emacs, I built this blog using org-mode files and Gatsby!",
+    "showing my love for Emacs, I built this blog using org-mode files and Gatsby!",
   appMusicDescription:
     "Maven Desktop App created with functionality that " +
     "allows for xml importing, and implemented with patterns from the GoF Design Patterns book.",
@@ -35,14 +41,13 @@ export const constants = {
     },
   ],
   markers: [...markers],
-  projectsText:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-    "Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. " +
-    "Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. " +
-    "Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit " +
-    "vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis. ",
-  linkedinLink: "https://www.linkedin.com/in/enrique-kessler-martinez/",
-  githubLink: "https://github.com/Qkessler",
+  projectsText1:
+    'I have been working on personal projects for a long time, as I believe they are ' +
+    'the best way to consolidate the technologies you learn. I am a big fan of open-source ' +
+    'software, I use ',
+  projectsText2: 'to showcase my projects and benefit from its ability to incorporate git ' +
+    'into a big community.',
+  projectsText3: 'From time to time I also publish some of my results on ',
   blogText:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
     "Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. " +
@@ -52,4 +57,8 @@ export const constants = {
   indexText:
     "Welcome! This web has been created to share some of my findings of the " +
     "amazing world we live in and improve personally opening up myself to the world. Buckle up!",
+  linkedinLink: "https://www.linkedin.com/in/enrique-kessler-martinez/",
+  githubLink: "https://github.com/Qkessler",
+  twitterLink: 'https://twitter.com/quique_kessler',
+  umuLink: 'https://www.um.es'
 }
