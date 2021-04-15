@@ -33,7 +33,7 @@ const PostLink = ({ title, category, slug, date, excerpt, tags, children }) => (
         <Link to={slug}>
           <Heading as='h3' sx={{ color: 'text'}}>{title}</Heading>
         </Link>
-        <Flex sx={{ verticalAlign: 'center', alignItems: 'center'}}>
+        <Flex sx={{ verticalAlign: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
           <time sx={{ color: 'gray', fontSize: 'small', pr: 2 }}>
             <DateIcon sx={{ mr: 1 }} />
             {date}

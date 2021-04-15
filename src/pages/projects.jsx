@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Container, Heading, jsx, Text, Box } from 'theme-ui'
+import { Container, Heading, jsx, Text, Box, Badge } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from 'gatsby-theme-blorg/src/components/seo'
 import { GrLinkedin } from 'react-icons/gr'
@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa'
 
 import Projects from '../components/projects'
 import { constants } from '../constants/constants'
+import { Tag } from '../components/project-show'
 
 const SocialItem = ({ text, to, children }) => (
   <Box pb={2} sx={{ display: 'flex' }}>
@@ -40,7 +41,7 @@ export default function ProjectsPage() {
               </SocialItem>
             </li>
           </ul>
-          <Projects timeline/>
+          <Projects timeline />
         </main>
       </Container>
     </Layout>

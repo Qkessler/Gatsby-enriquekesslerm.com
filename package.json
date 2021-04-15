@@ -32,7 +32,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "prebuild": "rm -rf .cache",
+    "prebuild": "gatsby clean",
     "predevelop": "rm -rf .cache",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",

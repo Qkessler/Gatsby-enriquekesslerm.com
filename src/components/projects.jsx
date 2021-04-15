@@ -22,6 +22,10 @@ const projects = [
             to="/enriquekesslermcom"
             name="enriquekesslerm.com"
             description={constants.webDescription}
+            tags={[
+              { text: 'Gatsby', color: '#8a4baf' },
+              { text: 'React', color: '#2cd8e4' },
+            ]}
           />
         )
       },

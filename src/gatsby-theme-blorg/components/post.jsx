@@ -49,7 +49,7 @@ export default ({ data }) => {
                 {post.category}
               </Text>
             </Link>
-            <TagsIcon sx={{ mr: 2 }} />
+            {post.tags.length > 0 && <TagsIcon sx={{ mr: 2 }} />}
             <Tags tags={post.tags} />
           </Flex>
           <Divider />
