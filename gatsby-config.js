@@ -109,7 +109,7 @@ module.exports = {
             }
             `,
             output: "/rss.xml",
-            title: "Enrique Kessler Martínez's RSS Feed",
+            title: "Enrique Kessler Martínez's posts",
           },
         ],
       },

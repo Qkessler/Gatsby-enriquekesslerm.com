@@ -2,11 +2,12 @@
 
 import { Link, StaticQuery, graphql } from "gatsby"
 import _ from "lodash/fp"
-import { Box, Flex, Heading, jsx, Text, Container } from "theme-ui"
+import { Box, Flex, Heading, IconButton, jsx, Text, Container } from "theme-ui"
 import Layout from "gatsby-theme-blorg/src/components/layout"
 import SEO from "gatsby-theme-blorg/src/components/seo"
 import Tags from "gatsby-theme-blorg/src/components/tags"
 import PostList from "gatsby-theme-blorg/src/components/post-list"
+import { FaRss } from 'react-icons/fa'
 
 import { constants } from "../../constants/constants"
 import Search from "../../components/search"
@@ -91,12 +92,26 @@ export default ({ data, location, pageContext }) => {
       <main sx={{ flex: 1 }}>
         {isBlog && (
           <Container pb={2} variant="content">
-            <Heading as="h1" pb={3}>Articles</Heading>
+            <Flex sx={{ alignItems: 'center' }}>
+              <Heading as="h1" pb={3} sx={{ flex: '1 1 auto' }}>Articles</Heading>
+              <Link to='/rss.xml'>
+                <Box sx={{
+                  color: constants.iconGray,
+                  transition: '0.3s', '&:hover': {
+                    transform: 'scale(1.2)'
+                  }
+                }}>
+                  <IconButton aria-label='RSS feed' >
+                    <FaRss size={20} />
+                  </IconButton>
+                </Box>
+              </Link>
+            </Flex>
             <Text pt={4}>
               {constants.blogText}{posts.length} articles on this site. Use the search bar
               below to filter by title, tags or category.
             </Text>
-            
+
           </Container>
         )}
         {category && category.length > 0 && isNaN(category) && !isBlog && (
