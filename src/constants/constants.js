@@ -49,16 +49,15 @@ export const constants = {
     'into a big community.',
   projectsText3: 'From time to time I also publish some of my results on ',
   blogText:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-    "Aliquam urna lacus, vestibulum at fermentum a, fermentum ut arcu. " +
-    "Phasellus eget velit est. Vivamus id fringilla ligula, quis pulvinar orci. " +
-    "Morbi dignissim dui libero, at varius justo mollis in. Pellentesque suscipit " +
-    "vitae lorem a volutpat. Phasellus mattis sagittis erat quis mollis.",
+    'I have been writing online on this site since 2021. I write mostly about ' +
+    'software development, psychology and any new topic I might be learning about. In total, ' +
+    'I have written ',
   indexText:
     "Welcome! This web has been created to share some of my findings of the " +
     "amazing world we live in and improve personally opening up myself to the world. Buckle up!",
   linkedinLink: "https://www.linkedin.com/in/enrique-kessler-martinez/",
   githubLink: "https://github.com/Qkessler",
   twitterLink: 'https://twitter.com/quique_kessler',
-  umuLink: 'https://www.um.es'
+  umuLink: 'https://www.um.es',
+  updatedCV: 'https://github.com/Qkessler/cv/releases/latest/download/cv_EnriqueKesslerMartinez.pdf'
 }

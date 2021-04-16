@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
+import { jsx, Box, Text } from 'theme-ui'
 import { useSiteMetadata } from 'gatsby-theme-blorg/src/hooks'
 import { SiTwitter, SiGithub } from "react-icons/si"
 import { GrLinkedin } from "react-icons/gr"
@@ -18,7 +18,7 @@ const getUrl = (name) => {
 
 const SocialLinks = ({ ...props }) => {
   return (
-    <Box {...props} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Box {...props} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', verticalAlign: 'center' }}>
       <SocialButton link={getUrl('twitter')} ariaLabel='Twitter' mx={3}>
         <SiTwitter size={35} />
       </SocialButton>
@@ -30,6 +30,9 @@ const SocialLinks = ({ ...props }) => {
       </SocialButton>
       <SocialButton link={getUrl('email')} ariaLabel='Email' mx={3}>
         <FiMail size={35} />
+      </SocialButton>
+      <SocialButton link={constants.updatedCV} ariaLabel='CV' mx={2}>
+        <Text as='h3'>CV</Text>
       </SocialButton>
     </Box>
   )

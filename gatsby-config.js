@@ -1,7 +1,4 @@
 module.exports = {
-  flags: {
-    DEV_SSR: false
-  },
   siteMetadata: {
     siteUrl: "https://enriquekesslerm.com",
     title: `Enrique Kessler Martínez`,

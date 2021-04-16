@@ -34,7 +34,7 @@
     "clean": "gatsby clean", 
     "build": "gatsby build",
     "prebuild": "gatsby clean",
-    "predevelop": "rm -rf .cache",
+    "predevelop": "gatsby clean",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

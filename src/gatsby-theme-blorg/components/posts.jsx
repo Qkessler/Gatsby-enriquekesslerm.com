@@ -92,7 +92,11 @@ export default ({ data, location, pageContext }) => {
         {isBlog && (
           <Container pb={2} variant="content">
             <Heading as="h1" pb={3}>Articles</Heading>
-            <Text pt={4}>{constants.blogText}</Text>
+            <Text pt={4}>
+              {constants.blogText}{posts.length} articles on this site. Use the search bar
+              below to filter by title, tags or category.
+            </Text>
+            
           </Container>
         )}
         {category && category.length > 0 && isNaN(category) && !isBlog && (
