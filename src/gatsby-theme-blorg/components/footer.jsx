@@ -32,7 +32,7 @@ const SocialLinks = ({ ...props }) => {
         <FiMail size={35} />
       </SocialButton>
       <SocialButton link={constants.updatedCV} ariaLabel='CV' mx={2}>
-        <Text as='h3'>CV</Text>
+        <Text as='h3' pb={1}>CV</Text>
       </SocialButton>
     </Box>
   )
