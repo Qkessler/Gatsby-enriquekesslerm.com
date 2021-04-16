@@ -48,9 +48,7 @@ const ProjectShow = ({ name, description, to, tags, children }) => {
               <Heading as="h4" pr={2}> {name} </Heading>
               <Flex sx={{ justifySelf: 'flex-end' }}>
                 {tags?.map((tag, index) => (
-                  <li key={`tag-${index}`}>
-                    <Tag text={tag.text} color={tag.color} />
-                  </li>
+                  <Tag key={`tag-${index}`} text={tag.text} color={tag.color} />
                 ))}
               </Flex>
             </Flex>
