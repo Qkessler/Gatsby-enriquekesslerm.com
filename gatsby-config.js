@@ -67,5 +67,52 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allOrgPost } }) => {
+              return allOrgPost.nodes.map(post => {
+                return Object.assign({}, post, {
+                  title: post.title,
+                  date: post.date,
+                  url: site.siteMetadata.siteUrl + post.slug,
+                  guid: site.siteMetadata.siteUrl + post.slug,
+                  custom_elements: [{ "content:encoded": post.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allOrgPost(sort: {fields: date, order: DESC}) {
+                   nodes {
+                      title
+                      excerpt
+                      html
+                      date(formatString: "MMMM DD, YYYY")
+                      slug
+                  }
+               }
+            }
+            `,
+            output: "/rss.xml",
+            title: "Enrique Kessler Martínez's RSS Feed",
+          },
+        ],
+      },
+    },
   ],
 }
