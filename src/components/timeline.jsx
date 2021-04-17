@@ -8,7 +8,7 @@ const TimelineEvent = ({ event }) => {
     <Flex ml={2}>
       {event.headline &&
        <Checkbox defaultChecked={true} />}
-      <Box>
+      <Box pb={3}>
         <Text as='h5' sx={{ mb: 1 }}>{event.headline}</Text>
         <Text>{event.info}</Text>
       </Box>
