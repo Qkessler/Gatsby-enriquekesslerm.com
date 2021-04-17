@@ -3,9 +3,9 @@
 import * as styles from "./timeline.module.css"
 import { Checkbox, Flex, Divider, Box, Text, jsx, Heading } from "theme-ui"
 
-const TimelineEvent = ({ event }) => {
+const TimelineEvent = ({ event, ml }) => {
   return (
-    <Flex ml={2}>
+    <Flex ml={ml}>
       {event.headline &&
        <Checkbox defaultChecked={true} />}
       <Box pb={3}>
@@ -21,9 +21,9 @@ const Timeline = ({ elements, projects }) => {
     <Box className={styles.wrapper}>
       {elements.map(yearEvents => (
         <Box key={`year-${yearEvents.year}`} as="div">
-          <Heading as="h4" pb={!projects ? 3 : 0}>{yearEvents.year}</Heading>
+          <Heading as="h4" pb={projects ? 0 : 3}>{yearEvents.year}</Heading>
           {yearEvents.events.map((event, index) => (
-            <TimelineEvent key={`event-${index}`} event={event} />
+            <TimelineEvent ml={projects ? 0 : 3} key={`event-${index}`} event={event} />
           ))}
           <Divider my={4} />
         </Box>
