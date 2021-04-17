@@ -1,28 +1,32 @@
 /** @jsx jsx */
 
 import * as styles from "./timeline.module.css"
-import { Box, Text, jsx, Heading } from "theme-ui"
+import { Checkbox, Flex, Divider, Box, Text, jsx, Heading } from "theme-ui"
 
-const Timeline = ({ elements }) => {
+const TimelineEvent = ({ event }) => {
+  return (
+    <Flex ml={2}>
+      {event.headline &&
+       <Checkbox defaultChecked={true} />}
+      <Box>
+        <Text as='h5' sx={{ mb: 1 }}>{event.headline}</Text>
+        <Text>{event.info}</Text>
+      </Box>
+    </Flex>
+  )
+}
+
+const Timeline = ({ elements, projects }) => {
   return (
     <Box className={styles.wrapper}>
-      {elements.map((yearEvents, index) => (
-        <li key={index}>
-          <Box as="div">
-            <Heading as="h4">{yearEvents.year}</Heading>
-            <ul className={styles.sessions}>
-              {yearEvents.events.map((event, index) => {
-                return (
-                  <li key={index} className={styles.timelineElem}>
-                    <Text className={styles.info} sx={{ color: "text" }}>
-                      {event.info}
-                    </Text>
-                  </li>
-                )
-              })}
-            </ul>
-          </Box>
-        </li>
+      {elements.map(yearEvents => (
+        <Box key={`year-${yearEvents.year}`} as="div">
+          <Heading as="h4" pb={!projects ? 3 : 0}>{yearEvents.year}</Heading>
+          {yearEvents.events.map((event, index) => (
+            <TimelineEvent key={`event-${index}`} event={event} />
+          ))}
+          <Divider my={4} />
+        </Box>
       ))}
     </Box>
   )

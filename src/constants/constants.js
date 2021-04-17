@@ -1,4 +1,5 @@
-import { markers } from "./travel-markers"
+import { markers } from './travel-markers'
+import { timelineEvents } from './timeline-events'
 
 export const constants = {
   softGray: '#777',
@@ -27,19 +28,7 @@ export const constants = {
   appMusicDescription:
     "Maven Desktop App created with functionality that " +
     "allows for xml importing, and implemented with patterns from the GoF Design Patterns book.",
-  timelineElements: [
-    {
-      year: 2021,
-      events: [{ info: "😄 I got hired as an SDE Intern @ Amazon!" }],
-    },
-    {
-      year: 2020,
-      events: [
-        { info: "this is the info for the 2020 event" },
-        { info: "this is the second event for 2020" },
-      ],
-    },
-  ],
+  timelineElements: [...timelineEvents],
   markers: [...markers],
   projectsText1:
     'I have been working on personal projects for a long time, as I believe they are ' +

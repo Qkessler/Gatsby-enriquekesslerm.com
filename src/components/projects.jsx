@@ -105,7 +105,7 @@ const Projects = ({ number, timeline }) => {
   const sliceNumber = number ? number : allProjects.length
   return (
     <div>
-      { timeline && <Timeline elements={projects} />}
+      { timeline && <Timeline elements={projects} projects/>}
       { !timeline &&
         <Box as="div">
           <ul>
