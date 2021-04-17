@@ -56,7 +56,7 @@ const projects = [
       {
         info: (
           < ProjectShow
-            to="/projects/app-music"
+            to="/app-music"
             name="AppMusic"
             description={constants.appMusicDescription}
             tags={[
