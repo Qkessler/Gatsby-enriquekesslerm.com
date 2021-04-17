@@ -1,5 +1,6 @@
 import { markers } from './travel-markers'
 import { timelineEvents } from './timeline-events'
+import { projects } from './projects'
 
 export const constants = {
   softGray: '#777',
@@ -16,20 +17,9 @@ export const constants = {
   aboutMeText5: 'On this website, I will publish most of my findings of the amazing ' +
     'world that we live in in the form of book reviews, notes and articles. ' +
     'I believe the openness will help me improve personally and professionally. Buckle up!',
-  cqWebDescription:
-    "Django Web-App for studying which creates an easier customer " +
-    "experience applying a mix between “Flash Cards” and “Active Recall” studying techniques.",
-  cqAppDescription:
-    "Following the initial success of the web, " +
-    "I partnered with another developer to create the CloudQuestions app using Flutter!",
-  webDescription:
-    "In order to have a personal web to showcase myself and " +
-    "showing my love for Emacs, I built this blog using org-mode files and Gatsby!",
-  appMusicDescription:
-    "Maven Desktop App created with functionality that " +
-    "allows for xml importing, and implemented with patterns from the GoF Design Patterns book.",
   timelineElements: [...timelineEvents],
   markers: [...markers],
+  projects: [...projects],
   projectsText1:
     'I have been working on personal projects for a long time, as I believe they are ' +
     'the best way to consolidate the technologies you learn. I am a big fan of open-source ' +
