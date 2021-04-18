@@ -2,7 +2,7 @@
 #+DATE: <2021-04-18 Sun>
 #+CATEGORY: Books
 #+TAGS: psychology teams specialization education learning
-#+SUMMARY: Range is one of the latest books from David Epstein, Range is one of the latest books from David Epstein, who is commonly known by giving TED talks about performance science and most recently psychology and specialization in today's world.
+#+SUMMARY: Range is one of the latest books from David Epstein, who is commonly known by giving TED talks about performance science and most recently psychology and specialization in today's world.
 #+IMAGE: ./images/813FFNCfnjL.jpg
 
 Range is one of the latest books by David Epstein, who is commonly known by

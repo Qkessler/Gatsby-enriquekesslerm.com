@@ -15,20 +15,17 @@ function getAllProjects() {
 const Projects = ({ number, timeline }) => {
   const allProjects = getAllProjects()
   const sliceNumber = number ? number : allProjects.length
-  return (
-    <div>
-      { timeline && <Timeline elements={constants.projects} projects />}
-      { !timeline &&
-        <Box as="div">
-          <ul>
-            {allProjects.slice(0, sliceNumber).map((p, index) => (
-              <li key={index}>{p}</li>
-            ))}
-          </ul>
-        </Box>
-      }
-    </div>
+  if (timeline) return (
+    <Timeline elements={constants.projects} projects />
   )
+  else return (
+    <Box as="div">
+      <ul>
+        {allProjects.slice(0, sliceNumber).map((p, index) => (
+          <li key={index}>{p}</li>
+        ))}
+      </ul>
+    </Box>)
 }
 
 export default Projects

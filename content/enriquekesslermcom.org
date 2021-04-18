@@ -56,7 +56,7 @@ keep myself learning, while creating a personal space.
    our life, and can be content with a much simpler and more wholesome one.
    #+end_quote
    
-   Instead of going for Markdown files, being a hardcore Emacs user as I am, I
+   Instead of going for Markdown files, being the hardcore Emacs user I am, I
    needed to find something to merge my love for Emacs and org-mode. The
    solution rested in the [[https://www.huxiaoxing.com/building-a-website-with-org-mode-files][Xiaoxing's orgajs starter]], which uses the =orgajs=
    package —also authored by him— parsing our org-mode files into beautiful and
