@@ -1,0 +1,131 @@
+#+TITLE: Range - David Epstein
+#+DATE: <2021-04-18 Sun>
+#+CATEGORY: Books
+#+TAGS: psychology teams specialization education learning
+#+SUMMARY: Range is one of the latest books from David Epstein, Range is one of the latest books from David Epstein, who is commonly known by giving TED talks about performance science and most recently psychology and specialization in today's world.
+#+IMAGE: ./images/813FFNCfnjL.jpg
+
+Range is one of the latest books from David Epstein, who is commonly known by
+giving TED talks about performance science and most recently psychology and
+specialization in today's world.
+
+We have been taught by our celebrity seeking society that success comes from
+people that start out very early in their specialization topic of choice, and
+through deliberate practice —a.k.a 10k hours of practice— they reach mastery
+and are able to live out of it.
+
+In this other amazing book: [[https://www.amazon.es/Early-Retirement-Extreme-philosophical-independence/dp/145360121X][Early Retirement Extreme]], Jacob Lund explains the
+concept of mastery, creating a series of stages which are some of the stages we
+go through in order to understand, incorporate and produce information about a
+certain topic.
+
+After years of research, we know that these cases are the extreme. Most people
+that reach a certain level of "success" —What is success anyway? In my book
+success is fulfillment by having the inner need of doing things right, according
+to your values and the societal measures that you have been breeding over the
+years— have done so by changing their path multiple times, and benefiting from
+the switching process. These people —again, the majority— are called the
+Generalists.
+
+* Learning environments
+  When learning, there are multiple environments that propel or bring down
+  learning. We can classify these in *kind* and wicked environments. The first are
+  the ones on which most of the celebrity performers thrive, as they are the ones
+  that can benefit from hours of practice. Some examples are chess, golf...
+
+  On the other side, *wicked* environments are the ones that no longer benefit from
+  experience, hence drawing on the big picture that us humans are able to bring to
+  the topics. A.I is able to infer tactics for kind environments, and they are
+  already good enough to beat humans at it. In order to beat the computer, our
+  best bet is outsource tactics —strategies inferred after years of experience—
+  while focusing on the big picture, which is contrary to specializing.
+
+* Education
+  Considering both learning environments, the Education topic had to come up.
+  In our modern Education System, there are two types of professors. The
+  professors that have a predisposition to give the students everything already
+  prepared for them to study, and the professors that focus on problems that
+  make the students think and learn on their own. The former are the ones that
+  receive better reviews on the yearly polls, but guess which is better for long
+  term learning?
+
+  By creating a *wicked* learning environment, the latter are able to ensure
+  that the students create the connections necessary to long term learning and
+  memory. These making connection problems could also be called "Fermi
+  Problems". An example of these Fermi problems (see [[https://es.wikipedia.org/wiki/Enrico_Fermi][Enrico Fermi]]) could be:
+  #+begin_quote
+  How many windows get cleaned each day in New York?
+  #+end_quote
+  The idea is that using some of the common knowledge information, i.e the
+  number of people per house, or average windows per house or apartment, get an
+  answer that gives an insight in our broader thinking.
+
+* Analogical thinking
+  Kepler has been famous to have thought about problems, both common and complex
+  in the same way: through analogies. Analogies can spark new connections that
+  we may benefit from when thinking about a problem.
+
+  Our brains are powerful enough to withhold information, in order to avoid
+  overcrowding our thoughts —our mental bandwidth. Through analogical thinking,
+  our brain is able to seek patterns in the same trains of thought, hence
+  helping the problems.
+
+  #+begin_quote
+  Yes, striving to accomplish a single overarching goal means you have grit,
+  determination and resilience. But the ability to pull yourself together mentally
+  and physically in competition is different from the new challenges that await
+  you. So after you retire, travel, write a poem, try to start your own business,
+  stay out a little too late, devote the time to something that doesn't have a
+  clear end goal.
+  #+end_quote
+
+* Foxes and Hedgehogs
+  According to David, there are two types of personalities, specially in the
+  information world.
+
+  Hedgehogs are people that are usually well versed in their space of expertise,
+  and have long years in the field. Instead of being able to rethink their views
+  —through active open mindedness—, they are prone to sticking to their time
+  funded opinions.
+
+  Foxes on the other side, focus on facts for different themes, NOT opinions. They
+  are able to differentiate the time where their views are not totally correct,
+  and adapt to the situation and their current passions. Contrary to hedgehogs,
+  even though they may or may not have the sufficient knowledge to cherry pick
+  details to support their theory, they are comfortable with change, not being
+  tied to their work as their identity.
+
+* Tech industry
+  The current trend of interesting Tech Companies is to propose a certain
+  culture check in order to be able to work for the company, "just to check"
+  whether you are worthy employee.
+
+  Even though we are fed that these types of hiring processes are what sets
+  apart good from bad employees, evidence shows the contrary. Cultural values,
+  principles, are taught to be proportional to individual success, but it is not
+  necessarily true.
+
+  There was a recent study that showed that managers benefited from identifying
+  the major cultural mode that the organization —or team— was on and pushing
+  backwards based on fake Harvard Study.  This creates a movement of
+  in-congruence, that keeps people on their feet, while benefiting from the
+  shift of cultural processes and rethinking.
+
+  #+begin_quote
+  Building in crosschecks balances the risks of Mindless Conformity and Reckless
+  Deviation.
+  #+end_quote
+  —Tetlock
+
+* Conclusion
+  I ended up enjoying the book —I find the topic to be mesmerizing— but I did
+  find it to be cumbersome to get through. Even though David is able to effectively
+  summarize the information, there are countless pages of data that is not really
+  interesting.
+
+  On the other hand, the topic of the book is one that we can benefit from these
+  days, considering the push for specialization that we are seeing in the
+  industry world. Maybe it is not a bad book to keep your mind fresh on the
+  topic, to avoid falling in the pitfalls he mentions.
+
+  "I would recommend score": 6/10.
