@@ -27,7 +27,7 @@ const Timeline = ({ elements, projects }) => {
             <TimelineEvent ml={projects ? 0 : 3} pb={projects ? 0 : 3} key={`event-${index}`} event={event} />
           ))}
           {index != elements.length - 1 && <Divider my={4} sx={{
-            height: '.25em',
+            height: '.15em',
             backgroundColor: 'muted'}} />
           }
         </Box>
