@@ -73,12 +73,9 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt }, size }) => {
 const ShareWithLinkedIn = ({ post: { title, slug }, size }) => {
   const { author, siteUrl } = useSiteMetadata()
   const linkedInLink =
-    `https://www.linkedin.com/shareArticle` +
+    `https://www.linkedin.com/sharing/share-offsite/` +
     objectToGetParams({
-      mini: "true",
-      source: author,
       url: `${siteUrl}${slug}`,
-      title: title,
     })
   return (
     <SocialButton link={linkedInLink} ariaLabel='LinkedIn' mx={1}>
