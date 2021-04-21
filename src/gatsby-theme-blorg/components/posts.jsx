@@ -111,7 +111,11 @@ export default ({ data, location, pageContext }) => {
               {constants.blogText}{posts.length} articles on this site. Use the search bar
               below to filter by title, tags or category.
             </Text>
-
+            <Box pt={2}>
+              <Text>
+                You may also access the <Link to='/archive'>Archive</Link>.
+              </Text>
+            </Box>
           </Container>
         )}
         {category && category.length > 0 && isNaN(category) && !isBlog && (

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import { graphql, Link } from 'gatsby'
-import { Box, Heading, Container, jsx } from 'theme-ui'
+import { Box, Text, Heading, Container, jsx } from 'theme-ui'
 import Layout from 'gatsby-theme-blorg/src/components/layout'
 import SEO from 'gatsby-theme-blorg/src/components/seo'
 
@@ -16,16 +16,16 @@ function getPostsByYear(nodes) {
   return postsByYear
 }
 
-const YearlyPosts = ({ nodes }) => {
+const YearlyPosts = ({ nodes, ...props }) => {
   const postsByYearList = getPostsByYear(nodes)
   return (
-    <Box as='div'>
+    <Box {...props} as='div'>
       {Object.entries(postsByYearList)
         .reverse()
         .map(([year, posts]) => (
           <Box key={`year-${year}`}>
             <Heading as='h3'>{year}</Heading>
-            <ul>
+            <ul sx={{ ml: 3 }}>
               {posts.map(post =>
                 (
                   <li key={`post-${post.slug}`}>
@@ -49,7 +49,8 @@ const ArchivePage = ({ data }) => {
        <Container variant='content'>
          <SEO title='Archive' />
          <Heading as='h1' sx={{ pb: 3 }}> Archive </Heading>
-         <YearlyPosts nodes={nodes} />
+         <Text> Welcome to the Archive. All the posts are ordered by publish date.</Text>
+         <YearlyPosts pt={4} nodes={nodes} />
        </Container>
      </Layout>
   )
