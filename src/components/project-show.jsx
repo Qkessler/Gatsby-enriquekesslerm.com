@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Box, Heading, Text, jsx, Link, Flex, Badge } from "theme-ui"
+import { Box, Heading, Text, jsx, Link as ThemeLink, Flex, Badge } from "theme-ui"
 import { Link as GatsbyLink } from "gatsby"
 
 /*
@@ -19,10 +19,24 @@ export const Tag = ({ text, color }) => {
   )
 }
 
+const Link = ({ isOutsideLink, to, children }) => {
+  var isOutsideLink = to.includes('http')
+  if (isOutsideLink) return (
+    <ThemeLink href={to}>
+      {children}
+    </ThemeLink>
+  )
+  else return (
+    <ThemeLink as={GatsbyLink} to={to}>
+      {children}
+    </ThemeLink>
+  )
+}
+
 const ProjectShow = ({ name, description, to, tags, children }) => {
   return (
     <div>
-      <Link as={GatsbyLink} to={to}>
+      <Link to={to}>
         <Box
           as="div"
           p={3}
