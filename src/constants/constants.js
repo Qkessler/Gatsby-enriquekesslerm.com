@@ -20,6 +20,7 @@ export const constants = {
   timelineElements: [...timelineEvents],
   markers: [...markers],
   projects: [...projects],
+  showMoreNumber: 2,
   projectsText1:
     'I have been working on personal projects for a long time, as I believe they are ' +
     'the best way to consolidate the technologies you learn. I am a big fan of open-source ' +

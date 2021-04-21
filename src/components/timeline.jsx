@@ -1,8 +1,10 @@
 /** @jsx jsx */
 
+import { useState, useEffect } from "react"
 import * as styles from "./timeline.module.css"
-import { Checkbox, Flex, Divider, Box, Text, jsx, Heading } from "theme-ui"
+import { Checkbox, Flex, Divider, Box, Text, jsx, Heading, IconButton } from "theme-ui"
 import { constants } from '../constants/constants'
+import {MdExpandMore} from 'react-icons/md'
 
 const TimelineEvent = ({ event, ml, pb }) => {
   return (
@@ -18,6 +20,39 @@ const TimelineEvent = ({ event, ml, pb }) => {
 }
 
 const Timeline = ({ elements, projects }) => {
+  // State for the list
+  const [list, setList] = useState([...elements.slice(0, constants.showMoreNumber)])
+
+  // State to trigger load more
+  const [loadMore, setLoadMore] = useState(false)
+
+  // State of whether there is more to load
+  const [hasMore, setHasMore] = useState(elements.length > constants.showMoreNumber)
+
+  // Load more button click
+  const handleLoadMore = () => {
+    setLoadMore(true)
+  }
+
+  // Handle loading more articles
+  useEffect(() => {
+    if (loadMore && hasMore) {
+      const currentLength = list.length
+      const isMore = currentLength < elements.length
+      const nextResults = isMore
+        ? elements.slice(currentLength, currentLength + constants.showMoreNumber)
+        : []
+      setList([...list, ...nextResults])
+      setLoadMore(false)
+    }
+  }, [loadMore, hasMore]) //eslint-disable-line
+
+  // Check if there is more.
+  useEffect(() => {
+    const isMore = list.length < elements.length
+    setHasMore(isMore)
+  }, [list]) //eslint-disable-line
+  
   return (
     <Box className={styles.wrapper}>
       {elements.map((yearEvents, index) => (
@@ -32,6 +67,14 @@ const Timeline = ({ elements, projects }) => {
           }
         </Box>
       ))}
+      { hasMore && (
+        <Flex sx={{ justifyContent: 'center', mt: 3 }} onClick={handleLoadMore}>
+          <IconButton>
+            <MdExpandMore size={60}/>
+          </IconButton>
+          <Text sx={{ cursor: 'pointer' }}>See more</Text>
+        </Flex>
+       )}
     </Box>
   )
 }
