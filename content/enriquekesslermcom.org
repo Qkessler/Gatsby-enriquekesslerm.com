@@ -26,25 +26,7 @@ keep myself learning, while creating a personal space.
    
    Considering the previous web-building experience that I had, drawing from
    some of the [[https://www.djangoproject.com/][Django]] knowledge was plenty to build the website/blog that
-   I had been dreaming of. Using the =gatsby-config.js= file, you are able to
-   configure plugins and the siteMetadata, which is then queryable with Graphql.
-
-   #+begin_src javascript
-    graphql`
-      query SiteMetaData {
-        site {
-          siteMetadata {
-            title
-            author
-            siteUrl
-            description
-            twitter
-            social { name url }
-          }
-        }
-      }
-    `
-   #+end_src
+   I had been dreaming of.
 
 ** Where is the content coming from?
    Gatsby by default —i.e. using the default starter— provides several CMS that
@@ -79,12 +61,9 @@ entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built 
 industry-accepted the best framework for lightning fast websites—, the site has
    #+end_src
 
-   [[file:images/mind-blown.gif]]
-
 ** Structure
    You can access the source code of this project —like any other of my
-   projects— at [[https://github.com/Qkessler]], feel free to commit any changes or
-   typos to help the cause.
+   projects— [[https://github.com/Qkessler/enriquekesslerm.com][here]], feel free to commit any changes or typos to help the cause.
 
    [[/][enriquekesslerm.com]] follows the following structure
 

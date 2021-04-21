@@ -28,7 +28,7 @@ org-mode. Using collapsible headers —in org-mode, we use asterisks to define
 the level we are on. There is a good guide on structural writing with org-mode
 by Tony Ballantyne [[https://tonyballantyne.com/EmacsWritingTips.html][here]].
 
-Some of the other features that I need when writing my notes —I use [[file:20210124110000-how_to_take_smart_notes_with_org_mode.org][org-roam]]
+Some of the other features that I need when writing my notes —I use [[https://github.com/org-roam/org-roam][org-roam]]
 to be able to get the bidirectional-links goodies— or blog posts are
 spelling, logic and style checking.
 
