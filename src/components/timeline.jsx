@@ -21,7 +21,7 @@ const TimelineEvent = ({ event, ml, pb }) => {
 
 const Timeline = ({ elements, projects }) => {
   // State for the list
-  const [list, setList] = useState([...elements.slice(0, constants.showMoreNumber)])
+  const [eventsList, setList] = useState([...elements.slice(0, constants.showMoreNumber)])
 
   // State to trigger load more
   const [loadMore, setLoadMore] = useState(false)
@@ -37,31 +37,31 @@ const Timeline = ({ elements, projects }) => {
   // Handle loading more articles
   useEffect(() => {
     if (loadMore && hasMore) {
-      const currentLength = list.length
+      const currentLength = eventsList.length
       const isMore = currentLength < elements.length
       const nextResults = isMore
         ? elements.slice(currentLength, currentLength + constants.showMoreNumber)
         : []
-      setList([...list, ...nextResults])
+      setList([...eventsList, ...nextResults])
       setLoadMore(false)
     }
   }, [loadMore, hasMore]) //eslint-disable-line
 
   // Check if there is more.
   useEffect(() => {
-    const isMore = list.length < elements.length
+    const isMore = eventsList.length < elements.length
     setHasMore(isMore)
-  }, [list]) //eslint-disable-line
+  }, [eventsList]) //eslint-disable-line
   
   return (
     <Box className={styles.wrapper}>
-      {elements.map((yearEvents, index) => (
+      {eventsList.map((yearEvents, index) => (
         <Box key={`year-${yearEvents.year}`} as="div">
           <Heading as="h4" pb={projects ? 0 : 3}>{yearEvents.year}</Heading>
           {yearEvents.events.map((event, index) => (
             <TimelineEvent ml={projects ? 0 : 3} pb={projects ? 0 : 3} key={`event-${index}`} event={event} />
           ))}
-          {index != elements.length - 1 && <Divider my={4} sx={{
+          {index != eventsList.length - 1 && <Divider my={4} sx={{
             height: '.15em',
             backgroundColor: 'muted'}} />
           }
