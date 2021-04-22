@@ -359,3 +359,19 @@ designing the website, thank you so much!
     You can find the RSS file [[https://enriquekesslerm.com/rss.xml][here]].
 
     [[./content/images/rss-enriquekesslerm.png]]
+** Running the site locally
+   Just in case you want to try things out (remember to check the [[*License][LICENSE]]) follow the
+   next steps to get up and running:
+
+   #+begin_src shell
+    git clone https://github.com/Qkessler/enriquekesslerm.com
+    cd enriquekesslerm.com
+    yarn install
+    yarn develop
+   #+end_src
+
+   The website should be running at =localhost:8000= in your browser.
+   
+** License
+   The website is copyrighted under the [[./LICENSE][MIT License]]. Feel free take inspiration,
+   but please, avoid plagiarism.
