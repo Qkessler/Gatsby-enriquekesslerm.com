@@ -70,7 +70,7 @@ designing the website, thank you so much!
     You can access the source code of this project —like any other of my
     projects— [[https://github.com/Qkessler/enriquekesslerm.com][here]], feel free to commit any changes or typos to help the cause.
 
-    [[/][enriquekesslerm.com]] follows the following structure
+    [[https://enriquekesslerm.com][enriquekesslerm.com]] follows the following structure
 
     #+begin_src bash
  .
