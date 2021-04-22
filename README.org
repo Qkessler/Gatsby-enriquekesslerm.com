@@ -30,6 +30,8 @@ designing the website, thank you so much!
     - [[#travel-map][Travel map🗺]]
     - [[#moving-rainbow-text][Moving rainbow text📛]]
     - [[#rss][RSS]]
+  - [[#running-the-site-locally][Running the site locally]]
+  - [[#license][License]]
 #+END_QUOTE
 
 ** Why [[https://www.gatsbyjs.com/][Gatsby]]?
