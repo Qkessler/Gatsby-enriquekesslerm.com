@@ -209,8 +209,8 @@ designing the website, thank you so much!
      created for each of them (dynamically when they are defined in the blog
      posts)
 
-     [[./content/images/category-enriquekesslerm.png][Projects category]]
-     [[./content/images/tags-enriquekesslerm.png][Software tag]]
+     [[./content/images/category-enriquekesslerm.png]]
+     [[./content/images/tags-enriquekesslerm.png]]
     
 *** Travel map
     One of the ideas that I took from [[https://leerob.io][Lee's blog]] is to add a travel-map. I didn't
