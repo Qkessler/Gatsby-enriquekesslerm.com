@@ -3,7 +3,7 @@
 My personal web is officially out and running! 
 
 The enriquekesslerm.com project started as a placeholder for learning Gatsby,
-entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built with Gatsby —easily
+entangled in the [[https://github.com/Qkessler/100DaysOfGatsby][100 Days Of Gatsby]] experience. Built with Gatsby —easily
 industry-accepted the best framework for lightning fast websites—, the site has
 quickly become the place where I try to bring all of my ideas to be sure that I
 keep myself learning, while creating a personal space.
