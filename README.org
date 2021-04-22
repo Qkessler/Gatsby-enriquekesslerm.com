@@ -1,7 +1,7 @@
 [[./content/images/enriquekesslerm.png]]
 
 * [[https://enriquekesslerm.com][enriquekesslerm.com]]
-  [[file:assets/svg/gatsby-badge.svg]]
+  [[file:assets/svg/gatsby-badge.svg]] [[file:assets/svg/react-badge.svg]] [[file:assets/svg/html5-badge.svg]] [[file:assets/svg/css3-badge.svg]] [[file:assets/svg/javascript-badge.svg]]
 
 My personal web is officially out and running! 
 
