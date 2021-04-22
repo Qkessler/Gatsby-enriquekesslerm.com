@@ -1,3 +1,5 @@
+[[./content/images/enriquekesslerm.png]]
+
 * [[https://enriquekesslerm.com][enriquekesslerm.com]]
 
 My personal web is officially out and running! 
