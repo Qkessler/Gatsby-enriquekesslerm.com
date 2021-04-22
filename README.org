@@ -1,3 +1,275 @@
 * enriquekesslerm.com
-Personal web
+
+My personal web is officially out and running! 
+
+The enriquekesslerm.com project started as a placeholder for learning Gatsby,
+entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built with Gatsby —easily
+industry-accepted the best framework for lightning fast websites—, the site has
+quickly become the place where I try to bring all of my ideas to be sure that I
+keep myself learning, while creating a personal space.
+
+Before starting with the breakdown, I find that it is important to give credit
+where credit is due. I took a lot of inspiration on the following blogs when
+designing the website, thank you so much!
+
+- Lee Robinson's [[https://leerob.io][leerob.io]]
+- François Best's [[https://francoisbest.com/][francoisbest.com]]
+
+** Why [[https://www.gatsbyjs.com/][Gatsby]]?
+    Gatsby is a React framework, so you will have to live with that it is built
+    in JavaScript. On the other side, Gatsby compensates by pre-fetching data and
+    caching all your website at build time. This means that the website will feel
+    as crisp as a mobile app while having all the advantages that the web still
+    offers, considering how young the mobile world is.
+
+    [[file:images/gatsby-index.png]]
+   
+    Gatsby provides extensive docs, and has a joyful community behind, trying to
+    make the web better one step at a time. Without reinventing the wheel, you
+    are able to access [[https://www.gatsbyjs.com/starters/][starters]], [[https://www.gatsbyjs.com/plugins][plugins]] and more.
+   
+    Considering the previous web-building experience that I had, drawing from
+    some of the [[https://www.djangoproject.com/][Django]] knowledge was plenty to build the website/blog that
+    I had been dreaming of.
+** Where is the content coming from?
+    Gatsby by default —i.e. using the default starter— provides several CMS that
+    you can connect to, namely Contentful, Ghost and more. I decided to go the
+    more “[[https://www.gnu.org/software/emacs/][emacsy]]” route, because
+
+    #+begin_quote
+    By experimenting with voluntary discomfort, we learn to appreciate far more of
+    our life, and can be content with a much simpler and more wholesome one.
+    #+end_quote
+   
+    Instead of going for Markdown files, being the hardcore Emacs user I am, I
+    needed to find something to merge my love for Emacs and org-mode. The
+    solution rested in the [[https://www.huxiaoxing.com/building-a-website-with-org-mode-files][Xiaoxing's orgajs starter]], which uses the =orgajs=
+    package —also authored by him— parsing our org-mode files into beautiful and
+    configurable websites, What could be better?
+
+    Just to drive the point home, this is the magic of orgajs in play. The
+    following is the heading of this post.
+
+    #+begin_src 
+   ,* PUBLISHED enriquekesslerm.com                       :web:software:personal:
+ :PROPERTIES:
+ :DATE: <2021-04-12 lun>
+ :CATEGORY: Projects
+ :SUMMARY: Personal web used to showcase myself and collect my writings and ideas in one spot.
+ :IMAGE: ./images/danielle-macinnes-IuLgi9PWETU-unsplash.jpg
+ :END:
+
+ The enriquekesslerm.com project started as a placeholder for learning Gatsby,
+ entangled in the [[/100daysofgatsby-log][100 Days Of Gatsby]] experience. Built with Gatsby —easily
+ industry-accepted the best framework for lightning fast websites—, the site has
+    #+end_src
+
+** Structure
+    You can access the source code of this project —like any other of my
+    projects— [[https://github.com/Qkessler/enriquekesslerm.com][here]], feel free to commit any changes or typos to help the cause.
+
+    [[/][enriquekesslerm.com]] follows the following structure
+
+    #+begin_src bash
+ .
+ ├── assets
+ │   ├── images
+ │   └── svg
+ ├── content
+ │   ├── 100daysofgatsby-log.org
+ │   ├── advanced.org
+ │   ├── emacs-for-writers.org
+ │   ├── getting-started.org
+ │   ├── images
+ │   ├── projects.org
+ │   └── standalong.org
+ ├── gatsby-config.js
+ ├── LICENSE
+ ├── package.json
+ ├── png2svg_black.sh
+ ├── README.md
+ ├── src
+ │   ├── components
+ │   ├── constants
+ │   ├── gastby-plugin-theme-ui
+ │   ├── gatsby-theme-blorg
+ │   ├── hooks
+ │   ├── pages
+ │   └── utils
+ └── yarn.lock
+    #+end_src
+
+    As I'm using the [[https://yarnpkg.com/][yarn]] package manager, the yarn.lock file keeps all the
+    versions of the packages that my page requires. Under the /content directory,
+    I store all the org-mode files that compose my posts. Under /src, there are
+    self developed components, but Gatsby's known concept as "Shadowing" is common.
+    I shadow some of the configuration files for the plugins gatsby-plugin-theme-ui
+    and gatsby-theme-blorg.
+
+** Features
+*** Search blog posts🔍
+     Using [[http://elasticlunr.com/][elasticlunr]], which is an amazing light-weight self-hosted search
+     engine, I'm able to implement the search engine for my blog posts. The
+     package has configuration that needed to be done, as always on the
+     =gatsby-config.js= file.
+
+     #+begin_src javascript
+     {
+       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+       options: {
+         fields: [`title`, `tags`, `category`],
+         // How to resolve each field`s value for a supported node type
+         resolvers: {
+           OrgPost: {
+             title: (node) => node.title,
+             tags: (node) => node.tags,
+             excerpt: (node) => node.summary,
+             slug: (node) => node.slug,
+             date: (node) => {
+               const date = node.date
+               const moment = require("moment")
+               return moment(date).add(-1, "d").format(`MMMM DD, YYYY`)
+             },
+             category: (node) => node.category,
+           },
+         },
+       },
+     },
+     #+end_src
+
+     If you are using Markdown (a.k.a the MarkdownRemark package) for your
+     content, no additional configuration is needed, but I needed to configure
+     the OrgPost graphql type.
+
+     Elasticlunr uses the old component system based on state classes, but I
+     imagine it could be implemented using the
+     new [[https://twitter.com/quique_kessler/status/1384808605912862723?s=20][useState React Hook]]. Elasticlunr indexes the blog posts for the user
+     when the /blog page starts, and it does so using the =getOrCreateIndex=
+     function:
+
+     #+begin_src javascript
+     getOrCreateIndex = () =>
+     this.index
+       ? this.index
+       : // Create an elastic lunr index and hydrate with graphql query results
+         Index.load(this.props.searchIndex)
+     #+end_src
+
+     When the user's input changes, the =search= function is called, which
+     queries the created index for the results according to the input, mapping
+     the reference to the OrgPost Object.
+
+     #+begin_src javascript
+      search = (evt) => {
+         const query = evt.target.value
+         this.index = this.getOrCreateIndex()
+         this.setState({
+             query,
+             // Query the index with search string to get an [] of IDs
+             results: this.index
+                .search(query, { expand: true })
+                // Map over each ID and return the full document
+                .map(({ ref }) => this.index.documentStore.getDoc(ref)),
+         })
+      }
+     #+end_src
+
+     The end result is pretty cool! I can search by 'title', 'tags' and 'category'.
+
+     [[file:images/search-enriquekesslerm.png]]
+
+*** Categories and tags📁
+     Each of the blog posts has additional metadata that can be added using either
+     the headline of the org-file, or in the :PROPERTIES: drawer if the post is
+     headline-based. Here are all the available options:
+
+     | metadata field   | headline based               | file based           |
+     |------------------+------------------------------+----------------------|
+     | title            | headline content             | =#+TITLE=            |
+     |                  | =EXPORT_TITLE=               |                      |
+     |------------------+------------------------------+----------------------|
+     | date             | =DATE=                       | =#+DATE=             |
+     |                  | =EXPORT_DATE=                | =#+EXPORT_DATE=      |
+     |                  | =PUBLISH_DATE=               | =#+PUBLISH_DATE=     |
+     |                  | "CLOSED" planning timestamp  |                      |
+     |------------------+------------------------------+----------------------|
+     | category         | =CATEGORY=                   | =#+CATEGORY=         |
+     |                  | file name                    |                      |
+     |------------------+------------------------------+----------------------|
+     | tags             | tags of headline             | =#+TAGS=             |
+     |------------------+------------------------------+----------------------|
+     | export_file_name | =EXPORT_FILE_NAME=           | =#+EXPORT_FILE_NAME= |
+     |                  | headline content (sanitised) | file name            |
+     |------------------+------------------------------+----------------------|
+     | excerpt          | =EXCERPT=                    | =EXCERPT=            |
+     |                  | =SUMMARY=                    | =SUMMARY=            |
+     |                  | =DESCRIPTION=                | =DESCRIPTION=        |
+
+     The category and tags are the one that I'm talking about as custom pages are
+     created for each of them (dynamically when they are defined in the blog
+     posts)
+
+     [[file:images/category-enriquekesslerm.png][Projects category]]
+     [[file:images/tags-enriquekesslerm.png][Software tag]]
+    
+*** Travel map
+    One of the ideas that I took from [[https://leerob.io][Lee's blog]] is to add a travel-map. I didn't
+    really find that his using google-map was that interesting, so I searched for
+    other ways, stumbling on react-leaflet.
+   
+    #+begin_quote
+    Leaflet is the leading open-source JavaScript library for mobile-friendly
+    interactive maps. Weighing just about 39 KB of JS, it has all the mapping
+    features most developers ever need.
+
+    Leaflet is designed with simplicity, performance and usability in mind. It works
+    efficiently across all major desktop and mobile platforms, can be extended with
+    lots of plugins, has a beautiful, easy to use and well-documented API and a
+    simple, readable source code that is a joy to contribute to.
+    #+end_quote
+    —[[https://leafletjs.com/][https://leafletjs.com/]]
+
+    React-leaflet is the React package that uses the leaflet library to create custom
+    components, pretty cool, huh?
+
+    #+begin_src javascript
+     if (typeof window !== "undefined") {
+       return (
+         <MapContainer
+           center={center}
+           zoom={zoom}
+           style={{ width: "100%", height: "400px" }}
+         >
+           <TileLayer
+             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+           />
+           {markers !== null &&
+             markers.map((m, index) => (
+               <Marker key={index} position={m.position}>
+                 <Popup>{m.text}</Popup>
+               </Marker>
+             ))}
+         </MapContainer>
+       )
+     }
+     return null
+    #+end_src
+
+    Using that simple code I'm able to use a series of markers (which are stored in
+    their own /constants file) and add them to the map, with their descriptions and
+    custom CSS popups.
+
+    [[file:images/travelmap-enriquekesslerm.png]]
+
+*** Moving rainbow text
+    As part of the initial look that I wanted to infuse the website,
+    one of the initial TODO's was adding a moving gradient text for
+    my name on the index page.
+
+    I adapted [[https://www.joshwcomeau.com/react/rainbow-button/][Josh Comeau's]] moving gradient button to work as the background
+    for some text. The end result has pretty clean code and it works for
+    most of the browsers ([[https://css-houdini.rocks/][CSS Houdini]] is still not fully supported).
+
+    [[file:images/gradient-name.gif]]
 

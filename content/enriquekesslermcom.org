@@ -217,7 +217,6 @@ industry-accepted the best framework for lightning fast websites—, the site ha
     [[file:images/category-enriquekesslerm.png][Projects category]]
     [[file:images/tags-enriquekesslerm.png][Software tag]]
     
-
 ** Travel map
    One of the ideas that I took from [[https://leerob.io][Lee's blog]] is to add a travel-map. I didn't
    really find that his using google-map was that interesting, so I searched for
