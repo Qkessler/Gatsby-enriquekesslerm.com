@@ -1,3 +1,0 @@
-# enriquekesslerm.com
-Personal web
-
