@@ -22,7 +22,7 @@ designing the website, thank you so much!
     as crisp as a mobile app while having all the advantages that the web still
     offers, considering how young the mobile world is.
 
-    [[file:images/gatsby-index.png]]
+    [[./images/gatsby-index.png]]
    
     Gatsby provides extensive docs, and has a joyful community behind, trying to
     make the web better one step at a time. Without reinventing the wheel, you
@@ -176,7 +176,7 @@ designing the website, thank you so much!
 
      The end result is pretty cool! I can search by 'title', 'tags' and 'category'.
 
-     [[file:images/search-enriquekesslerm.png]]
+     [[./images/search-enriquekesslerm.png]]
 
 *** Categories and tags📁
      Each of the blog posts has additional metadata that can be added using either
@@ -209,7 +209,7 @@ designing the website, thank you so much!
      created for each of them (dynamically when they are defined in the blog
      posts)
 
-     [[file:images/category-enriquekesslerm.png][Projects category]]
+     [[./images/category-enriquekesslerm.png][Projects category]]
      [[file:images/tags-enriquekesslerm.png][Software tag]]
     
 *** Travel map
@@ -260,7 +260,7 @@ designing the website, thank you so much!
     their own /constants file) and add them to the map, with their descriptions and
     custom CSS popups.
 
-    [[file:images/travelmap-enriquekesslerm.png]]
+    [[./images/travelmap-enriquekesslerm.png]]
 
 *** Moving rainbow text
     As part of the initial look that I wanted to infuse the website,
@@ -271,5 +271,5 @@ designing the website, thank you so much!
     for some text. The end result has pretty clean code and it works for
     most of the browsers ([[https://css-houdini.rocks/][CSS Houdini]] is still not fully supported).
 
-    [[file:images/gradient-name.gif]]
+    [[./images/gradient-name.gif]]
 
