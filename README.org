@@ -28,6 +28,7 @@ designing the website, thank you so much!
     - [[#categories-and-tags][Categories and tags📁]]
     - [[#travel-map][Travel map🗺]]
     - [[#moving-rainbow-text][Moving rainbow text📛]]
+    - [[#rss][RSS]]
 #+END_QUOTE
 
 ** Why [[https://www.gatsbyjs.com/][Gatsby]]?
@@ -289,3 +290,71 @@ designing the website, thank you so much!
     [[./content/images/gradient-name.gif]]
 
 
+
+*** RSS
+    As I'm a big advocate of RSS, I found that it needed to be included as one of
+    the key features of the web-page. Using the [[https://www.gatsbyjs.com/plugins/gatsby-plugin-feed/][gatsby-plugin-feed]], the configuration
+    was easy and quick.
+
+    ⚠ As a warning, the output file is only created on build, I had several hours of
+    searching for problems to finally end up finding that it no longer builds the file
+    on =gatsby develop=.
+
+    #+begin_src javascript
+     {
+       resolve: `gatsby-plugin-feed`,
+       options: {
+         query: `
+           {
+             site {
+               siteMetadata {
+                 title
+                 description
+                 siteUrl
+                 site_url: siteUrl
+               }
+             }
+           }
+         `,
+         feeds: [
+           {
+             serialize: ({ query: { site, allOrgPost } }) => {
+               return allOrgPost.nodes.map(post => {
+                 return Object.assign({}, post, {
+                   title: post.title,
+                   date: post.date,
+                   url: site.siteMetadata.siteUrl + post.slug,
+                   guid: site.siteMetadata.siteUrl + post.slug,
+                   custom_elements: [{ "content:encoded": post.html }],
+                 })
+               })
+             },
+             query: `
+               {
+                 allOrgPost(sort: {fields: date, order: DESC}) {
+                    nodes {
+                       title
+                       excerpt
+                       html
+                       date(formatString: "MMMM DD, YYYY")
+                       slug
+                   }
+                }
+             }
+             `,
+             output: "/rss.xml",
+             title: "Enrique Kessler Martínez's posts",
+           },
+         ],
+       },
+     }
+    #+end_src
+
+    As always, if you are using MarkdownRemark the configuration is even easier,
+    with org-mode you require to add little configuration. An important part is
+    the content-encoded html for my posts, without it there would be problems with
+    the resulting =rss.xml= file.
+
+    You can find the RSS file [[https://enriquekesslerm.com/rss.xml][here]].
+
+    [[./content/images/rss-enriquekesslerm.png]]
