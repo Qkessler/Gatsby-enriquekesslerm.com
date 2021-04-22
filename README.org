@@ -26,8 +26,8 @@ designing the website, thank you so much!
   - [[#features][Features]]
     - [[#search-blog-posts][Search blog posts🔍]]
     - [[#categories-and-tags][Categories and tags📁]]
-    - [[#travel-map][Travel map]]
-    - [[#moving-rainbow-text][Moving rainbow text]]
+    - [[#travel-map][Travel map🗺]]
+    - [[#moving-rainbow-text][Moving rainbow text📛]]
 #+END_QUOTE
 
 ** Why [[https://www.gatsbyjs.com/][Gatsby]]?
@@ -227,7 +227,7 @@ designing the website, thank you so much!
      [[./content/images/category-enriquekesslerm.png]]
      [[./content/images/tags-enriquekesslerm.png]]
     
-*** Travel map
+*** Travel map🗺
     One of the ideas that I took from [[https://leerob.io][Lee's blog]] is to add a travel-map. I didn't
     really find that his using google-map was that interesting, so I searched for
     other ways, stumbling on react-leaflet.
@@ -277,7 +277,7 @@ designing the website, thank you so much!
 
     [[./content/images/travelmap-enriquekesslerm.png]]
 
-*** Moving rainbow text
+*** Moving rainbow text📛
     As part of the initial look that I wanted to infuse the website,
     one of the initial TODO's was adding a moving gradient text for
     my name on the index page.
