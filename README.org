@@ -1,8 +1,9 @@
 [[./content/images/enriquekesslerm.png]]
 
 * [[https://enriquekesslerm.com][enriquekesslerm.com]]
-[[https://www.gatsbyjs.com/][file:https:/img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white]]
-[[https://travis-ci.org/AdrieanKhisbe/omni-tags.el][file:https://travis-ci.org/AdrieanKhisbe/omni-tags.el.svg]]
+  <img src="https://img.shields.io/badge/-Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
+# [[https://www.gatsbyjs.com/][file:https:/img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white]]
+# [[https://travis-ci.org/AdrieanKhisbe/omni-tags.el][file:https://travis-ci.org/AdrieanKhisbe/omni-tags.el.svg]]
 
 My personal web is officially out and running! 
 
