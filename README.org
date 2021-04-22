@@ -17,13 +17,17 @@ designing the website, thank you so much!
 - Lee Robinson's [[https://leerob.io][leerob.io]]
 - François Best's [[https://francoisbest.com/][francoisbest.com]]
 
-** Table of Contents :TOC:QUOTE:
+** Table of Contents :TOC_3:QUOTE:
 #+BEGIN_QUOTE
 - [[#enriquekesslermcom][enriquekesslerm.com]]
   - [[#why-gatsby][Why Gatsby?]]
   - [[#where-is-the-content-coming-from][Where is the content coming from?]]
   - [[#structure][Structure]]
   - [[#features][Features]]
+    - [[#search-blog-posts][Search blog posts🔍]]
+    - [[#categories-and-tags][Categories and tags📁]]
+    - [[#travel-map][Travel map]]
+    - [[#moving-rainbow-text][Moving rainbow text]]
 #+END_QUOTE
 
 ** Why [[https://www.gatsbyjs.com/][Gatsby]]?
