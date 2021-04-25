@@ -1,69 +1,79 @@
 #+TITLE: 100 Days Of Gatsby
-#+DATE: <2021-03-24 Wen>
-#+IMAGE: ./images/gatsby-blue-green.png
+#+DATE: <2021-04-25 dom 17:19>
 #+SUMMARY: Starting the journey! This is the post where I keep all my progress on the 100DaysOfGatsby challenge.
 
-Considering previous experience learning Python following a similar strategy, I
-find that the 100DaysOf* is the best way to get proficient with any new
-technology interesting enough! The 100DaysOfGatsby plan that I’m following was
-created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blog/tags/100-days-of-gatsby/][100-days-of-gatsby]]
+Starting the journey! Considering previous experience learning Python
+following a similar strategy, I find that the 100DaysOf* is the best way to
+get proficient with any new technology interesting enough!
 
-* Day 1: 2021/03/07
+The 100DaysOfGatsby plan that I'm following was created by the Gatsby team,
+you can find it here: [[https://www.gatsbyjs.com/blog/tags/100-days-of-gatsby/][https://www.gatsbyjs.com/blog/tags/100-days-of-gatsby/]]
+
+** Conclusion
+   The 100DaysofGatsby has been an amazing experience all-round, and I couldn't
+   be happier to be able to say that I have learned a ton: React, Gatsby's way
+   of making the JAMStack work, org-mode flavored posts, some writing skills (I
+   feel like I'm getting better at writing in English).
+
+   On the other side, it feels that continuing for other 50 days to finish the
+   100 isn't the best way to put my time to work. The big project that I had in
+   mind when starting this 100DaysOfGatsby has already been completed
+   ([[https://enriquekesslerm.com]]) and I couldn't be prouder.
+
+   I highly encourage everyone that is interested in the web ecosystem to learn
+   a JAMStack framework and Gatsby is a great choice (Next.js is another good
+   one). Feel free to hit me up if any doubts arise from my process and
+   challenge!
+** Day 1: 2021/03/07
   The first day I created the repository and added the first project, starting
   to dabble with routing, using the [[file:../org_files/slip-box/20210314170333-gatsby_file_system_api.org][Gatsby File System API]] and graphql. I find
   that the graphql that was changed by Gatsby is a really interesting concept,
   with the ability to pass filters to the queries.
-
-* Day 2: 2021/03/08
+** Day 2: 2021/03/08
   The second day! I started trying to understand pages in Gatsby. Considering
   that it is the first time that I have touched React, Typescript and Graphql, I
   have a lot of learning to do.
 
   I understood the amazing way to pass variables to html code, all inside our
   javascript or typescript files! I also added the [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/20210308183755-gatsby_building_blocks.org][Gatsby building blocks note]].
-
-* Day 3: 2021/03/09
+** Day 3: 2021/03/09
   On the third day, I started getting interested on Styling on Gatsby,
   considering that it was recommended to me to start thinking about theming and
   CSS-in-JS frameworks, namely Chakra-ui, Theme-ui and Tailwind CSS. I wrote
   a [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/20210309171436-gatsby_styling.org][note]] on the topic, drawing from the information that I found on
   the [[https://www.gatsbyjs.com/docs/how-to/styling][how-to/styling]] page in the Gatsby documentation.
 
-  I also tried implementing a simple navigation betweeen locations with the file
+  I also tried implementing a simple navigation between locations with the file
   system api, but I didn't seem to understand it correctly. More work to do.
-
-* Day 4: 2021/03/10
+** Day 4: 2021/03/10
    On the fourth day, I started working on getting content in the site, starting
    with the Contentful CMS, which was recommended by the Gatsby team for the
    simplicity and ease of mastering the concepts.
 
    I also added the location pages, but it doesn't really work because I still
-   don't understand how to pafss the variables to the queries.
-
-* Day 5: 2021/03/11
+   don't understand how to pass the variables to the queries.
+** Day 5: 2021/03/11
    I though that it was a good idea to check the =filesystem-api= to make sure
    that I was understanding the queries, just to see if I was doing stuff wrong
    with the Contentful API. Surprise, I was. the filesystem-api made working
    with the =src/= directory a breeze. I added the [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/20210311190230-gatsby_data.org][Gatsby data note.]]
 
    I tried to set up the locations pages again, with no success.
-
-* Day 6: 2021/03/12
+** Day 6: 2021/03/12
    On day 6, I tried getting some information on fixing the Contenful API, it
    seems that I would never get this working. I looked at =StaticQueries= in the
    Gatsby docs. Still didn't work.
 
 
    I added the location page, getting the correct information into a list.
-
-* Day 7: 2021/03/13
+** Day 7: 2021/03/13
    On day 7, I added [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/javascript-gatsby-emacs-configuration.org][Emacs development configuration]] in order to get a working
    react, gatsby and typescript workflow going!
 
    I also added the [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/20210308181323-gatsby_static_queries.org][Static Queries note]], drawing on the information I had been
    collecting the day before.
    
-* Day 8: 2021/03/14
+** Day 8: 2021/03/14
    I added the [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/20210314170333-gatsby_file_system_api.org][Gatsby file system api note]], trying to understand the process
    that Gatsby uses for getting the data to create the pages. The information
    turned out to be amazing, it is the first time that I see technology making
@@ -73,22 +83,19 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    the filesystem-api, getting more pages working. I also found that there was
    no =gatsbyPath= property on graphiql for the ContentfulLocation object, which
    is key to linking to the pages created by the Gatsby file system api.
-
-* Day 9: 2021/03/15
+** Day 9: 2021/03/15
    I added a working proof of concept project, using what I had learned about
    the filesystem api to finally get the location pages working, feels amazing!
    I found that maybe it was a problem with the Contentful starter page,
    creating a new project worked wonders.
-
-* Day 10: 2021/03/17
+** Day 10: 2021/03/17
    As I finished the first task that was assigned by the Gatsby team on the
    100DaysOfGatsby blog post, I turned to the second challenge, which started me
    out on CSS frameworks, namely [[https://chakra-ui.com/docs/getting-started][Chakra-ui]].
 
    I found that the documentation for installing Chakra-ui is flawed, as there
    are a ton of dependency issues and the directions are a bit confusing.
-
-* Day 11: 2021/03/18
+** Day 11: 2021/03/18
    I worked a bit more on the emacs configuration, I wasn't really happy with
    =js2-mode=, and turned to =lsp-mode=, which is the package that I really use
    for all my programming needs inside of emacs. Here are interesting links:
@@ -99,8 +106,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    I also tried to get Chakra-ui working, but there was no way to get Gatsby 3.*
    and Chakra together. I found that some issues were created on the Chakra-ui
    repo, pushing for a change of versions or at least supporting both.
-
-* Day 12: 2021/03/19
+** Day 12: 2021/03/19
    On day 12, I added
    the [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/20210319190110-style_guide_design_systems_and_component_libraries.org][Style Guide, Design Systems and Component Libraries note]], which is super
    interesting for understanding the world of styling and website making.
@@ -110,7 +116,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    didn't really find it interesting. I need to learn more
    about [[https://www.gatsbyjs.com/docs/conceptual/how-shadowing-works/][Shadowing in Gatsby]].
    
-* Day 13: 2021/03/20
+** Day 13: 2021/03/20
    I worked a bit more on the layout, running into a ton of errors, namely
    because Chakra-ui kept giving me war for the dependencies.
 
@@ -118,11 +124,10 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    is a package that gets the content for the site from org-mode files. I
    configured the options for the starter, getting some changes on the site
    always feels good.
-
-* Day 14: 2021/03/21
-   On day 14, I tried to swich from npm to yarn, as I found that yarn was much
+** Day 14: 2021/03/21
+   On day 14, I tried to switch from npm to yarn, as I found that yarn was much
    quicker and lighter, considering that I have to create a node_modules folder
-   everytime I change machines. Didn't really work, I was running into
+   every time I change machines. Didn't really work, I was running into
    dependency issues and couldn't find helpful information on the documentation.
 
    I restarted the project once more, considering that I had messed up the
@@ -133,8 +138,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    I also changed the themeSwitcher's place, making it look a lot better in my
    opinion. Couldn't get sticky position working on the navbar using Theme-ui,
    need to inform myself better.
-
-* Day 15: 2021/03/22
+** Day 15: 2021/03/22
    This was more of a relaxed day, I tried to understand the logic behind the
    orgajs, which are the configuration files that I need to pass to headers and
    files in order to make it work. More information was found regarding:
@@ -143,16 +147,14 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    - Categories.
    - Closed dates: Orgajs could use the closed date on our published posts, man
      I love org-mode.
-
-* Day 16: 2021/03/23
+** Day 16: 2021/03/23
    I started trying to change the theme-ui colors for the header links, without
    success again, will have to add custom css-in-js to the =Link= tags it seems.
 
    The 16th day was amazing. I got to attend to a Gatsby cloud performance
    webinar, and added a note on the notes that I had been taking on the
    webinar: [[https://github.com/Qkessler/100DaysOfGatsby/blob/main/enrique-kesslerm-web/performance_webinar_notes.org][performance webinar notes.]]
-
-* Day 17: 2021/03/24
+** Day 17: 2021/03/24
    I moved the enriquekesslerm.com repo from the 100DaysOfGatsby to its own repo,
    with the intention of using the repository to create my future web page, which
    will contain information about me and some of my writing, getting excited! :smile:
@@ -167,7 +169,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    After successfully moving the project, before running out of time, I started dabbling
    into the creation of my =/about= page. I need to create a content plan before jumping
    to code.
-* Day 18: 2021/03/25
+** Day 18: 2021/03/25
    I continued working on the /about page. In order to follow good about page design
    guidelines, I created the [[file:20210325120813-about_pages.org::+title: About pages][about pages note]]. I started dabbling on the use of
    Images in gatsby, which is a spiky topic. Gatsby knows that most of the performance
@@ -176,15 +178,19 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
 
    I created a project-show component in order to showcase some of the projects on
    the about page, half acting as a cv.
-* Day 19: 2021/03/26
+** Day 19: 2021/03/26
    As I keep on moving with the /about page, I decided on the initial design that I
-   linked on previous days. You can find it [[file:about-page-poc.jpg][here.]] I started working on the gradient
-   part of the text. Sparked by the initial idea, I found two interesting links:
+   linked on previous days.
 
-   - https://www.joshwcomeau.com/react/rainbow-button/: rainbow gradient
+   [[file:images/about-page-poc.jpg]]
+
+   I started working on the gradient part of the text. Sparked by the initial
+   idea, I found two interesting links:
+
+   - [[https://www.joshwcomeau.com/react/rainbow-button/][https://www.joshwcomeau.com/react/rainbow-button/]]: rainbow gradient
      transition inspiration, the idea drawing on react hooks and css variables
      is great. I adapted his work to act as a moving background for my text.
-   - https://github.com/system-ui/theme-ui/discussions/1011: some information
+   - [[https://github.com/system-ui/theme-ui/discussions/1011][https://github.com/system-ui/theme-ui/discussions/1011]]: some information
      about how to style theme-ui components using css tags.
 
    With working information, I adapted Josh's work to get a working animated
@@ -192,8 +198,8 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
 
    #+CAPTION: Moving gradient name!
    #+NAME:   gradient-name
-   [[./gradient-name.gif]]
-* Day 20: 2021/03/27
+   [[./images/gradient-name.gif]]
+** Day 20: 2021/03/27
    Already on the 20th day! I'm loving the journey and it feels like I'm getting
    more comfortable working with npm, typeScript and Gatsby overall. The project
    tree no longer feels scary.
@@ -205,7 +211,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
 
    - [[https://stackoverflow.com/questions/61158924/import-svg-as-a-component-in-gatsby/61161331][Stack overflow answer]].
    - [[https://www.gatsbyjs.com/plugins/gatsby-plugin-react-svg/#gatsby-plugin-react-svg-npm-version][gatsby-plugin-react-svg documentation]].
-* Day 21: 2021/03/28
+** Day 21: 2021/03/28
    I continued with the structure of the /about page, with problems. I find that some
    of the posts that are supposed to be format friendly are faulty, I might need to
    restart the project again.
@@ -216,7 +222,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
 
    Styling seems hard with the theme-ui configuration, without having our own. I need to
    figure out a way to extend the orga-theme-ui-preset with my styles, or use a min.css file.
-* Day 22: 2021/03/30
+** Day 22: 2021/03/30
    Today I kept working trying to understand the theming that is done with
    the default =orga-theme-ui-preset=. I can't seem to understand the shadowing
    of the theme. From the base *Theme-ui* documentation I see that the following
@@ -243,7 +249,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    This code under =gatsby-plugin-theme-ui/index.js= should provide the 'project' variant
    for Links, but the styling doesn't seem to be applied. Need to do some more digging.
    Today was fun.
-* Day 23: 2021/03/31
+** Day 23: 2021/03/31
    I continued trying to tweak the custom =theme= in the starter, but
    I still don't seem to understand the way the creator intended for us to tweak
    his own theme.
@@ -252,7 +258,7 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    to create, without success. I have also tried to extend his theme by using the
    ...orga in the index file, no luck. I reached to @xiaoxinghu to clear up the fog
    a bit.
-* Day 24: 2021/04/01
+** Day 24: 2021/04/01
    I'm ready to give up, it feels like there is no progress... APRIL FOOLS!
    
    I have finally got a hang of how theme-ui styles its components. Even though
@@ -262,3 +268,320 @@ created by the Gatsby team, you can find it here: [[https://www.gatsbyjs.com/blo
    That said, I finished the projects section in the /about page. I also started
    working on the timeline component for the /about page and finally got a working
    style. I love the initial look, I need to fill in the info soon.
+** Day 25: 2021/04/02
+   I continued working with the about page, getting a working timeline
+   elements, while keeping a consistent styling using theme-ui.
+
+   As I wanted to change the color of the NavLinks to the text color,
+   I used the information that I learned from the fight with the
+   project-show component in the /about page to change the styling
+   using the sx prop, amazing!
+** Day 26: 2021/04/03
+   Today I got around making the flex component for the /about page. It really
+   looks like it's starting to shape up to be a cool page. I'm satisfied by the
+   result.
+
+   In order to abstract the code, I also created the =src/constants= folder to
+   hold all the constants of the components. That way, in the =about.js= file I
+   no longer need to hold the strings for the information.
+** Day 27: 2021/04/04
+   Today I continued with the /about page, adding the travel map section. The section
+   uses =react-leaflet= which is the open-source map solution package for react. The
+   entire process was seemless, I added most of the locations I have traveled to, and
+   it is bringing amazing memories!
+
+   #+CAPTION: Travel map
+   #+NAME:   travel-map
+   [[./images/travelmap-enriquekesslerm.png]]
+** Day 28: 2021/04/05
+   Today I finished some touches on the /about page, created the structure for
+   the /projects page and added some of the information needed there.
+
+   I got the idea of slicing the projects list to add the two latest topic to the
+   about page. In javaScript, we can use the =slice= function, close to slicing
+   iterables in python3.
+   #+begin_src javascript
+    const latestProjects = projects.slice(0, 2)
+   #+end_src
+
+   With the idea I created a component that would use a prop to check whether I
+   want to show all the topics or the list sliced. Pretty amazing. I also had
+   extra time today and started to work on changing the index page. I modified
+   the layout on the /about page configuring the FlexBox layout by theme-ui.
+   #+begin_src javascript
+   <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+            <Text pb={4} pr={4} sx={{ flexGrow: 1, flexBasis: 500 }}>{constants.aboutMeText}</Text>
+            <StaticImage src="../../assets/images/fotoCV.png"
+              alt="Enrique Kessler Martínez"
+              placeholder="blurred"
+              layout="constrained"
+                         sx={{ flexGrow: 1, flexBasis: 0, minWidth: 200, maxWidth: 250, margin: 'auto' }}
+            />
+          </Box> 
+   #+end_src
+** Day 29: 2021/04/06
+   Today I didn't have much time to work on a big section of the blog. I changed
+   the orga-blorg Index page to be at /blog, but the result is not what I expected,
+   I will need to check the source code to make sure where the maintainer is using
+   the queries for the index page, I couldn't find it easily.
+
+   I also added the test of a blog post: Emacs for writing. I have been searching inside
+   the Emacs ecosystem for packages that would improve my writing, considering I intend
+   to keep on going with blog post writing and more.
+** Day 30: 2021/04/07
+   I finally got around understanding how can I override the ='indexPath'= for
+   the orga-blorg. The /blog page is turning great. I started looking at search
+   inside of Gatsby and I found the interesting [[https://www.gatsbyjs.com/plugins/gatsby-plugin-elasticsearch/][gatsby-plugin-elasticsearch]],
+   giving us also react components for accessing the different indexes.
+
+   It is self-hosted, so I need to balance the need to have it out in the world
+   vs self-hosted, which is said to increase lots the bundle size.
+** Day 31: 2021/04/08
+   Today I finally finished implementing the searchBar for my /blog page. The whole
+   experience was really rewarding, because the documentation is not great, and I
+   had to do a lot of guesswork to get the information about the package right.
+
+   Some of the links that I found especially helpful are the following:
+   - [[https://www.gatsbyjs.com/plugins/gatsby-plugin-elasticsearch/][https://www.gatsbyjs.com/plugins/gatsby-plugin-elasticsearch/]]
+   - [[https://medium.com/swlh/building-a-search-bar-for-your-gatsbyjs-site-with-typesense-3e277dc33942][https://medium.com/swlh/building-a-search-bar-for-your-gatsbyjs-site-with-typesense-3e277dc33942]]
+   - [[https://github.com/typesense/typesense-instantsearch-adapter][https://github.com/typesense/typesense-instantsearch-adapter]]
+   - [[http://elasticlunr.com/][http://elasticlunr.com/]]
+
+   I finally settled on the latter, for its ease of implementation and its already
+   good examples that can be tweaked.
+
+   [[./images/search-enriquekesslerm.png]]
+** Day 32: 2021/04/09
+   Today I finished the post-share component, I have the finished links for: Facebook,
+   Twitter, LinkedIn and mailto. I'm happy with the overall result.
+
+   I also added the Edit on Github link, to be able to fork and commit possible typos.
+   
+** Day 33: 2021/04/10
+   I received a mail from the creator of orga.js, which is the engine that I'm using
+   to get the content out of the org-mode content files to fill my posts. He had migrated
+   to Gatsby v3, which was already a peer dependency of all the packages that I was using.
+   
+   The migration was pretty much painless, but I seem to keep getting the error of
+   changing the title on the posts when one is changed.
+** Day 34: 2021/04/11
+   Today I didn't really have much time to work with. I continued to change some
+   of the configuration, in order to mitigate the title error, without
+   success. I might need to change the project to use the new starter again.
+
+   I also added some images to the 100Daysofgatsby post.
+** Day 35: 2021/04/12
+   I finally fixed the title error, which was originally caused because the
+   cache is built on the orgPosts on build, and when I try to change any of them
+   the cache turns obsolete. The solution that I came up with is just to remove
+   the cache as a prebuild and predevelop script. The possible changes that I
+   did on the =package.json= file are the following:
+
+   #+begin_src json
+    "scripts": {
+    "build": "gatsby build",
+    "prebuild": "rm -rf .cache",
+    "predevelop": "rm -rf .cache",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+   #+end_src
+
+   Note that the scripts with pre as a prefix to the intended script name are
+   run before the original script is called. The post prefix does the same for
+   running the scripts after the original script.
+
+   I also changed the Projects component to allow for a timeline component if
+   the =timeline= prop is passed. I find that checking the date on which the
+   project was built is interesting for possible visitors.
+
+   Lastly, I modified the post-share file to remove the "Share with" text, I find
+   that having the icons is already enough at the end of the post.
+** Day 36: 2021/04/13
+   Today I started working on the / page, adapting the /about page to hold less information,
+   leaving the Latest Posts and Latest projects to the home page.
+
+   I also changed some of the siteMetadata, in order to access the socialLinks in the footer.
+   I can't seem to be able to align the icons in the center of the footer, something weird.
+** Day 37: 2021/04/14
+   Heavily inspired by [[https://francoisbest.com][François Best]], I continued working on my index page,
+   which I seem to finally have struck a cord with. I am really proud of its
+   actual state.
+
+   François has this amazing feature for the blog posts that he fathoms as
+   Featured.  He marks them with a little icon (with its position set to
+   absolute), and the final result is clean and suttle.
+
+   [[./images/francoisbest-post.png]]
+
+   I really liked the layout that he had on his Posts, and I changed my tags to
+   be on a flex layout with the date. I also added the little icon on the
+   corner, it is just too slick to pass on. Ended up with this:
+
+   [[./images/my-post.png]]
+
+   I also changed the layout on the inside of the posts, to remove the bio and
+   center and divide the post-share section. It is now cleaner in my opinion,
+   and it is not too charged with information. I changed the footer too :smile:.
+
+   [[./images/footer-post-share.png]]
+** Day 38: 2021/04/15
+   Today I started working on adding Tags to the projects, I feel that the
+   splash of colors is needed for the /projects page, while giving some important
+   information to possible visitors. Pretty happy with the result, here is the light
+   and dark-mode version.
+
+   I also checked the build using =yarn build= without success. The build doesn't work
+   correctly, some of the information is display badly, specially at the footer.
+** Day 39: 2021/04/16
+   This morning I finally fixed all errors relating the build. For some reason,
+   adding a li when it wasn't needed gave the error. Even surrounding it with ul
+   didn't improve the situation. If removed all together the error is fixed and
+   the website can fully build and serve.
+
+   Just to test it out, I deployed an initial version (without lots of
+   information) to Gatsby Cloud. The process was painless, setting up the repo
+   and forgetting.
+
+   I also set up an RSS feed for my posts (using [[https://www.gatsbyjs.com/plugins/gatsby-plugin-feed][gatsby-plugin-feed]]),
+   configuring the serialize function to work with OrgPosts, my object
+   type. Pretty cool package, does a lot of work for you.
+
+   #+begin_src javascript
+    { 
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allOrgPost } }) => {
+              return allOrgPost.nodes.map(post => {
+                return Object.assign({}, post, {
+                  title: post.title,
+                  date: post.date,
+                  url: site.siteMetadata.siteUrl + post.slug,
+                  guid: site.siteMetadata.siteUrl + post.slug,
+                  custom_elements: [{ "content:encoded": post.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allOrgPost(sort: {fields: date, order: DESC}) {
+                   nodes {
+                      title
+                      excerpt
+                      html
+                      date(formatString: "MMMM DD, YYYY")
+                      slug
+                  }
+               }
+            }
+            `,
+            output: "/rss.xml",
+            title: "Enrique Kessler Martínez's posts",
+          },
+        ],
+      },
+    },
+   #+end_src
+** Day 40: 2021/04/17
+   Today was one of those Refactoring days. I find that having some days for
+   refactoring some of the code improves the codebase of a projects lots.
+
+   I removed the projects constants from the /projects page and moved the
+   information to its own =jsx= file in the /constants folder. I also updated
+   the timeline to work differently when used with projects or in the /about
+   page. For the /about page, I added cool checkboxes and a headline on the
+   events.
+
+   I also finished the /404 page, adding some information from wikipedia and
+   guiding users to the / page. I might need to upgrade it some time in the future,
+   it should be at least a bit funny :smile:.
+** Day 41: 2021/04/18
+   Following the refactoring on the day before, I continued updating and refactoring
+   the timeline component. Instead of using conditional rendering when an if-else
+   situation pops in, just return on if and on else.
+
+   I also added my first Book review blog post: Range by David Epstein. I might
+   need to hide most of the mosts when starting with the page, and uploading
+   them sequentially.
+** Day 42: 2021/04/20
+   In order to provide an Archive page holding the list of posts per year, I created
+   the Archive component, which uses an interesting query:
+   
+   #+begin_src javascript
+       export const query = graphql`
+query ArchiveQuery {
+  allOrgPost(sort: {fields: date, order: DESC}) {
+    nodes {
+      title
+      date(formatString: "YYYY")
+      slug
+    }
+  }
+}
+`   
+   #+end_src
+
+   In this query, I get the years in the date field for each post, ordering
+   them in descending order. In the =getPostsByYear= function I then process
+   the different years and posts creating a new object.
+
+   #+begin_src javascript
+   function getPostsByYear(nodes) {
+       var postsByYear = {}
+       for (var post of nodes) {
+          if (!(post.date in postsByYear)) {
+              postsByYear[post.date] = []
+          }
+          postsByYear[post.date].push(post)
+       }
+       return postsByYear
+   }
+   /*
+     i.e {2021: [...], 2020: [...]}
+   */
+   #+end_src
+
+   Using the Object.entries function, I'm able to access each of the key-value
+   pairs for the year-posts.
+
+   #+begin_src 
+  Object.entries(postsByYearList)
+        .reverse()
+        .map(([year, posts]) => (
+   #+end_src
+** Day 43: 2021/04/21
+   Today I continued working on the archive page, getting its final touches.
+   Not flashy at all, but it never was the plan. The idea was to have a
+   simple list of posts for visitors to go through easily.
+
+   I also learned from the React state docs, and wrote a [[./20210421113117-react_state.org][note about it]]. I
+   got around buying the domain, and deploying the website using Gatsby Cloud.
+   As I said in previous days, the deployment process couldn't be easier and
+   the build time was =1:47= minutes, AMAZING!
+** Day 44: 2021/04/23
+   Today as a chill day in the 100DaysofGatsby I watched some of the
+   talks in the Gatsby Conf 2021. Pretty good stuff, I would recommend watching
+   it to anyone interested in the web and Jamstack.
+
+   I will finish and publish the notes about the conference in the later days.
+   I'm starting to wonder what to do in the 100Days, I might stop and continue
+   working with Flutter, 44 days is already pretty good, considering the main
+   project for it [[https://enriquekesslerm.com][has already been completed]].
+   
