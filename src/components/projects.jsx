@@ -20,7 +20,7 @@ const Projects = ({ number, timeline }) => {
   )
   else return (
     <Box as="div">
-      <ul>
+      <ul sx={{ listStyle: 'none', padding: 0 }}>
         {allProjects.slice(0, sliceNumber).map((p, index) => (
           <li key={index}>{p}</li>
         ))}

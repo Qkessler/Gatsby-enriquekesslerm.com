@@ -1,0 +1,41 @@
+#+TITLE: Early retirement series introduction
+#+DATE: <2021-04-30 vie>
+#+CATEGORY: Early-retirement-series
+#+TAGS: finance fire
+#+SUMMARY: The introduction to what will be a series of blog posts discussing Early retirement, investing and personal finance.
+
+#+CAPTION: Photo by Bailey Zindel on Unsplash.
+[[file:images/bailey-zindel-NRQV-hBF10M-unsplash.jpg]]
+
+Welcome to the introduction post for the new [[/Early-retirement-series][Early retirement series]]! Feel free
+to visit the category to find all the blog posts for the series.
+
+In these series I will write about most of the information that I have acquired over the years of reading about the topic, plus discussing my investing strategy and my personal finance setup. Let's get started!
+
+** What is FIRE?
+   Fire is short for "Financial Independence, retire early". Financial independence is a topic that has been widely discussed in the personal finance world, consisting on having enough money to reduce or stop the work that you do for money (I will be discussing What is work in another blog post).
+
+   The normal path to financial independence starts by being conscious about your personal finances, including the debt that we are too embarrassed to talk about.You need to calculate your spending for a year. How much do you need to survive for one entire year? You will find yourself surprised to see that is not that much. A technique that I used for this when I started thinking about budgeting is to spend a month tracking my expenses in a sheet of paper. After the month, self reflect on the other months: Do I have any special events that would require further spending? Have I accounted with Christmas and birthdays?
+
+   Once you have that number, you multiply it by a number between 25 and 30, and you have your financial independence number! When your net worth —we don't add any depreciating assets to the value— has reached the golden number, you are financial independent, you are no longer required to work and you can retire early!
+
+   Let's not get too rushed up by the idea. Yes, you are feeling butterflies in your stomach, I know. Calm down. The process requires discipline and self control, which if you are reading this in your twenties or even your thirties you should be thankful to have. We'll get more into depth into the financial independence process in the next blog posts, while I keep going my own.
+
+** What is Early Retirement?
+   Early retirement is a big boat to embark yourself into. Most of us wouldn't have the balls to even try. I find myself in the lucky position to be able to have ever increasing interest in this puzzling topic.
+
+   Early retirement is a term that summarizes all the activities that lead us to being Financially Independent and being able to do with our lives whatever we want —being able to work still if we wanted to— and reaching the ability to rely to depend solely on investments, which is scary initially.
+
+   The powering battery into our early retirement journey is frugality, which in simple terms is living below your means (I will discuss more about that in the following posts). As we read in [[https://www.mrmoneymustache.com/][Mr Money Mustache]] —which is a lovely blog I would recommend if you find an interest in your finances and specially having control over them— instead of trying to increase your income, it might easier to simplify your income to a plentiful 25%.
+
+   Reducing our incomes to 25% would provide the 75% remaining opportunity to invest. This investment chunk would nicely go to one of the following:
+
+   1. Paying off any high interest borrowing.
+   2. Paying off any debts all together (not counting mortgages, sometimes the 3% interest is okay to have).
+   3. Chipping away into our mortgages.
+   4. Putting it in high interest accounts.
+   5. Putting it in diversified, secure, index funds.
+
+   The ability to stay below this 25% comes with time, but it's surprising the amount of money you are able to save (when I say save I mean invest) which you are putting to work for you, starting to be able to move away from the need of having a job to support your day to day needs.
+
+   And that's it! You can expect a ton of blog posts for this series as I love the topic. Fasten up, I expect the journey to be fun and exciting! If you have a comment on the topics you would love to read about, or even your personal experiences on the topic, feel free to hit me up on [[https://twitter.com/quique_kessler][twitter]] or with an [[mailto:enrique.kesslerm@gmail.com][email]]. See you soon!
