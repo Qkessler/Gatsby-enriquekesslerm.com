@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { IconButton, Box, Text, jsx, Link } from "theme-ui"
+import { IconButton, Box, Text, jsx, Link, Button, Heading } from "theme-ui"
 import { useSiteMetadata } from "gatsby-theme-blorg/src/hooks"
 import { IconContext } from "react-icons"
 import { FaFacebook } from "react-icons/fa"
@@ -12,7 +12,7 @@ import { constants } from '../../constants/constants'
 const objectToGetParams = (object) => {
   return (
     "?" +
-    Object.keys(object)
+      Object.keys(object)
       .filter((key) => !!object[key])
       .map((key) => `${key}=${encodeURIComponent(object[key])}`)
       .join("&")
@@ -23,10 +23,10 @@ export const SocialButton = ({ link, ariaLabel, mx, children }) => {
   return (
     <Link href={link}>
       <Box mx={mx} sx={{
-        color: constants.iconGray, transition: '0.3s', '&:hover': {
-          transform: 'scale(1.2)',
-        }
-      }}>
+             color: constants.iconGray, transition: '0.3s', '&:hover': {
+               transform: 'scale(1.2)',
+             }
+           }}>
         <IconButton aria-label={ariaLabel} >
           {children}
         </IconButton>
@@ -36,16 +36,16 @@ export const SocialButton = ({ link, ariaLabel, mx, children }) => {
   )
 }
 
-const TweetThisButton = ({ post: { title, slug }, size }) => {
+const ShareWithTwitter = ({ post: { title, slug }, size }) => {
   const { siteUrl, twitter } = useSiteMetadata()
   if (!twitter || twitter.length === 0) return null
   const link =
-    `https://twitter.com/intent/tweet` +
-    objectToGetParams({
-      text: title,
-      url: `${siteUrl}${slug}`,
-      via: twitter,
-    })
+        `https://twitter.com/intent/tweet` +
+        objectToGetParams({
+          text: title,
+          url: `${siteUrl}${slug}`,
+          via: twitter,
+        })
 
   return (
     <SocialButton link={link} ariaLabel='Twitter' mx={1}>
@@ -54,15 +54,36 @@ const TweetThisButton = ({ post: { title, slug }, size }) => {
   )
 }
 
+const TweetThisButton = ({ post: { title, slug } }) => {
+  const { siteUrl, twitter } = useSiteMetadata()
+  if (!twitter || twitter.length === 0) return null
+  const link = `https://twitter.com/intent/tweet` + objectToGetParams({
+    text: title,
+    url: `${siteUrl}${slug}`,
+    via: twitter,
+  })
+
+  return (
+    <a href={link}>
+      <Button sx={{
+                width: '100%',
+                px: 2,
+              }}>
+        <Heading as='h3'>Tweet at me</Heading>
+      </Button>
+    </a>
+  )
+}
+
 const ShareWithFacebook = ({ post: { title, slug, excerpt }, size }) => {
   const { siteUrl } = useSiteMetadata()
   const facebookLink =
-    `https://www.facebook.com/sharer/sharer.php` +
-    objectToGetParams({
-      u: `${siteUrl}${slug}`,
-      title: title,
-      quote: excerpt,
-    })
+        `https://www.facebook.com/sharer/sharer.php` +
+        objectToGetParams({
+          u: `${siteUrl}${slug}`,
+          title: title,
+          quote: excerpt,
+        })
   return (
     <SocialButton link={facebookLink} ariaLabel='Facebook' mx={1}>
       <FaFacebook size={size} />
@@ -73,10 +94,10 @@ const ShareWithFacebook = ({ post: { title, slug, excerpt }, size }) => {
 const ShareWithLinkedIn = ({ post: { title, slug }, size }) => {
   const { author, siteUrl } = useSiteMetadata()
   const linkedInLink =
-    `https://www.linkedin.com/sharing/share-offsite/` +
-    objectToGetParams({
-      url: `${siteUrl}${slug}`,
-    })
+        `https://www.linkedin.com/sharing/share-offsite/` +
+        objectToGetParams({
+          url: `${siteUrl}${slug}`,
+        })
   return (
     <SocialButton link={linkedInLink} ariaLabel='LinkedIn' mx={1}>
       <GrLinkedin size={size} />
@@ -87,13 +108,13 @@ const ShareWithLinkedIn = ({ post: { title, slug }, size }) => {
 const ShareByMail = ({ post: { title, slug, excerpt }, size }) => {
   const { author, siteUrl } = useSiteMetadata()
   const mailToLink =
-    `mailto:` +
-    objectToGetParams({
-      subject: `From ${siteUrl}${slug}: ${title}`,
-      body:
-        `Here is a post from ${author}'s blog that might interest you:\n\n` +
-        `${title}. ${excerpt}\n${siteUrl}${slug}`,
-    })
+        `mailto:` +
+        objectToGetParams({
+          subject: `From ${siteUrl}${slug}: ${title}`,
+          body:
+          `Here is a post from ${author}'s blog that might interest you:\n\n` +
+            `${title}. ${excerpt}\n${siteUrl}${slug}`,
+        })
   return (
     <SocialButton link={mailToLink} ariaLabel='Email' mx={1}>
       <FiMail size={size} />
@@ -115,29 +136,31 @@ const EditOnGithub = ({ post: { slug } }) => {
 }
 
 export default ({ post }) => (
-  <Box
-    sx={{
-      display: "flex",
-      flexWrap: "wrap",
-      verticalAlign: 'center',
-      pt: 2,
-    }}
-  >
-    <Box as="div" sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      flexGrow: 1,
-      flexBasis: 500,
-      verticalAlign: 'center',
-    }}>
-      <Text pr={2} pt={1} color={constants.softGray}>Share with </Text>
-      <TweetThisButton post={post} size={35} />
-      <ShareWithFacebook post={post} size={35} />
-      <ShareWithLinkedIn post={post} size={35} />
-      <ShareByMail post={post} size={35} />
+  <div>
+    <TweetThisButton post={post}/>
+    <Box sx={{
+           display: "flex",
+           flexWrap: "wrap",
+           verticalAlign: 'center',
+           pt: 2,
+         }}>
+      <Box as="div" sx={{
+             display: 'flex',
+             flexDirection: 'row',
+             flexGrow: 1,
+             flexBasis: 500,
+             verticalAlign: 'center',
+           }}>
+        <Text pr={2} pt={1} color={constants.softGray}>Share with </Text>
+        <ShareWithTwitter post={post} size={35} />
+        <ShareWithFacebook post={post} size={35} />
+        <ShareWithLinkedIn post={post} size={35} />
+        <ShareByMail post={post} size={35} />
+      </Box>
+      <Box sx={{ flexGrow: 1, flexBasis: 150, pt: 1 }}>
+        <EditOnGithub post={post} />
+      </Box>
     </Box>
-    <Box sx={{ flexGrow: 1, flexBasis: 150, pt: 1 }}>
-      <EditOnGithub post={post} />
-    </Box>
-  </Box>
+  </div>
+
 )
