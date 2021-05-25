@@ -7,6 +7,7 @@
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^3.0.2",
     "cypress": "^7.4.0",
+    "date-fns": "^2.21.3",
     "eslint-config-react-app": "^6.0.0",
     "gatsby": "^3.2.1",
     "gatsby-plugin-feed": "^3.3.0",
