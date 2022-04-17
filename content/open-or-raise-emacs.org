@@ -1,0 +1,29 @@
+#+title: Open or raise emacs
+#+DATE: <2022-04-17>
+#+TAGS: emacs keyboard script macos
+#+SUMMARY: Keyboard maestro is a great tool to activate the windows of the most used applications effectively, with a keypress. Emacs is a bit harder to adapt to that workflow, if running the client-server model. Let's see how that would work.
+
+I use [[https://www.keyboardmaestro.com/main/][Keyboard maestro]] to Activate the applications I use the most, with the intention of reducing hand movement I endure every day. In my normal developing workflow, I would start working with Emacs to do my first Inbox Review, I would then open up the browser to search for anything while developing and I would then want to go back to Emacs to keep developing. Everything works with a keypress and following [[https://www.merriam-webster.com/dictionary/mnemonics][mnemonics]] to make the keys easier to remember.
+
+The latter is the part that I have been interested in improving. I use the Emacs client-server approach to have a fast running Emacs instance at all times. If I would want to close Emacs, I would be back to an open instance instantly.
+
+The problem with Emacs is that having the server running, we can't use the application condition with Keyboard maestro, since we already have an open application, even if it's running in the background.
+
+The idea is then run an Apple script as the condition to check whether the Emacs process is running (and not the Emacs window) to launch the Emacs client, or only activate the window that is already there. To do so, I would want to use an Apple Script to grep for the background process.
+
+Here is the script that I use as condition:
+#+begin_src applescript
+tell application "System Events"
+	set emacsWindowsCount to count of window 1 of (processes whose name is "Emacs")
+	if emacsWindowsCount is 0 then
+		error number -1
+	end if
+end tell
+#+end_src
+
+And here is the Keyboard maestro macro I ended up with. The LauchEmacsClient is an application that I created with Automator to just call the =emacsclient= binary with the buffer I want to start with.
+
+#+caption: Activate Emacs keyboard maestro macro.
+[[file:images/activate-emacs-macro.png]]
+
+If anyone is interested in the =.kmmacros= file, ping me on Twitter.
