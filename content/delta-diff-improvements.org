@@ -1,0 +1,48 @@
+#+title: Delta diff improvements and Magit
+#+DATE: <2022-05-02>
+#+TAGS: emacs macos diff git
+#+SUMMARY: Delta is a pager that git can use to make diff (and other) buffers more syntax aware. I have a working setup with Magit, here is how to set that up.
+
+[[https://github.com/dandavison/delta][Delta]] is a "syntax-highlighting pager for git, diff and grep output". You can use it to find your way easily reading the files that are changed on a new commit or code review.
+
+If you follow the README, the setup is pretty straightforward:
+1. Install the =delta= binary: I used =brew= since I'm on MacOS.
+2. Configure the .gitconfig file (which is the file =delta= consumes) and add =delta= as the pager. Here is the snipped to be added to the .gitconfig file from the README, so you don't have to search around!
+
+#+begin_src toml
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+#+end_src
+
+To configure Emacs to use delta as the pager for its magit diffs and more, you can use the [[https://github.com/dandavison/magit-delta][magit-delta package]]. I have found success with it, and the last commit is from 3 months ago, so it should be good to go.
+
+If you use straight (and use-package), here is the snippet I use on my config.
+#+begin_src emacs-lisp
+  (use-package magit-delta
+    :straight t
+    :ensure-system-package (delta . git-delta)
+    :hook (magit-mode . magit-delta-mode)
+    :custom
+    (magit-delta-default-dark-theme "gruvbox-dark"))
+#+end_src
+
+With the [[https://github.com/jwiegley/use-package/blob/master/README.md#use-package-ensure-system-package][ensure-system-package property]], we can give the binary name to be installed automatically with the default package manager. Since in brew the name of the binary for delta is not "delta", we can pass a cons to select the backup, =git-delta=, if the first not found.
+
+The problem I had is that I don't use the default dark theme (Monokai) when I work with the terminal or Emacs. I use [[https://github.com/morhetz/gruvbox][gruvbox]].
+#+begin_src emacs-lisp
+  (magit-delta-default-dark-theme "gruvbox-dark")
+#+end_src
+
+With the line above, it uses the gruvbox theme, which is the closest to what I need. Overall, I'll test delta for a while, it seems worth a shot.
